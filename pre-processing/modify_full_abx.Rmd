@@ -1,0 +1,41 @@
+---
+title: "Modify full_abx.item generated with a Praat script"
+output: html_document
+---
+```{r}
+library(plyr)
+```
+
+`create_datafile.praat` generates an abx.item file with metalinguistic parameters and acoustic measures. It also contains two sets of onset/offset times:
+
+- onset_v and offset_v = variable window. Onset is the beginning of the consonant, offset is the end point of the following vowel. Gives times for the CV sequence where C is a stop (aspirated or ejective) preceded by a word boundary, and V is a vowel 
+- onset_f and offset_f = fixed width. Onset is set as the minimum constriction time found in the data (here 20ms), offset is the mean vowel duration found in the data (here 109ms). Fixed width window is aligned on the oral burst. 
+
+# What does this do?
+We want to delete some of the columns which were created in the `full_abx.item` to use resulting `abx.item` files in ABXpy and easy_abx tests. 
+
+Choose which window setting to use
+```{r}
+datafile <- readr::read_delim("full_abx.item", " ")
+datafile <- dplyr::rename_at(datafile, 
+                  names(datafile["item"]), 
+                  function(x) paste0("#", x))
+datafile$X19 <- NULL
+
+# Choose between fixed or variable window (uncomment one)
+# Select fixed width
+datafile$onset_v <- NULL
+datafile$offset_v <- NULL
+datafile <- rename(datafile, c("onset_f"="onset", "offset_f"="offset"))
+# Select variable width
+#datafile$onset_f <- NULL
+#datafile$offset_f <- NULL
+#datafile <- rename(datafile, c("onset_v"="onset", "offset_v"="offset"))
+
+# ABXpy item file
+## Change folder
+write.table(datafile, file = "../results/fixed/abx.item", quote = F, sep = " ", row.names = F, col.names = T)
+# Easy_abx csv file
+#write.table(datafile, file = "../results/features/abx.csv", quote = F, sep = ",", row.names = F, col.names = T)
+```
+
