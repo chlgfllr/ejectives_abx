@@ -4,7 +4,7 @@ set -e
 
 source activate abxenv
 
-TEST=fixed
+TEST=variable
 FOLDER=by__place_question_speaker_vowel
 DIR=../results/$TEST
 

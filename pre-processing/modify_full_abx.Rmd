@@ -32,6 +32,19 @@ datafile <- rename(datafile, c("onset_f"="onset", "offset_f"="offset"))
 #datafile$offset_f <- NULL
 #datafile <- rename(datafile, c("onset_v"="onset", "offset_v"="offset"))
 
+# Normalize temporal measures
+x <- max(datafile$vot)
+datafile$votnorm <- datafile$vot / x
+datafile$vot <- NULL
+
+y <- max(datafile$constriction) 
+datafile$constrictionnorm <- datafile$constriction / y
+datafile$constriction <- NULL
+
+z <- max(datafile$vowelduration)
+datafile$vowelnorm <- datafile$vowelduration / z
+datafile$vowelduration <- NULL
+
 # ABXpy item file
 ## Change folder
 write.table(datafile, file = "../results/fixed/abx.item", quote = F, sep = " ", row.names = F, col.names = T)
