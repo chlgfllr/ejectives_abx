@@ -1,0 +1,23 @@
+---
+title: "Compare ABXpy scores"
+output: html_document
+---
+
+Creates a file with 2+ sets of results to compare the scores
+
+```{r}
+first <- readr::read_delim("../results/results_large.csv", "\t")
+second <- readr::read_delim("../results/results_small.csv", "\t")
+
+first$score_large <- first$score
+first$score <- NULL
+
+second$score_small <- second$score
+second$score <- NULL
+
+comparison <- dplyr::inner_join(first, second,
+                                by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
+
+write.csv(comparison, "../results/comparison_small_large_mfcc.csv")
+```
+

@@ -76,12 +76,12 @@ read_distances <- function(data_folder) {
 ```{r warning = FALSE}
 setwd("~/ejectives_abx/results")
 
-distances_fixed <- read_distances("fixed/by__place_question_speaker_vowel")
-distances_fixed$experiment <- "fixed"
-distances_egg <- read_distances("egg_fixed/by__place_question_speaker_vowel")
-distances_egg$experiment <- "egg"
+distances_fixed_large <- read_distances("fixed/by__place_question_speaker_vowel")
+distances_fixed_large$experiment <- "fixed_large"
+distances_fixed_small <- read_distances("smaller_mfcc/fixed/by__place_question_speaker_vowel")
+distances_fixed_small$experiment <- "fixed_small"
 
-distances <- dplyr::bind_rows(distances_fixed, distances_egg)
+distances <- dplyr::bind_rows(distances_fixed_large, distances_fixed_small)
 distances$place <- distances$place_A # know this because experiment was BY place, speaker
 distances$speaker <- distances$speaker_A 
 distances$question <- distances$question_A 
@@ -90,9 +90,10 @@ distances$question <- distances$question_A
 
 ```{r}
 ggplot(distances, aes(x = place, y = dist, fill=same)) + 
-      ggplot2::geom_boxplot(position="dodge") +
+      ggplot2::geom_violin(position="dodge") +
       ggplot2::facet_grid(speaker ~ experiment) +
       ggplot2::theme_minimal()
 
+#ggsave("/Users/chloe/distances_violin.jpeg", width = 5, height = 5)
 ```
 

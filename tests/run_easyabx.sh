@@ -5,7 +5,7 @@ set -e
 source activate easyabx
 
 TEST=features
-FOLDER=by__
+FOLDER=by__again
 DIR=../results/$TEST
 
 NAME=abx

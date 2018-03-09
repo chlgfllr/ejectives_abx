@@ -4,11 +4,11 @@ set -e
 
 source activate abxenv
 
-TEST=egg_fixed
+TEST=fixed
 FOLDER=by__place_question_speaker_vowel
-DIR=../results/$TEST
+DIR=../results/smaller_mfcc/$TEST
 
-FEATURE_FILE=egg.h5f
+FEATURE_FILE=smaller_mfcc.h5f
 ITEM_FILE=$DIR/abx.item
 
 TASK_FILE=$DIR/$FOLDER/abx.abx
