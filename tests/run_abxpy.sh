@@ -6,9 +6,9 @@ source activate abxenv
 
 TEST=fixed
 FOLDER=by__place_question_speaker_vowel
-DIR=../results/smaller_mfcc/$TEST
+DIR=../results/different_mfcc/larger/$TEST
 
-FEATURE_FILE=smaller_mfcc.h5f
+FEATURE_FILE=mono_mfcc.h5f
 ITEM_FILE=$DIR/abx.item
 
 TASK_FILE=$DIR/$FOLDER/abx.abx
