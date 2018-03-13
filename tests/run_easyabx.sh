@@ -18,7 +18,7 @@ echo
 echo "Running easyabx test and extracting distances"
 echo
 
-mkdir $DIR/$FOLDER && \
+mkdir -p $DIR/$FOLDER && \
   ./prepare_abx.py $DIR/abx.csv $DIR/$FOLDER/$NAME --header \
      --col_features 13-15 --col_labels 6-12 --col_items 1,2,3 && \
   ./run_abx.py $DIR/$FOLDER/$NAME --on "type" --by place position question speaker vowel &&\

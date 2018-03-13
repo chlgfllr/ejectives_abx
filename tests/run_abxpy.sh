@@ -22,7 +22,7 @@ echo
 echo "Running ABXpy test and extracting distances"
 echo
 
-mkdir $DIR/$FOLDER && \
+mkdir -p $DIR/$FOLDER && \
   abx-task $ITEM_FILE $TASK_FILE --on type --by place vowel position speaker question && \
   abx-distance $FEATURE_FILE $TASK_FILE $DISTANCE_FILE --normalization 1 --njobs 1 && \
   abx-score $TASK_FILE $DISTANCE_FILE $SCORE_FILE && \
