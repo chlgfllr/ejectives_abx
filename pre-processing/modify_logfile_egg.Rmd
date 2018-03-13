@@ -15,7 +15,7 @@ info <- dplyr::select(item, `#file`, onset, offset, `#item`, sequence, syllables
                       type, place, vowel, position, speaker, question, new)
 egg_ <- dplyr::inner_join(info, egg, by=c(`#file`="#file"))
 
-write.csv(egg_, "../results/egg_fixed/egg_edit.csv")
+write.csv(egg_, "../results/egg_fixed/egg_edit.csv", quote = F, row.names = F)
 ```
 
 
