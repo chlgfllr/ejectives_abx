@@ -5,7 +5,7 @@ set -e
 source activate easyabx
 
 TEST=egg_fixed
-FOLDER=by__essai_boston
+FOLDER=by__place_position_question_speaker_vowel
 DIR=../results/$TEST
 
 NAME=abx
@@ -24,6 +24,8 @@ mkdir -p $DIR/$FOLDER && \
   run_abx $DIR/$FOLDER/$NAME --on "type" --by place position question speaker vowel &&\
   python dis2txt.py $TASK_FILE $DISTANCE_FILE $OUTPUT_TXT && \
   cp $DIR/$FOLDER/abx.csv $DIR/$FOLDER/results.csv; rm $DIR/$FOLDER/abx.csv && \
-  sed -e "s/-/ /g" $DIR/$FOLDER/abx.item > TMP; mv TMP $DIR/$FOLDER/abx.item
+  sed -e "s/-/ /g" $DIR/$FOLDER/abx.item > TMP; mv TMP $DIR/$FOLDER/abx.item 
+#&& \
+#  sed -e "s/-/ /g" $OUTPUT_TXT > TMP; mv TMP $OUTPUT_TXT
 
 source deactivate
