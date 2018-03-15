@@ -1,5 +1,5 @@
 ---
-title: "ABX"
+title: "Easyabx results editing"
 output: html_document
 ---
 
@@ -13,13 +13,30 @@ library(ggplot2)
 read_distances <- function(data_folder) {
   # Files utilisés
   distances <- readr::read_delim(paste0(data_folder, "/distance.txt"), " ")
+  #distances <- readr::read_delim("../results/features/avion/distance.txt", " ")
+  ## ici deux problèmes : 
+  ## soit j'utilise le remplacement des caractères qui lient les items et j'ai trop de colonnes
+  ## soit je le fais pas et j'ai deux colonnes nom_onset_offset et quatre noms de colonnes random
+  ## dans tous les cas, trouver comment aligner les headers et les colonnes
   items <- readr::read_delim(paste0(data_folder, "/abx.item"), " ")
+  #items <- readr::read_delim("../results/features/avion/abx.item", " ")
   
+  # Suppress row numbers
   distances$X1 <- NULL
+  
+  # Get rid of random times in distances
+  distances$a <- NULL
+  distances$a_1 <- NULL
+  distances$a_2 <- NULL
+  distances$a_3 <- NULL
   
   # Change column names because why not
   names(distances)[which(names(distances)=="d(A, B)")] <- "dist"
 
+  # Get rid of random times in items
+  items$a <- NULL
+  items$a_1 <- NULL
+  
   ####################
   items_B <- dplyr::select(distances, dplyr::ends_with("_B"))
   items_B_ <- dplyr::inner_join(items_B, items,
@@ -28,12 +45,26 @@ read_distances <- function(data_folder) {
   items_B__ <- dplyr::rename_at(items_B_, 
                   names(items_B_)[!endsWith(names(items_B_), "_B")], 
                   function(x) paste0(x, "_B"))
+
+#  items_B <- dplyr::select(distances, dplyr::matches("file_B"))
+#  items_B_ <- dplyr::inner_join(items_B, items,
+#                                    by=c(file_B="#file"))
+#  items_B__ <- dplyr::rename_at(items_B_, 
+#                  names(items_B_)[!endsWith(names(items_B_), "_B")], 
+#                  function(x) paste0(x, "_B"))
   items_B_clean <- items_B__
   items_B_clean$type_B <- NULL
   items_B_clean$vowel_B <- NULL
   items_B_clean$position_B <- NULL
-  items_B_clean$new_B <- NULL
+  items_B_clean$`#syllables_B` <- NULL
 
+#  items_A <- dplyr::select(distances, dplyr::matches("file_A"))
+#  items_A_ <- dplyr::inner_join(items_A, items,
+#                                    by=c(file_A="#file"))
+#  items_A__ <- dplyr::rename_at(items_A_, 
+#                  names(items_A_)[!endsWith(names(items_A_), "_A")], 
+#                  function(x) paste0(x, "_A"))
+#  items_A_clean <- items_A__
   items_A <- dplyr::select(distances, dplyr::ends_with("_A"))
   items_A_ <- dplyr::inner_join(items_A, items,
                                     by=c(file_A="#file", onset_A="onset", 
@@ -42,10 +73,12 @@ read_distances <- function(data_folder) {
                   names(items_A_)[!endsWith(names(items_A_), "_A")], 
                   function(x) paste0(x, "_A"))
   items_A_clean <- items_A__
+
   items_A_clean$type_A <- NULL
   items_A_clean$vowel_A <- NULL
   items_A_clean$position_A <- NULL
-  items_A_clean$new_A <- NULL
+  items_A_clean$`#syllables_A` <- NULL
+  #items_A_clean$new_A <- NULL
 
   # Selectionne le distance score
   distance_score <- dplyr::select(distances, "dist")
@@ -57,8 +90,10 @@ read_distances <- function(data_folder) {
   distances_better$onset_B <- NULL
   distances_better$offset_B <- NULL
   # Create a new table with less information                   
-  names(distances_better)[which(names(distances_better)=="#item_A")] <- "item_A"
-  names(distances_better)[which(names(distances_better)=="#item_B")] <- "item_B"
+  names(distances_better)[which(names(distances_better)=="#sequence_A")] <- "sequence_A"
+  names(distances_better)[which(names(distances_better)=="#sequence_B")] <- "sequence_B"
+#  names(distances_better)[which(names(distances_better)=="#item_A")] <- "item_A"
+#  names(distances_better)[which(names(distances_better)=="#item_B")] <- "item_B"
   
   distances_better$ejective_A <- grepl(">", distances_better$sequence_A)
   distances_better$ejective_B <- grepl(">", distances_better$sequence_B)
@@ -78,12 +113,13 @@ setwd("~/ejectives_abx/results")
 
 distances_fixed_standard <- read_distances("fixed/by__place_question_speaker_vowel")
 distances_fixed_standard$experiment <- "fixed_standard"
-distances_fixed_small <- read_distances("different_mfcc/smaller/fixed/by__place_question_speaker_vowel")
-distances_fixed_small$experiment <- "fixed_small"
-distances_fixed_large <- read_distances("different_mfcc/larger/fixed/by__place_question_speaker_vowel")
-distances_fixed_large$experiment <- "fixed_large"
+distances_egg <- read_distances("egg_fixed/_avion")
+distances_egg$experiment <- "egg"
+distances_features <- read_distances("features/avion")
+distances_features$experiment <- "features"
 
-distances <- dplyr::bind_rows(distances_fixed_large, distances_fixed_standard, distances_fixed_small)
+#distances <- dplyr::bind_rows(distances_fixed_large, distances_fixed_standard, distances_fixed_small)
+distances <- dplyr::bind_rows(distances_fixed_standard, distances_features, distances_egg)
 distances$place <- distances$place_A # know this because experiment was BY place, speaker
 distances$speaker <- distances$speaker_A 
 distances$question <- distances$question_A 
@@ -92,10 +128,10 @@ distances$question <- distances$question_A
 
 ```{r}
 ggplot(distances, aes(x = place, y = dist, fill=same)) + 
-      ggplot2::geom_violin(position="dodge") +
+      ggplot2::geom_boxplot(position="dodge") +
       ggplot2::facet_grid(speaker ~ experiment) +
       ggplot2::theme_minimal()
 
-#ggsave("/Users/chloe/distances_violin.jpeg", width = 5, height = 5)
+ggsave("/Users/chloe/distances_egg.jpeg", width = 5, height = 5)
 ```
 
