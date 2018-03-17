@@ -5,8 +5,11 @@ output: html_document
 
 Used the `Sound > Query > Get value at time...` function in Praat to extract amplitude estimates every 0.005 seconds (inverse de 200 Hz, might have to change this value). 
 
+EDIT 16 mars : multiplication des valeurs d'amplitude par 1000 pour tester les résultats d'ABXpy
+
 ```{r}
-egg <- readr::read_delim("../results/egg_fixed/egg.csv", " ")
+#egg <- readr::read_delim("../results/egg_fixed/egg.csv", " ")
+egg <- readr::read_delim("../results/egg_fixed/egg_1000.csv", " ")
 egg$X27 <- NULL
 
 item <- readr::read_delim("../results/fixed/abx.item", " ")
@@ -15,7 +18,8 @@ info <- dplyr::select(item, `#file`, onset, offset, `#item`, sequence, syllables
                       type, place, vowel, position, speaker, question, new)
 egg_ <- dplyr::inner_join(info, egg, by=c(`#file`="#file"))
 
-write.csv(egg_, "../results/egg_fixed/egg_edit.csv", quote = F, row.names = F)
+#write.csv(egg_, "../results/egg_fixed/egg_edit.csv", quote = F, row.names = F)
+write.csv(egg_, "../results/egg_fixed/egg_1000_edit.csv", quote = F, row.names = F)
 ```
 
 

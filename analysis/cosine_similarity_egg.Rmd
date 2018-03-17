@@ -1,0 +1,53 @@
+---
+title: "Cosine similarity"
+output: html_document
+---
+
+Convert row > column to calculate cosine similarity
+https://cran.r-project.org/web/packages/lsa/lsa.pdf
+
+```{r}
+library(lsa)
+```
+
+```{r}
+# Mise en forme des données d'amplitudes
+egg_data <- readr::read_delim("../results/egg_fixed/egg_1000_edit.csv", ",")
+
+# Supprimer les données qui ne sont pas des mesures d'amplitude
+amplitudes <- dplyr::select(egg_data, dplyr::starts_with("time"))
+colonnes <- as.vector(egg_data$`#file`)
+egg <- as.data.frame(t(amplitudes))
+colnames(egg) <- colonnes
+```
+
+```{r}
+original <- readr::read_delim("/Users/chloe/ejectives_abx/results/egg_fixed/egg_1000/distance.txt", " ")
+
+noms_fichiers <- dplyr::select(original, dplyr::starts_with("file"))
+distance <- dplyr::select(original, dplyr::starts_with("d"))
+modifie <- dplyr::bind_cols(noms_fichiers, distance)
+modifie$dis2txt <- modifie$`d(A, B)`
+modifie$`d(A, B)` <- NULL
+
+# Calcul des similarités cosinus
+for(i in 1:nrow(modifie)) {
+  
+    a <- modifie[i,1]
+    b <- modifie[i,2]
+    c <- dplyr::select(egg, dplyr::matches(as.character(a)))
+    d <- dplyr::select(egg, dplyr::matches(as.character(b)))
+    df <- as.matrix(dplyr::bind_cols(c, d))
+    e <- cosine(df)
+    modifie[i,4] <- e[1,2]
+  
+    }
+
+names(modifie)[4] <- "cosine"
+
+modifie$difference <- modifie$dis2txt + modifie$cosine
+# = 1
+
+write.csv(modifie, "../results/egg_fixed/dis2txt_and_cosine_similarity.csv", row.names = F)
+```
+

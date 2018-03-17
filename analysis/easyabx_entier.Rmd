@@ -13,13 +13,13 @@ library(ggplot2)
 read_distances <- function(data_folder) {
   # Files utilisés
   distances <- readr::read_delim(paste0(data_folder, "/distance.txt"), " ")
-  #distances <- readr::read_delim("../results/features/avion/distance.txt", " ")
+  #distances <- readr::read_delim("../results/egg_fixed/egg_1000/distance.txt", " ")
   ## ici deux problèmes : 
   ## soit j'utilise le remplacement des caractères qui lient les items et j'ai trop de colonnes
   ## soit je le fais pas et j'ai deux colonnes nom_onset_offset et quatre noms de colonnes random
   ## dans tous les cas, trouver comment aligner les headers et les colonnes
   items <- readr::read_delim(paste0(data_folder, "/abx.item"), " ")
-  #items <- readr::read_delim("../results/features/avion/abx.item", " ")
+  #items <- readr::read_delim("../results/egg_fixed/egg_1000/abx.item", " ")
   
   # Suppress row numbers
   distances$X1 <- NULL
@@ -113,13 +113,15 @@ setwd("~/ejectives_abx/results")
 
 distances_fixed_standard <- read_distances("fixed/by__place_question_speaker_vowel")
 distances_fixed_standard$experiment <- "fixed_standard"
-distances_egg <- read_distances("egg_fixed/_avion")
-distances_egg$experiment <- "egg"
-distances_features <- read_distances("features/avion")
-distances_features$experiment <- "features"
+#distances_egg_1000 <- read_distances("egg_fixed/egg_1000")
+#distances_egg_1000$experiment <- "egg_1000"
+#distances_egg <- read_distances("egg_fixed/_avion")
+#distances_egg$experiment <- "egg"
+#distances_features <- read_distances("features/avion")
+#distances_features$experiment <- "features"
 
 #distances <- dplyr::bind_rows(distances_fixed_large, distances_fixed_standard, distances_fixed_small)
-distances <- dplyr::bind_rows(distances_fixed_standard, distances_features, distances_egg)
+distances <- dplyr::bind_rows(distances_fixed_standard)
 distances$place <- distances$place_A # know this because experiment was BY place, speaker
 distances$speaker <- distances$speaker_A 
 distances$question <- distances$question_A 
@@ -132,6 +134,6 @@ ggplot(distances, aes(x = place, y = dist, fill=same)) +
       ggplot2::facet_grid(speaker ~ experiment) +
       ggplot2::theme_minimal()
 
-ggsave("/Users/chloe/distances_egg.jpeg", width = 5, height = 5)
+#ggsave("/Users/chloe/distances_egg.jpeg", width = 5, height = 5)
 ```
 
