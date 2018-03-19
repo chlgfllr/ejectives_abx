@@ -22,7 +22,7 @@ colnames(egg) <- colonnes
 ```
 
 ```{r}
-original <- readr::read_delim("/Users/chloe/ejectives_abx/results/egg_fixed/egg_1000/distance.txt", " ")
+original <- readr::read_delim("../results/egg_fixed/egg_1000/distance.txt", " ")
 
 noms_fichiers <- dplyr::select(original, dplyr::starts_with("file"))
 distance <- dplyr::select(original, dplyr::starts_with("d"))
@@ -49,5 +49,26 @@ modifie$difference <- modifie$dis2txt + modifie$cosine
 # = 1
 
 write.csv(modifie, "../results/egg_fixed/dis2txt_and_cosine_similarity.csv", row.names = F)
+```
+
+```{r}
+# Corrélation entre dis2txt scores et similarité cosinus ?
+scores <- readr::read_delim("../results/egg_fixed/dis2txt_and_cosine_similarity.csv", ",")
+
+# Yup, c'est la même chose
+ggplot(scores, aes(x = dis2txt, y = cosine)) + 
+  ggplot2::geom_point()
+```
+
+```{r}
+# Cross correlation?
+# Pulmonic vs ejective; cosine similarity = -0.602380585
+essai <- ccf(egg$geo020s08a0136v02, egg$geo020s08a0202v02, type = "correlation")
+essaiefnsdlkn<- ccf(egg$geo020s08a0202v02, egg$geo020s08a0202v02, type = "correlation")
+# Ejective vs ejective; cosine similarity = 0.886472351
+essai_ <- ccf(egg$geo020s09a0057v01, egg$geo020s09a0098v01, type = "correlation")
+
+# Null correlation; ke-ke cosine similarity = 0.002656558
+essai__ <- ccf(egg$geo020s08a0135v02, egg$geo020s08a0136v02, type = "correlation")
 ```
 
