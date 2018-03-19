@@ -199,8 +199,12 @@ distances_features_with_vot$experiment <- "features_with_vot"
 distances_features_no_vot <- read_easyabx("features/no_vot___by__place_position_question_speaker_vowel")
 distances_features_no_vot$experiment <- "features_no_vot"
 
+distances_deltas_egg <- read_easyabx("egg_fixed/deltas__by__place_position_question_speaker_vowel")
+distances_deltas_egg$experiment <- "deltas_egg"
+
 ## Tous les tests dans un même fichier
-distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_with_vot, distances_features_no_vot)
+#distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_with_vot, distances_features_no_vot)
+distances <- dplyr::bind_rows(distances_fixed_standard, distances_egg, distances_deltas_egg)
 
 #distances <- distances_egg_1000
 distances$place <- distances$place_A # know this because experiment was BY place, speaker

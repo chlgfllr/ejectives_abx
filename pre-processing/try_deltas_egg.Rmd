@@ -1,0 +1,61 @@
+---
+title: "Find a better way to use the EGG"
+output: html_document
+---
+
+Because easyabx doesn't like the amplitude measures taken from EGG signal every 0.005s, try using the deltas
+
+```{r}
+egg_original <- readr::read_delim("../results/egg_fixed/egg_1000_edit.csv", ",")
+
+egg_filename <- egg_original[,1]
+egg_times <- dplyr::select(egg_original, dplyr::starts_with("time_"))
+
+egg_base <- dplyr::bind_cols(egg_filename, egg_times)
+
+for(i in 1:nrow(egg_base)){
+  egg_base[i,27] <- egg_base[i,3] - egg_base[i,2]
+  egg_base[i,28] <- egg_base[i,4] - egg_base[i,3]
+  egg_base[i,29] <- egg_base[i,5] - egg_base[i,4]
+  egg_base[i,30] <- egg_base[i,6] - egg_base[i,5]
+  egg_base[i,31] <- egg_base[i,7] - egg_base[i,6]
+  egg_base[i,32] <- egg_base[i,8] - egg_base[i,7]
+  egg_base[i,33] <- egg_base[i,9] - egg_base[i,8]
+  egg_base[i,34] <- egg_base[i,10] - egg_base[i,9]
+  egg_base[i,35] <- egg_base[i,11] - egg_base[i,10]
+  egg_base[i,36] <- egg_base[i,12] - egg_base[i,11]
+  egg_base[i,37] <- egg_base[i,13] - egg_base[i,12]
+  egg_base[i,38] <- egg_base[i,14] - egg_base[i,13]
+  egg_base[i,39] <- egg_base[i,15] - egg_base[i,14]
+  egg_base[i,40] <- egg_base[i,16] - egg_base[i,15]
+  egg_base[i,41] <- egg_base[i,17] - egg_base[i,16]
+  egg_base[i,42] <- egg_base[i,18] - egg_base[i,17]
+  egg_base[i,43] <- egg_base[i,19] - egg_base[i,18]
+  egg_base[i,44] <- egg_base[i,20] - egg_base[i,19]
+  egg_base[i,45] <- egg_base[i,21] - egg_base[i,20]
+  egg_base[i,46] <- egg_base[i,22] - egg_base[i,21]
+  egg_base[i,47] <- egg_base[i,23] - egg_base[i,22]
+  egg_base[i,48] <- egg_base[i,24] - egg_base[i,23]
+  egg_base[i,49] <- egg_base[i,25] - egg_base[i,24]
+  egg_base[i,50] <- egg_base[i,26] - egg_base[i,25]
+}
+
+egg_modified <- dplyr::select(egg_base, names(egg_base)[endsWith(names(egg_base), ".1")])
+egg_deltas <- dplyr::bind_cols(egg_filename, egg_modified)
+names(egg_deltas) <- c("#file", "delta_1", "delta_2", "delta_3", "delta_4", "delta_5",
+                       "delta_6", "delta_7", "delta_8", "delta_9", "delta_10",
+                       "delta_11", "delta_12", "delta_13", "delta_14", "delta_15",
+                       "delta_16", "delta_17", "delta_18", "delta_19", "delta_20",
+                       "delta_21", "delta_22", "delta_23", "delta_24")
+
+## To use for the distances
+#write.csv(egg_deltas, "../results/egg_fixed/egg_deltas.csv", row.names = F)
+
+## To use for easyabx
+egg_labels <- dplyr::select(egg_original, names(egg_original)[!startsWith(names(egg_original), "time")])
+egg_item <- dplyr::bind_cols(egg_labels, egg_deltas)
+egg_item$`#file1` <- NULL
+
+write.csv(egg_item, "../results/egg_fixed/egg_deltas_item.csv", row.names = F, quote = F)
+```
+

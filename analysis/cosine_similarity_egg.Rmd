@@ -12,10 +12,20 @@ library(lsa)
 
 ```{r}
 # Mise en forme des données d'amplitudes
-egg_data <- readr::read_delim("../results/egg_fixed/egg_1000_edit.csv", ",")
+#egg_data <- readr::read_delim("../results/egg_fixed/egg_1000_edit.csv", ",")
 
 # Supprimer les données qui ne sont pas des mesures d'amplitude
-amplitudes <- dplyr::select(egg_data, dplyr::starts_with("time"))
+#amplitudes <- dplyr::select(egg_data, dplyr::starts_with("time"))
+#colonnes <- as.vector(egg_data$`#file`)
+#egg <- as.data.frame(t(amplitudes))
+#colnames(egg) <- colonnes
+
+###############
+# Mise en forme des deltas après création des deltas
+egg_data <- readr::read_delim("../results/egg_fixed/egg_deltas.csv", ",")
+
+# Supprimer les données qui ne sont pas des mesures d'amplitude
+amplitudes <- dplyr::select(egg_data, dplyr::starts_with("delta"))
 colonnes <- as.vector(egg_data$`#file`)
 egg <- as.data.frame(t(amplitudes))
 colnames(egg) <- colonnes
