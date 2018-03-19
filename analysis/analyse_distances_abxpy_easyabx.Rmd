@@ -190,11 +190,8 @@ setwd("~/ejectives_abx/results")
 distances_fixed_standard <- read_abxpy("fixed/by__place_question_speaker_vowel")
 distances_fixed_standard$experiment <- "fixed_standard"
 
-#distances_egg_1000 <- read_easyabx("egg_fixed/egg_1000")
-#distances_egg_1000$experiment <- "egg_1000"
-
-#distances_egg <- read_easyabx("egg_fixed/_avion")
-#distances_egg$experiment <- "egg"
+distances_egg <- read_easyabx("egg_fixed/by__place_position_question_speaker_vowel")
+distances_egg$experiment <- "egg"
 
 distances_features_with_vot <- read_easyabx("features/by__place_position_question_speaker_vowel")
 distances_features_with_vot$experiment <- "features_with_vot"

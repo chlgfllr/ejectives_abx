@@ -5,7 +5,7 @@ set -e
 source activate easyabx
 
 TEST=egg_fixed
-FOLDER=egg_1000
+FOLDER=by__place_position_question_speaker_vowel
 DIR=../results/$TEST
 
 NAME=abx
