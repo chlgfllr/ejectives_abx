@@ -9,7 +9,7 @@ Creates a file with 2+ sets of results to compare the scores
 #large <- readr::read_delim("../results/results_large.csv", "\t")
 #small <- readr::read_delim("../results/results_small.csv", "\t")
 #standard <- readr::read_delim("../results/results_standard.csv", "\t")
-egg <- readr::read_delim("../results/results_egg.csv", "\t")
+egg_deltas <- readr::read_delim("../results/results_deltas.csv", "\t")
 egg_1000 <- readr::read_delim("../results/results_egg_1000.csv", "\t")
 
 #large$score_large <- large$score
@@ -21,8 +21,8 @@ egg_1000 <- readr::read_delim("../results/results_egg_1000.csv", "\t")
 #standard$score_standard <- standard$score
 #standard$score <- NULL
 
-egg$score_egg <- egg$score
-egg$score <- NULL
+egg_deltas$score_deltas <- egg_deltas$score
+egg_deltas$score <- NULL
 
 egg_1000$score_egg_1000 <- egg_1000$score
 egg_1000$score <- NULL
@@ -32,12 +32,18 @@ egg_1000$score <- NULL
 #comparison <- dplyr::inner_join(comparison, large,  
 #                                by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
 
-comparison <- dplyr::inner_join(egg, egg_1000,  
+comparison <- dplyr::inner_join(egg_deltas, egg_1000,  
                                 by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
 
 #comparison$compare <- comparison$score_standard - comparison$score_smaller
 
-#write.csv(comparison, "../results/comparison_egg.csv")
+#write.csv(comparison, "../results/comparison_egg_deltas.csv")
 ```
+
+```{bash}
+rm ../results/results_deltas.csv
+rm ../results/results_egg_1000.csv
+```
+
 
 Note: I'm not sure what changing the window length during the features extraction does, but it returns different scores. `comparison$compare` shows the results of `score_standard - score_smaller`.

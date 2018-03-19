@@ -199,12 +199,15 @@ distances_features_with_vot$experiment <- "features_with_vot"
 distances_features_no_vot <- read_easyabx("features/no_vot___by__place_position_question_speaker_vowel")
 distances_features_no_vot$experiment <- "features_no_vot"
 
+distances_features_vot_only <- read_easyabx("features/vot_only___by__place_position_question_speaker_vowel")
+distances_features_vot_only$experiment <- "features_only_vot"
+
 distances_deltas_egg <- read_easyabx("egg_fixed/deltas__by__place_position_question_speaker_vowel")
 distances_deltas_egg$experiment <- "deltas_egg"
 
 ## Tous les tests dans un même fichier
-#distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_with_vot, distances_features_no_vot)
-distances <- dplyr::bind_rows(distances_fixed_standard, distances_egg, distances_deltas_egg)
+distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_vot_only)
+#distances <- dplyr::bind_rows(distances_fixed_standard, distances_egg, distances_deltas_egg)
 
 #distances <- distances_egg_1000
 distances$place <- distances$place_A # know this because experiment was BY place, speaker
@@ -215,11 +218,36 @@ distances$question <- distances$question_A
 
 
 ```{r}
+# Plot the distances by experiment
 ggplot(distances, aes(x = place, y = dist, fill=same)) + 
       ggplot2::geom_boxplot(position="dodge") +
       ggplot2::facet_grid(speaker ~ experiment) +
       ggplot2::theme_minimal()
 
-#ggsave("/Users/chloe/distances_features_with_without_vot_and_abxpy.jpeg", width = 15, height = 8)
+#ggsave("/Users/chloe/vot_and_abxpy.jpeg", width = 5, height = 5)
+```
+
+```{r}
+# Do a scatter plot of dtw and vot distances to see how much they are correlated
+tmp_vot <- distances_features_vot_only
+tmp_vot$dist_vot <- tmp_vot$dist
+tmp_vot$dist <- NULL
+
+tmp_fixed <- distances_fixed_standard
+tmp_fixed$dist_fixed <- tmp_fixed$dist
+tmp_fixed$dist <- NULL
+
+distance_correlation <- dplyr::inner_join(tmp_vot, tmp_fixed, 
+                                         by=c(file_A="file_A", file_B="file_B",
+                                              sequence_A="sequence_A", sequence_B="sequence_B",
+                                              place_A="place_A", speaker_A="speaker_A", 
+                                              same="same"))
+
+                                              
+ggplot(distance_correlation, aes(x=dist_vot, y=dist_fixed)) +
+  ggplot2::geom_point() +
+  geom_smooth(method=lm)
+
+#ggsave("/Users/chloe/scatterplot_vot_and_abxpy.jpeg", width = 5, height = 5)
 ```
 
