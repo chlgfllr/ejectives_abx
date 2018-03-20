@@ -43,7 +43,7 @@ comparison <- dplyr::bind_rows(egg_abxpy, egg_amplitude, egg_deltas, egg_deltas_
 ```
 
 ```{r}
-
+# Compare all the results
 all_results <- comparison
 
 all_results$place <- substr(all_results$by, 3, 5)
@@ -55,20 +55,7 @@ all_results$position <- grepl("initial", all_results$by)
 all_results$position <- ifelse(all_results$position=="TRUE", "initial", "medial")
 
 all_results$by <- NULL
-  
-```
 
-```{r}
-# Plot all results
-no_o_results <- subset(all_results, vowel != "o")
-
-ggplot2::ggplot(no_o_results, aes(x = place, y = score, fill = experiment)) + 
-  ggplot2::geom_boxplot(position="dodge") +
-  ggplot2::facet_grid(speaker ~ .) +
-  ggplot2::theme_minimal() + 
-  ggplot2::geom_abline(intercept = 0.5, slope = 0, color = "red")
-```
-```{r}
 # Compare some of the results
 some_results <- dplyr::bind_rows(egg_abxpy, egg_amplitude,
                                features_all, features_no_vot, features_vot_only, fixed)
@@ -82,9 +69,43 @@ some_results$position <- ifelse(some_results$position=="TRUE", "initial", "media
 
 some_results$by <- NULL
 
+# Compare results on features
+feature_results <- dplyr::bind_rows(features_all, features_no_vot, features_vot_only, fixed)
+
+feature_results$place <- substr(feature_results$by, 3, 5)
+feature_results$speaker <- stringr::str_sub(feature_results$by, -9, -7)
+feature_results$vowel <- stringr::str_sub(feature_results$by, -3, -3)
+feature_results$question <- grepl("question", feature_results$by)
+feature_results$question <- ifelse(feature_results$question=="TRUE", "question", "answer")
+feature_results$position <- grepl("initial", feature_results$by)
+feature_results$position <- ifelse(feature_results$position=="TRUE", "initial", "medial")
+
+feature_results$by <- NULL
+```
+
+```{r}
+# Plot all results
+no_o_results <- subset(all_results, vowel != "o")
+
+ggplot2::ggplot(no_o_results, aes(x = place, y = score, fill = experiment)) + 
+  ggplot2::geom_boxplot(position="dodge") +
+  ggplot2::facet_grid(speaker ~ .) +
+  ggplot2::theme_minimal() + 
+  ggplot2::geom_abline(intercept = 0.5, slope = 0, color = "red")
+
+# Plot some of the results
 some_no_o_results <- subset(some_results, vowel != "o")
 
 ggplot2::ggplot(some_no_o_results, aes(x = place, y = score, fill = experiment)) + 
+  ggplot2::geom_boxplot(position="dodge") +
+  ggplot2::facet_grid(speaker ~ .) +
+  ggplot2::theme_minimal() + 
+  ggplot2::geom_abline(intercept = 0.5, slope = 0, color = "red")
+
+# Plot the results on the features
+feature_no_o_results <- subset(feature_results, vowel != "o")
+
+ggplot2::ggplot(feature_no_o_results, aes(x = place, y = score, fill = experiment)) + 
   ggplot2::geom_boxplot(position="dodge") +
   ggplot2::facet_grid(speaker ~ .) +
   ggplot2::theme_minimal() + 
@@ -94,12 +115,13 @@ ggplot2::ggplot(some_no_o_results, aes(x = place, y = score, fill = experiment))
 # EGG abxpy is better than chance
 # features_all is really good, but features are inconsistent when vot is séparé
 
-ggplot2::ggplot(some_no_o_results, aes(x = experiment, y = score, fill = place)) + 
+# Another plot
+ggplot2::ggplot(no_o_results, aes(x = experiment, y = score, fill = place)) + 
   ggplot2::geom_boxplot() + 
   ggplot2::theme_minimal() + 
   ggplot2::geom_abline(intercept = 0.5, slope = 0, color = "red")
 
-ggplot2::ggplot(no_o_results, aes(x = experiment, y = score, fill = place)) + 
+ggplot2::ggplot(some_no_o_results, aes(x = experiment, y = score, fill = place)) + 
   ggplot2::geom_boxplot() + 
   ggplot2::theme_minimal() + 
   ggplot2::geom_abline(intercept = 0.5, slope = 0, color = "red")
