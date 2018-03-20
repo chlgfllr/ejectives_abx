@@ -6,36 +6,62 @@ output: html_document
 Creates a file with 2+ sets of results to compare the scores
 
 ```{r}
-#large <- readr::read_delim("../results/results_large.csv", "\t")
-#small <- readr::read_delim("../results/results_small.csv", "\t")
-#standard <- readr::read_delim("../results/results_standard.csv", "\t")
+fixed <- readr::read_delim("../results/results_fixed.csv", "\t")
 egg_deltas <- readr::read_delim("../results/results_deltas.csv", "\t")
 egg_1000 <- readr::read_delim("../results/results_egg_1000.csv", "\t")
+features_all <- readr::read_delim("../results/results_features_all.csv", "\t")
+features_no_vot <- readr::read_delim("../results/results_features_no_vot.csv", "\t")
+features_vot_only <- readr::read_delim("../results/results_features_vot_only.csv", "\t")
 
-#large$score_large <- large$score
-#large$score <- NULL
+fixed$score_fixed <- fixed$score
+fixed$score <- NULL
 
-#small$score_small <- small$score
-#small$score <- NULL
-
-#standard$score_standard <- standard$score
-#standard$score <- NULL
-
-egg_deltas$score_deltas <- egg_deltas$score
+egg_deltas$score_egg_deltas <- egg_deltas$score
 egg_deltas$score <- NULL
 
 egg_1000$score_egg_1000 <- egg_1000$score
 egg_1000$score <- NULL
 
+features_all$score_features_all <- features_all$score
+features_all$score <- NULL
+
+features_no_vot$score_features_no_vot <- features_no_vot$score
+features_no_vot$score <- NULL
+
+features_vot_only$score_features_vot_only <- features_vot_only$score
+features_vot_only$score <- NULL
+
+#fixed$place <- grepl("velar", fixed$by)
+
+
 #comparison <- dplyr::inner_join(small, standard, 
 #                                by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
 #comparison <- dplyr::inner_join(comparison, large,  
 #                                by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
+```
 
-comparison <- dplyr::inner_join(egg_deltas, egg_1000,  
+```{r}
+
+
+```
+
+
+```{r}
+
+comparison <- dplyr::inner_join(fixed, egg_1000,
                                 by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
 
-#comparison$compare <- comparison$score_standard - comparison$score_smaller
+comparison_ <- dplyr::inner_join(egg_deltas, features_all, 
+                                 by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
+                                 
+comparison__ <- dplyr::inner_join(features_no_vot, features_vot_only,
+                                  by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
+
+comparison___ <- dplyr::inner_join(comparison, comparison_,
+                                   by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
+
+comparison____ <- dplyr::inner_join(comparison__, comparison___,
+                                   by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
 
 #write.csv(comparison, "../results/comparison_egg_deltas.csv")
 ```

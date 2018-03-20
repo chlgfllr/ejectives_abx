@@ -56,6 +56,110 @@ egg_labels <- dplyr::select(egg_original, names(egg_original)[!startsWith(names(
 egg_item <- dplyr::bind_cols(egg_labels, egg_deltas)
 egg_item$`#file1` <- NULL
 
-write.csv(egg_item, "../results/egg_fixed/egg_deltas_item.csv", row.names = F, quote = F)
+#write.csv(egg_item, "../results/egg_fixed/egg_deltas_item.csv", row.names = F, quote = F)
+```
+
+```{r}
+# Conversion des deltas en log qqch avec ajout de la min value pour n'avoir que des valeurs positives
+egg_to_log <- egg_modified
+names(egg_to_log) <- c("delta_1", "delta_2", "delta_3", "delta_4", "delta_5",
+                       "delta_6", "delta_7", "delta_8", "delta_9", "delta_10",
+                       "delta_11", "delta_12", "delta_13", "delta_14", "delta_15",
+                       "delta_16", "delta_17", "delta_18", "delta_19", "delta_20",
+                       "delta_21", "delta_22", "delta_23", "delta_24")
+min_egg <- min(egg_to_log)
+valeur_min <- -min_egg + 1
+egg_adjusted <- egg_to_log + valeur_min
+
+# Conversion en log 2 des deltas
+egg_adjusted$delta_1 <- log(egg_adjusted$delta_1)
+egg_adjusted$delta_2 <- log(egg_adjusted$delta_2)
+egg_adjusted$delta_3 <- log(egg_adjusted$delta_3)
+egg_adjusted$delta_4 <- log(egg_adjusted$delta_4)
+egg_adjusted$delta_5 <- log(egg_adjusted$delta_5)
+egg_adjusted$delta_6 <- log(egg_adjusted$delta_6)
+egg_adjusted$delta_7 <- log(egg_adjusted$delta_7)
+egg_adjusted$delta_8 <- log(egg_adjusted$delta_8)
+egg_adjusted$delta_9 <- log(egg_adjusted$delta_9)
+egg_adjusted$delta_10 <- log(egg_adjusted$delta_10)
+egg_adjusted$delta_11 <- log(egg_adjusted$delta_11)
+egg_adjusted$delta_12 <- log(egg_adjusted$delta_12)
+egg_adjusted$delta_13 <- log(egg_adjusted$delta_13)
+egg_adjusted$delta_14 <- log(egg_adjusted$delta_14)
+egg_adjusted$delta_15 <- log(egg_adjusted$delta_15)
+egg_adjusted$delta_16 <- log(egg_adjusted$delta_16)
+egg_adjusted$delta_17 <- log(egg_adjusted$delta_17)
+egg_adjusted$delta_18 <- log(egg_adjusted$delta_18)
+egg_adjusted$delta_19 <- log(egg_adjusted$delta_19)
+egg_adjusted$delta_20 <- log(egg_adjusted$delta_20)
+egg_adjusted$delta_21 <- log(egg_adjusted$delta_21)
+egg_adjusted$delta_22 <- log(egg_adjusted$delta_22)
+egg_adjusted$delta_23 <- log(egg_adjusted$delta_23)
+egg_adjusted$delta_24 <- log(egg_adjusted$delta_24)
+
+egg_labels <- dplyr::select(egg_original, names(egg_original)[!startsWith(names(egg_original), "time")])
+egg_item <- dplyr::bind_cols(egg_labels, egg_adjusted)
+egg_item$`#file1` <- NULL
+
+#write.csv(egg_item, "../results/egg_fixed/egg_deltas_log2.csv", row.names = F, quote = F)
+```
+
+```{r}
+# Conversion des deltas en log 2 en n'utilisant que les valeurs absolues
+egg_to_log <- egg_modified
+names(egg_to_log) <- c("delta_1", "delta_2", "delta_3", "delta_4", "delta_5",
+                       "delta_6", "delta_7", "delta_8", "delta_9", "delta_10",
+                       "delta_11", "delta_12", "delta_13", "delta_14", "delta_15",
+                       "delta_16", "delta_17", "delta_18", "delta_19", "delta_20",
+                       "delta_21", "delta_22", "delta_23", "delta_24")
+egg_absolute <- abs(egg_to_log)
+egg_absolute$delta_1 <- log(egg_absolute$delta_1)
+egg_absolute$delta_2 <- log(egg_absolute$delta_2)
+egg_absolute$delta_3 <- log(egg_absolute$delta_3)
+egg_absolute$delta_4 <- log(egg_absolute$delta_4)
+egg_absolute$delta_5 <- log(egg_absolute$delta_5)
+egg_absolute$delta_6 <- log(egg_absolute$delta_6)
+egg_absolute$delta_7 <- log(egg_absolute$delta_7)
+egg_absolute$delta_8 <- log(egg_absolute$delta_8)
+egg_absolute$delta_9 <- log(egg_absolute$delta_9)
+egg_absolute$delta_10 <- log(egg_absolute$delta_10)
+egg_absolute$delta_11 <- log(egg_absolute$delta_11)
+egg_absolute$delta_12 <- log(egg_absolute$delta_12)
+egg_absolute$delta_13 <- log(egg_absolute$delta_13)
+egg_absolute$delta_14 <- log(egg_absolute$delta_14)
+egg_absolute$delta_15 <- log(egg_absolute$delta_15)
+egg_absolute$delta_16 <- log(egg_absolute$delta_16)
+egg_absolute$delta_17 <- log(egg_absolute$delta_17)
+egg_absolute$delta_18 <- log(egg_absolute$delta_18)
+egg_absolute$delta_19 <- log(egg_absolute$delta_19)
+egg_absolute$delta_20 <- log(egg_absolute$delta_20)
+egg_absolute$delta_21 <- log(egg_absolute$delta_21)
+egg_absolute$delta_22 <- log(egg_absolute$delta_22)
+egg_absolute$delta_23 <- log(egg_absolute$delta_23)
+egg_absolute$delta_24 <- log(egg_absolute$delta_24)
+
+egg_labels <- dplyr::select(egg_original, names(egg_original)[!startsWith(names(egg_original), "time")])
+egg_item <- dplyr::bind_cols(egg_labels, egg_absolute)
+egg_item$`#file1` <- NULL
+
+#write.csv(egg_item, "../results/egg_fixed/egg_deltas_log2_absolute.csv", row.names = F, quote = F)
+```
+
+```{r}
+# Mettre les deltas au carré pour ne pas avoir de valeurs négatives et transformer les valeurs
+egg_to_log <- egg_modified
+names(egg_to_log) <- c("delta_1", "delta_2", "delta_3", "delta_4", "delta_5",
+                       "delta_6", "delta_7", "delta_8", "delta_9", "delta_10",
+                       "delta_11", "delta_12", "delta_13", "delta_14", "delta_15",
+                       "delta_16", "delta_17", "delta_18", "delta_19", "delta_20",
+                       "delta_21", "delta_22", "delta_23", "delta_24")
+carre <- function(x) x^2
+egg_carre <- as.data.frame(carre(egg_to_log))
+
+egg_labels <- dplyr::select(egg_original, names(egg_original)[!startsWith(names(egg_original), "time")])
+egg_item <- dplyr::bind_cols(egg_labels, egg_carre)
+egg_item$`#file1` <- NULL
+
+#write.csv(egg_item, "../results/egg_fixed/egg_deltas_carre.csv", row.names = F, quote = F)
 ```
 

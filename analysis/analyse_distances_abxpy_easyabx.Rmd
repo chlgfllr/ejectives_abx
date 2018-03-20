@@ -187,8 +187,11 @@ read_easyabx <- function(data_folder) {
 ```{r warning = FALSE}
 setwd("~/ejectives_abx/results")
 
-distances_fixed_standard <- read_abxpy("fixed/by__place_question_speaker_vowel")
+distances_fixed_standard <- read_abxpy("fixed/by__place_position_question_speaker_vowel")
 distances_fixed_standard$experiment <- "fixed_standard"
+
+distances_abxpy_egg <- read_abxpy("egg_fixed/abxpy_mel_by__place_position_question_speaker_vowel")
+distances_abxpy_egg$experiment <- "egg_abxpy"
 
 distances_egg <- read_easyabx("egg_fixed/by__place_position_question_speaker_vowel")
 distances_egg$experiment <- "egg"
@@ -205,9 +208,18 @@ distances_features_vot_only$experiment <- "features_only_vot"
 distances_deltas_egg <- read_easyabx("egg_fixed/deltas__by__place_position_question_speaker_vowel")
 distances_deltas_egg$experiment <- "deltas_egg"
 
+distances_deltas_log_egg <- read_easyabx("egg_fixed/deltas_log2__by__place_position_question_speaker_vowel")
+distances_deltas_log_egg$experiment <- "deltas_log2_egg"
+
+distances_deltas_log_absolute_egg <- read_easyabx("egg_fixed/deltas_log2_absolute__by__place_position_question_speaker_vowel")
+distances_deltas_log_absolute_egg$experiment <- "deltas_log2_absolute_egg"
+
+distances_deltas_carre_egg <- read_easyabx("egg_fixed/deltas_carre__by__place_position_question_speaker_vowel")
+distances_deltas_carre_egg$experiment <- "deltas_carre_egg"
+
 ## Tous les tests dans un même fichier
-distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_vot_only)
-#distances <- dplyr::bind_rows(distances_fixed_standard, distances_egg, distances_deltas_egg)
+#distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_vot_only)
+distances <- dplyr::bind_rows(distances_fixed_standard, distances_abxpy_egg)
 
 #distances <- distances_egg_1000
 distances$place <- distances$place_A # know this because experiment was BY place, speaker
@@ -220,7 +232,7 @@ distances$question <- distances$question_A
 ```{r}
 # Plot the distances by experiment
 ggplot(distances, aes(x = place, y = dist, fill=same)) + 
-      ggplot2::geom_boxplot(position="dodge") +
+      ggplot2::geom_violin(position="dodge") +
       ggplot2::facet_grid(speaker ~ experiment) +
       ggplot2::theme_minimal()
 

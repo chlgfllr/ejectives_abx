@@ -1,15 +1,19 @@
 #!/bin/bash
 
 FOLDER=/Users/chloe/ejectives_abx/results
-TEST=by__place_question_speaker_vowel
-STANDARD_PATH=fixed
-SMALL_PATH=different_mfcc/smaller/fixed
-LARGE_PATH=different_mfcc/larger/fixed
+TEST=by__place_position_question_speaker_vowel
 
-cp $FOLDER/$SMALL_PATH/$TEST/results.csv $FOLDER/results_small.csv
-cp $FOLDER/$STANDARD_PATH/$TEST/results.csv $FOLDER/results_standard.csv
-cp $FOLDER/$LARGE_PATH/$TEST/results.csv $FOLDER/results_large.csv
+cp $FOLDER/fixed/$TEST/results.csv $FOLDER/results_fixed.csv
+cp $FOLDER/egg_fixed/$TEST/results.csv $FOLDER/results_egg_1000.csv
+cp $FOLDER/features/$TEST/results.csv $FOLDER/results_features_all.csv
+cp $FOLDER/egg_fixed/deltas__$TEST/results.csv $FOLDER/results_deltas.csv
+cp $FOLDER/features/no_vot___$TEST/results.csv $FOLDER/results_features_no_vot.csv
+cp $FOLDER/features/vot_only___$TEST/results.csv $FOLDER/results_features_vot_only.csv
 
-sed -e "s/, /,/g" results_small.csv > TMP; mv TMP results_small.csv
-sed -e "s/, /,/g" results_large.csv > TMP; mv TMP results_large.csv
-sed -e "s/, /,/g" results_standard.csv > TMP; mv TMP results_standard.csv
+sed -e "s/, /,/g" results_fixed.csv > TMP; mv TMP results_fixed.csv
+sed -e "s/, /,/g" results_egg_1000.csv > TMP; mv TMP results_egg_1000.csv
+sed -e "s/, /,/g" results_features_all.csv > TMP; mv TMP results_features_all.csv
+sed -e "s/, /,/g" results_deltas.csv > TMP; mv TMP results_deltas.csv
+sed -e "s/, /,/g" results_features_no_vot.csv > TMP; mv TMP results_features_no_vot.csv
+sed -e "s/, /,/g" results_features_vot_only.csv > TMP; mv TMP results_features_vot_only.csv
+
