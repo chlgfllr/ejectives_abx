@@ -7,35 +7,40 @@ Creates a file with 2+ sets of results to compare the scores
 
 ```{r}
 fixed <- readr::read_delim("../results/results_fixed.csv", "\t")
+
+egg_abxpy <- readr::read_delim("../results/results_egg_abxpy.csv", "\t")
+egg_amplitude <- readr::read_delim("../results/results_egg_amplitude.csv", "\t")
 egg_deltas <- readr::read_delim("../results/results_deltas.csv", "\t")
-egg_1000 <- readr::read_delim("../results/results_egg_1000.csv", "\t")
+egg_deltas_carre <- readr::read_delim("../results/results_deltas_carre.csv", "\t")
+egg_deltas_log_2 <- readr::read_delim("../results/results_deltas_log_2.csv", "\t")
+egg_deltas_log_2_absolute <- readr::read_delim("../results/results_deltas_log_2_absolute.csv", "\t")
+
 features_all <- readr::read_delim("../results/results_features_all.csv", "\t")
 features_no_vot <- readr::read_delim("../results/results_features_no_vot.csv", "\t")
 features_vot_only <- readr::read_delim("../results/results_features_vot_only.csv", "\t")
-egg_abxpy <- readr::read_delim("../results/results_egg_abxpy.csv", "\t")
 
 fixed$experiment <- "acoustic_fixed"
 
+egg_abxpy$experiment <- "egg_abxpy"
+egg_amplitude$experiment <- "egg_amplitude"
 egg_deltas$experiment <- "egg_deltas"
-
-egg_1000$experiment <- "egg_amplitude"
+egg_deltas_carre$experiment <- "egg_deltas_carre"
+egg_deltas_log_2$experiment <- "egg_deltas_log_2"
+egg_deltas_log_2_absolute$experiment <- "egg_deltas_log_2_absolute"
 
 features_all$experiment <- "features_all"
-
 features_no_vot$experiment <- "features_no_vot"
-
 features_vot_only$experiment <- "features_vot_only"
 
-egg_abxpy$experiment <- "egg_abxpy"
 ```
 
 ```{r}
-
-comparison <- dplyr::bind_rows(egg_1000, egg_abxpy, egg_deltas, 
+# Put all results in the same tableau
+comparison <- dplyr::bind_rows(egg_abxpy, egg_amplitude, egg_deltas, egg_deltas_carre,
+                               egg_deltas_log_2, egg_deltas_log_2_absolute,
                                features_all, features_no_vot, features_vot_only, fixed)
 
 ```
-
 
 ```{r}
 
@@ -54,18 +59,39 @@ all_results$by <- NULL
 ```
 
 ```{r}
+# Plot all results
 no_o_results <- subset(all_results, vowel != "o")
-  
-  
+
 ggplot2::ggplot(no_o_results, aes(x = place, y = score, fill = experiment)) + 
   ggplot2::geom_boxplot(position="dodge") +
   ggplot2::facet_grid(speaker ~ .) +
-  ggplot2::theme_minimal()
+  ggplot2::theme_minimal() + 
+  ggplot2::geom_abline(intercept = 0.5, slope = 0, color = "red")
 ```
+```{r}
+# Compare some of the results
+some_results <- dplyr::bind_rows(egg_abxpy, egg_amplitude,
+                               features_all, features_no_vot, features_vot_only, fixed)
+some_results$place <- substr(some_results$by, 3, 5)
+some_results$speaker <- stringr::str_sub(some_results$by, -9, -7)
+some_results$vowel <- stringr::str_sub(some_results$by, -3, -3)
+some_results$question <- grepl("question", some_results$by)
+some_results$question <- ifelse(some_results$question=="TRUE", "question", "answer")
+some_results$position <- grepl("initial", some_results$by)
+some_results$position <- ifelse(some_results$position=="TRUE", "initial", "medial")
 
+some_results$by <- NULL
 
-```{bash}
-rm ../results/results_deltas.csv
-rm ../results/results_egg_1000.csv
+no_o_results <- subset(some_results, vowel != "o")
+
+ggplot2::ggplot(no_o_results, aes(x = place, y = score, fill = experiment)) + 
+  ggplot2::geom_boxplot(position="dodge") +
+  ggplot2::facet_grid(speaker ~ .) +
+  ggplot2::theme_minimal() + 
+  ggplot2::geom_abline(intercept = 0.5, slope = 0, color = "red")
+
+# EGG amplitude measures are really bad
+# EGG abxpy is better than chance
+# features_all is really good, but features are inconsistent when vot is séparé
 ```
 
