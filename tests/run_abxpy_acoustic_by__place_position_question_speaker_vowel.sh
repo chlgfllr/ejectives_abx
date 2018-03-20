@@ -5,8 +5,8 @@ set -e
 source activate abxenv
 
 TEST=fixed
-FOLDER=by__place_question_speaker_vowel
-DIR=../results/different_mfcc/larger/$TEST
+FOLDER=by__place_position_question_speaker_vowel
+DIR=../results/$TEST
 
 FEATURE_FILE=mono_mfcc.h5f
 ITEM_FILE=$DIR/abx.item
@@ -23,7 +23,7 @@ echo "Running ABXpy test and extracting distances"
 echo
 
 mkdir -p $DIR/$FOLDER && \
-  abx-task $ITEM_FILE $TASK_FILE --on type --by place vowel position speaker question && \
+  abx-task $ITEM_FILE $TASK_FILE --on type --by place position question speaker vowel && \
   abx-distance $FEATURE_FILE $TASK_FILE $DISTANCE_FILE --normalization 1 --njobs 1 && \
   abx-score $TASK_FILE $DISTANCE_FILE $SCORE_FILE && \
   abx-analyze $SCORE_FILE $TASK_FILE $RESULTS_FILE && \

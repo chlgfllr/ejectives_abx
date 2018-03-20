@@ -12,64 +12,60 @@ egg_1000 <- readr::read_delim("../results/results_egg_1000.csv", "\t")
 features_all <- readr::read_delim("../results/results_features_all.csv", "\t")
 features_no_vot <- readr::read_delim("../results/results_features_no_vot.csv", "\t")
 features_vot_only <- readr::read_delim("../results/results_features_vot_only.csv", "\t")
+egg_abxpy <- readr::read_delim("../results/results_egg_abxpy.csv", "\t")
 
-fixed$score_fixed <- fixed$score
-fixed$score <- NULL
+fixed$experiment <- "acoustic_fixed"
 
-egg_deltas$score_egg_deltas <- egg_deltas$score
-egg_deltas$score <- NULL
+egg_deltas$experiment <- "egg_deltas"
 
-egg_1000$score_egg_1000 <- egg_1000$score
-egg_1000$score <- NULL
+egg_1000$experiment <- "egg_amplitude"
 
-features_all$score_features_all <- features_all$score
-features_all$score <- NULL
+features_all$experiment <- "features_all"
 
-features_no_vot$score_features_no_vot <- features_no_vot$score
-features_no_vot$score <- NULL
+features_no_vot$experiment <- "features_no_vot"
 
-features_vot_only$score_features_vot_only <- features_vot_only$score
-features_vot_only$score <- NULL
+features_vot_only$experiment <- "features_vot_only"
 
-#fixed$place <- grepl("velar", fixed$by)
-
-
-#comparison <- dplyr::inner_join(small, standard, 
-#                                by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
-#comparison <- dplyr::inner_join(comparison, large,  
-#                                by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
+egg_abxpy$experiment <- "egg_abxpy"
 ```
 
 ```{r}
 
+comparison <- dplyr::bind_rows(egg_1000, egg_abxpy, egg_deltas, 
+                               features_all, features_no_vot, features_vot_only, fixed)
 
 ```
 
 
 ```{r}
 
-comparison <- dplyr::inner_join(fixed, egg_1000,
-                                by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
+all_results <- comparison
 
-comparison_ <- dplyr::inner_join(egg_deltas, features_all, 
-                                 by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
-                                 
-comparison__ <- dplyr::inner_join(features_no_vot, features_vot_only,
-                                  by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
+all_results$place <- substr(all_results$by, 3, 5)
+all_results$speaker <- stringr::str_sub(all_results$by, -9, -7)
+all_results$vowel <- stringr::str_sub(all_results$by, -3, -3)
+all_results$question <- grepl("question", all_results$by)
+all_results$question <- ifelse(all_results$question=="TRUE", "question", "answer")
+all_results$position <- grepl("initial", all_results$by)
+all_results$position <- ifelse(all_results$position=="TRUE", "initial", "medial")
 
-comparison___ <- dplyr::inner_join(comparison, comparison_,
-                                   by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
-
-comparison____ <- dplyr::inner_join(comparison__, comparison___,
-                                   by=c(type_2="type_2", type_1="type_1", by="by", n="n"))
-
-#write.csv(comparison, "../results/comparison_egg_deltas.csv")
+all_results$by <- NULL
+  
 ```
+
+```{r}
+no_o_results <- subset(all_results, vowel != "o")
+  
+  
+ggplot2::ggplot(no_o_results, aes(x = place, y = score, fill = experiment)) + 
+  ggplot2::geom_boxplot(position="dodge") +
+  ggplot2::facet_grid(speaker ~ .) +
+  ggplot2::theme_minimal()
+```
+
 
 ```{bash}
 rm ../results/results_deltas.csv
 rm ../results/results_egg_1000.csv
 ```
 
-
-Note: I'm not sure what changing the window length during the features extraction does, but it returns different scores. `comparison$compare` shows the results of `score_standard - score_smaller`.
