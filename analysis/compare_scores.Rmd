@@ -82,9 +82,9 @@ some_results$position <- ifelse(some_results$position=="TRUE", "initial", "media
 
 some_results$by <- NULL
 
-no_o_results <- subset(some_results, vowel != "o")
+some_no_o_results <- subset(some_results, vowel != "o")
 
-ggplot2::ggplot(no_o_results, aes(x = place, y = score, fill = experiment)) + 
+ggplot2::ggplot(some_no_o_results, aes(x = place, y = score, fill = experiment)) + 
   ggplot2::geom_boxplot(position="dodge") +
   ggplot2::facet_grid(speaker ~ .) +
   ggplot2::theme_minimal() + 
@@ -93,5 +93,16 @@ ggplot2::ggplot(no_o_results, aes(x = place, y = score, fill = experiment)) +
 # EGG amplitude measures are really bad
 # EGG abxpy is better than chance
 # features_all is really good, but features are inconsistent when vot is séparé
+
+ggplot2::ggplot(some_no_o_results, aes(x = experiment, y = score, fill = place)) + 
+  ggplot2::geom_boxplot() + 
+  ggplot2::theme_minimal() + 
+  ggplot2::geom_abline(intercept = 0.5, slope = 0, color = "red")
+
+ggplot2::ggplot(no_o_results, aes(x = experiment, y = score, fill = place)) + 
+  ggplot2::geom_boxplot() + 
+  ggplot2::theme_minimal() + 
+  ggplot2::geom_abline(intercept = 0.5, slope = 0, color = "red")
+
 ```
 
