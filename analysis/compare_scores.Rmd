@@ -2,6 +2,9 @@
 title: "Compare ABXpy scores"
 output: html_document
 ---
+```{r}
+library(ggplot2)
+```
 
 Creates a file with 2+ sets of results to compare the scores
 
@@ -58,7 +61,8 @@ all_results$by <- NULL
 
 # Compare some of the results
 some_results <- dplyr::bind_rows(egg_abxpy, egg_amplitude,
-                               features_all, features_no_vot, features_vot_only, fixed)
+                               egg_deltas, egg_deltas_carre, egg_deltas_log_2,
+                               egg_deltas_log_2_absolute, fixed)
 some_results$place <- substr(some_results$by, 3, 5)
 some_results$speaker <- stringr::str_sub(some_results$by, -9, -7)
 some_results$vowel <- stringr::str_sub(some_results$by, -3, -3)
@@ -93,6 +97,7 @@ ggplot2::ggplot(no_o_results, aes(x = place, y = score, fill = experiment)) +
   ggplot2::theme_minimal() + 
   ggplot2::geom_abline(intercept = 0.5, slope = 0, color = "red")
 
+#ggsave("/Users/chloe/all_tests.jpg", width = 10, height = 6)
 # Plot some of the results
 some_no_o_results <- subset(some_results, vowel != "o")
 

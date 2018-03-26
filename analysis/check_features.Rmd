@@ -1,0 +1,14 @@
+---
+title: "Check some measures"
+output: html_document
+---
+```{r}
+datafile <- readr::read_delim("../results/features/abx.csv", delim = ",")
+
+ggplot2::ggplot(datafile, ggplot2::aes(x = place, y = vowelnorm, fill = type)) +
+  ggplot2::geom_violin() + 
+  ggplot2::facet_grid(speaker ~.)
+
+#ggplot2::ggsave("/Users/chloe/vowel_norm.jpeg", width = 8, height = 5)
+```
+

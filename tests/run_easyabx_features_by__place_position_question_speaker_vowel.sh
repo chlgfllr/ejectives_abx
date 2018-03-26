@@ -5,7 +5,7 @@ set -e
 source activate easyabx
 
 TEST=features
-FOLDER=no_vot___by__place_position_question_speaker_vowel
+FOLDER=by__place_position_question_speaker_vowel
 DIR=../results/$TEST
 
 NAME=abx
@@ -20,7 +20,7 @@ echo
 
 mkdir -p $DIR/$FOLDER && \
   prepare_abx $DIR/abx.csv $DIR/$FOLDER/$NAME --header \
-     --col_features 15-16 --col_labels 5-12 --col_items 1,2,3 && \
+     --col_features 14-16 --col_labels 5-12 --col_items 1,2,3 && \
   run_abx $DIR/$FOLDER/$NAME --on "type" --by place position question speaker vowel &&\
   python dis2txt.py $TASK_FILE $DISTANCE_FILE $OUTPUT_TXT && \
   cp $DIR/$FOLDER/abx.csv $DIR/$FOLDER/results.csv; rm $DIR/$FOLDER/abx.csv && \

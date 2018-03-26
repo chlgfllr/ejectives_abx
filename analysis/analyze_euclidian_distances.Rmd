@@ -1,0 +1,170 @@
+---
+title: "Analyze Euclidian distances"
+output: html_document
+---
+```{r}
+library(lsa)
+```
+
+
+```{r}
+# Mise en forme des deltas après création des deltas
+features_data <- readr::read_delim("../results/features/abx.csv", ",")
+
+# Supprimer les données qui ne sont pas des mesures d'amplitude
+vot <- dplyr::select(features_data, dplyr::starts_with("vot"))
+vowel_dur <- dplyr::select(features_data, dplyr::starts_with("voweln"))
+constriction <- dplyr::select(features_data, dplyr::starts_with("constri"))
+
+# Choisir si on considère plusieurs mesures ou juste une
+#measures <- dplyr::bind_cols(vot, vowel_dur)
+measures <- vot
+
+# Tout mettre dans un même fichier 
+colonnes <- as.vector(features_data$`#file`)
+features <- as.data.frame(t(measures))
+colnames(features) <- colonnes
+
+# Sélectionner le fichier distance.txt généré par le script dis2txt
+original <- readr::read_delim("../results/features/by__place_position_question_speaker_vowel/distance.txt", " ")
+
+noms_fichiers <- dplyr::select(original, dplyr::starts_with("file"))
+distance <- dplyr::select(original, dplyr::starts_with("d"))
+modifie <- dplyr::bind_cols(noms_fichiers, distance)
+modifie$dis2txt <- modifie$`d(A, B)`
+modifie$`d(A, B)` <- NULL
+
+# Calcule la distance euclidienne
+for (i in 1:nrow(modifie)) {
+  
+    a <- modifie[i,1]
+    b <- modifie[i,2]
+    c <- dplyr::select(features, dplyr::matches(as.character(a)))
+    c_ <- as.numeric(unlist(c))
+    d <- dplyr::select(features, dplyr::matches(as.character(b)))
+    d_ <- as.numeric(unlist(d))
+    e <- rbind(c_, d_)
+    e_ <- dist(e)
+    modifie[i,4] <- e_
+
+  }
+
+names(modifie)[4] <- "euclidian"
+
+# Calcul des similarités cosinus
+for(i in 1:nrow(modifie)) {
+
+    a <- modifie[i,1]
+    b <- modifie[i,2]
+    c <- dplyr::select(features, dplyr::matches(as.character(a)))
+    d <- dplyr::select(features, dplyr::matches(as.character(b)))
+    df <- as.matrix(dplyr::bind_cols(c, d))
+    e <- cosine(df)
+    modifie[i,5] <- e[1,2]
+
+}
+
+names(modifie)[5] <- "cosinus"
+```
+
+```{r}
+# Corrélation entre les deux mesures de distance ?
+ggplot2::ggplot(modifie, ggplot2::aes(x = euclidian, y = cosinus)) + 
+  ggplot2::geom_point() + 
+  ggplot2::geom_smooth(method=lm)
+
+ggplot2::ggplot(vot_v_dur, ggplot2::aes(x = euclidian, y = cosinus)) + 
+  ggplot2::geom_point() + 
+  ggplot2::geom_smooth(method=lm)
+```
+
+
+
+```{r}
+#read_easyabx <- function(data_folder) {
+  # Files utilisés
+  distances <- modifie
+  
+  #items <- readr::read_delim(paste0(data_folder, "/abx.item"), " ")
+  items <- readr::read_delim("../results/features/by__place_position_question_speaker_vowel/abx.item", " ")
+  
+  # Change column names because why not
+  names(distances)[which(names(distances)=="euclidian")] <- "dist"
+
+  # Get rid of random times in items
+  items$a <- NULL
+  items$a_1 <- NULL
+  
+  ####################
+  # FIXME : this is useless in this version but oh well
+  items_B <- dplyr::select(distances, dplyr::ends_with("_B"))
+  items_B_ <- dplyr::inner_join(items_B, items,
+                                    by=c(file_B="#file"))
+  items_B__ <- dplyr::rename_at(items_B_, 
+                  names(items_B_)[!endsWith(names(items_B_), "_B")], 
+                  function(x) paste0(x, "_B"))
+
+  items_B_clean <- items_B__
+  items_B_clean$type_B <- NULL
+  items_B_clean$vowel_B <- NULL
+  items_B_clean$position_B <- NULL
+  items_B_clean$`#syllables_B` <- NULL
+
+  items_A <- dplyr::select(distances, dplyr::ends_with("_A"))
+  items_A_ <- dplyr::inner_join(items_A, items,
+                                    by=c(file_A="#file"))
+  items_A__ <- dplyr::rename_at(items_A_, 
+                  names(items_A_)[!endsWith(names(items_A_), "_A")], 
+                  function(x) paste0(x, "_A"))
+  items_A_clean <- items_A__
+
+  items_A_clean$vowel_A <- NULL
+  items_A_clean$position_A <- NULL
+  items_A_clean$`#syllables_A` <- NULL
+
+  # Selectionne le distance score
+  distance_score <- dplyr::select(distances, "dist")
+
+  # Met tout dans un meme tibble
+  distances_better <- dplyr::bind_cols(items_A_clean, items_B_clean, distance_score)
+  distances_better$onset_A <- NULL
+  distances_better$offset_A <- NULL
+  distances_better$onset_B <- NULL
+  distances_better$offset_B <- NULL
+  # Create a new table with less information                   
+  names(distances_better)[which(names(distances_better)=="#sequence_A")] <- "sequence_A"
+  names(distances_better)[which(names(distances_better)=="#sequence_B")] <- "sequence_B"
+
+  distances_better$ejective_A <- grepl(">", distances_better$sequence_A)
+  distances_better$ejective_B <- grepl(">", distances_better$sequence_B)
+  
+  distances_better <- dplyr::mutate(distances_better,
+                                    same=ifelse(ejective_A == ejective_B,
+                                                "SAME", "DIFFERENT"))
+
+  #names(distances_better[,17]) <- "summary"
+
+#   return(distances_better)
+# }
+
+```
+
+```{r}
+# Plot the distances by experiment
+ggplot2::ggplot(distances_better, ggplot2::aes(x = place_A, y = dist, fill=type_A)) + 
+      ggplot2::geom_boxplot(position="dodge") +
+      ggplot2::facet_grid(speaker_B ~ .) +
+      ggplot2::theme_minimal() 
+
+#ggplot2::ggsave("/Users/chloe/vot_only_euclidian.jpeg", width = 5, height = 5)
+
+ggplot2::ggplot(distances_better, ggplot2::aes(x = place_A, y = dist, fill=same)) + 
+      ggplot2::geom_boxplot(position="dodge") +
+      ggplot2::facet_grid(speaker_B ~ .) +
+      ggplot2::theme_minimal() +
+      ggplot2::labs(title = "VOT dans deux conditions", 
+                    x = "Point d'articulation", y = "Distance euclidienne")
+
+#ggplot2::ggsave("/Users/chloe/vot_euclidian.jpg", width = 10, height = 5)
+```
+

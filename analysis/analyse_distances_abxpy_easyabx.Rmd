@@ -193,8 +193,8 @@ distances_fixed_standard$experiment <- "fixed_standard"
 distances_abxpy_egg <- read_abxpy("egg_fixed/abxpy_mel_by__place_position_question_speaker_vowel")
 distances_abxpy_egg$experiment <- "egg_abxpy"
 
-distances_egg <- read_easyabx("egg_fixed/by__place_position_question_speaker_vowel")
-distances_egg$experiment <- "egg"
+# distances_egg <- read_easyabx("egg_fixed/by__place_position_question_speaker_vowel")
+# distances_egg$experiment <- "egg"
 
 distances_features_with_vot <- read_easyabx("features/by__place_position_question_speaker_vowel")
 distances_features_with_vot$experiment <- "features_with_vot"
@@ -205,21 +205,24 @@ distances_features_no_vot$experiment <- "features_no_vot"
 distances_features_vot_only <- read_easyabx("features/vot_only___by__place_position_question_speaker_vowel")
 distances_features_vot_only$experiment <- "features_only_vot"
 
-distances_deltas_egg <- read_easyabx("egg_fixed/deltas__by__place_position_question_speaker_vowel")
-distances_deltas_egg$experiment <- "deltas_egg"
-
-distances_deltas_log_egg <- read_easyabx("egg_fixed/deltas_log2__by__place_position_question_speaker_vowel")
-distances_deltas_log_egg$experiment <- "deltas_log2_egg"
-
-distances_deltas_log_absolute_egg <- read_easyabx("egg_fixed/deltas_log2_absolute__by__place_position_question_speaker_vowel")
-distances_deltas_log_absolute_egg$experiment <- "deltas_log2_absolute_egg"
-
-distances_deltas_carre_egg <- read_easyabx("egg_fixed/deltas_carre__by__place_position_question_speaker_vowel")
-distances_deltas_carre_egg$experiment <- "deltas_carre_egg"
+distances_features_vot_vowel_duration <- read_easyabx("features/vot_vowel_duration_by__place_position_question_speaker_vowel")
+distances_features_vot_vowel_duration$experiment <- "features_vot_vowel_duration"
+#distances_better$experiment <- "euclidian_vot"
+# distances_deltas_egg <- read_easyabx("egg_fixed/deltas__by__place_position_question_speaker_vowel")
+# distances_deltas_egg$experiment <- "deltas_egg"
+# 
+# distances_deltas_log_egg <- read_easyabx("egg_fixed/deltas_log2__by__place_position_question_speaker_vowel")
+# distances_deltas_log_egg$experiment <- "deltas_log2_egg"
+# 
+# distances_deltas_log_absolute_egg <- read_easyabx("egg_fixed/deltas_log2_absolute__by__place_position_question_speaker_vowel")
+# distances_deltas_log_absolute_egg$experiment <- "deltas_log2_absolute_egg"
+# 
+# distances_deltas_carre_egg <- read_easyabx("egg_fixed/deltas_carre__by__place_position_question_speaker_vowel")
+# distances_deltas_carre_egg$experiment <- "deltas_carre_egg"
 
 ## Tous les tests dans un même fichier
 #distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_vot_only)
-distances <- dplyr::bind_rows(distances_fixed_standard, distances_abxpy_egg)
+distances <- distances_fixed_standard
 
 #distances <- distances_egg_1000
 distances$place <- distances$place_A # know this because experiment was BY place, speaker
@@ -232,11 +235,20 @@ distances$question <- distances$question_A
 ```{r}
 # Plot the distances by experiment
 ggplot(distances, aes(x = place, y = dist, fill=same)) + 
-      ggplot2::geom_violin(position="dodge") +
+      ggplot2::geom_boxplot(position="dodge") +
       ggplot2::facet_grid(speaker ~ experiment) +
       ggplot2::theme_minimal()
 
-#ggsave("/Users/chloe/vot_and_abxpy.jpeg", width = 5, height = 5)
+#ggsave("/Users/chloe/euclidian_vot_and_abxpy.jpeg", width = 5, height = 5)
+
+ggplot(distances, aes(x = place, y = dist, fill=same)) + 
+      ggplot2::geom_boxplot(position="dodge") +
+      ggplot2::facet_grid(speaker ~ .) +
+      ggplot2::theme_minimal() +
+      ggplot2::labs(title = "", 
+                    x = "Point d'articulation", y = "Dynamic Time Warping")
+
+#ggsave("/Users/chloe/abxpy_fixed.jpeg", width = 10, height = 5)
 ```
 
 ```{r}

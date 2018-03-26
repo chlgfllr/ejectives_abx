@@ -20,19 +20,62 @@ library(lsa)
 #egg <- as.data.frame(t(amplitudes))
 #colnames(egg) <- colonnes
 
+# ###############
+# # Mise en forme des deltas après création des deltas
+# egg_data <- readr::read_delim("../results/egg_fixed/egg_deltas.csv", ",")
+# 
+# # Supprimer les données qui ne sont pas des mesures d'amplitude
+# amplitudes <- dplyr::select(egg_data, dplyr::starts_with("delta"))
+# colonnes <- as.vector(egg_data$`#file`)
+# egg <- as.data.frame(t(amplitudes))
+# colnames(egg) <- colonnes
+
 ###############
 # Mise en forme des deltas après création des deltas
-egg_data <- readr::read_delim("../results/egg_fixed/egg_deltas.csv", ",")
+features_data <- readr::read_delim("../results/features/abx.csv", ",")
 
 # Supprimer les données qui ne sont pas des mesures d'amplitude
-amplitudes <- dplyr::select(egg_data, dplyr::starts_with("delta"))
-colonnes <- as.vector(egg_data$`#file`)
-egg <- as.data.frame(t(amplitudes))
-colnames(egg) <- colonnes
+#vot <- dplyr::select(features_data, dplyr::starts_with("vot"))
+vowel_dur <- dplyr::select(features_data, dplyr::starts_with("voweln"))
+#measures <- dplyr::bind_cols(vot, vowel_dur)
+measures <- vowel_dur
+colonnes <- as.vector(features_data$`#file`)
+features <- as.data.frame(t(measures))
+colnames(features) <- colonnes
 ```
 
 ```{r}
-original <- readr::read_delim("../results/egg_fixed/egg_1000/distance.txt", " ")
+# original <- readr::read_delim("../results/egg_fixed/egg_1000/distance.txt", " ")
+# 
+# noms_fichiers <- dplyr::select(original, dplyr::starts_with("file"))
+# distance <- dplyr::select(original, dplyr::starts_with("d"))
+# modifie <- dplyr::bind_cols(noms_fichiers, distance)
+# modifie$dis2txt <- modifie$`d(A, B)`
+# modifie$`d(A, B)` <- NULL
+# 
+# # Calcul des similarités cosinus
+# for(i in 1:nrow(modifie)) {
+#   
+#     a <- modifie[i,1]
+#     b <- modifie[i,2]
+#     c <- dplyr::select(egg, dplyr::matches(as.character(a)))
+#     d <- dplyr::select(egg, dplyr::matches(as.character(b)))
+#     df <- as.matrix(dplyr::bind_cols(c, d))
+#     e <- cosine(df)
+#     modifie[i,4] <- e[1,2]
+#   
+#     }
+# 
+# names(modifie)[4] <- "cosine"
+# 
+# modifie$difference <- modifie$dis2txt + modifie$cosine
+# # = 1
+# 
+# write.csv(modifie, "../results/egg_fixed/dis2txt_and_cosine_similarity.csv", row.names = F)
+```
+
+```{r}
+original <- readr::read_delim("../results/features/vot_only___by__place_position_question_speaker_vowel/distance.txt", " ")
 
 noms_fichiers <- dplyr::select(original, dplyr::starts_with("file"))
 distance <- dplyr::select(original, dplyr::starts_with("d"))
@@ -40,25 +83,37 @@ modifie <- dplyr::bind_cols(noms_fichiers, distance)
 modifie$dis2txt <- modifie$`d(A, B)`
 modifie$`d(A, B)` <- NULL
 
-# Calcul des similarités cosinus
-for(i in 1:nrow(modifie)) {
+# # Calcul des similarités cosinus
+# for(i in 1:nrow(modifie)) {
+#   
+#     a <- modifie[i,1]
+#     b <- modifie[i,2]
+#     c <- dplyr::select(features, dplyr::matches(as.character(a)))
+#     d <- dplyr::select(features, dplyr::matches(as.character(b)))
+#     df <- as.matrix(dplyr::bind_cols(c, d))
+#     e <- cosine(df)
+#     modifie[i,4] <- e[1,2]
+#   
+# }
+
+# Calcul des distances euclidiennes
+for (i in 1:nrow(modifie)) {
   
     a <- modifie[i,1]
     b <- modifie[i,2]
-    c <- dplyr::select(egg, dplyr::matches(as.character(a)))
-    d <- dplyr::select(egg, dplyr::matches(as.character(b)))
-    df <- as.matrix(dplyr::bind_cols(c, d))
-    e <- cosine(df)
-    modifie[i,4] <- e[1,2]
-  
-    }
+    c <- as.numeric(dplyr::select(features, dplyr::matches(as.character(a))))
+    d <- as.numeric(dplyr::select(features, dplyr::matches(as.character(b))))
+    e <- dist(rbind(c, d))
+    modifie[i,4] <- e
+}
 
-names(modifie)[4] <- "cosine"
+names(modifie)[4] <- "euclidian"
 
 modifie$difference <- modifie$dis2txt + modifie$cosine
 # = 1
 
-write.csv(modifie, "../results/egg_fixed/dis2txt_and_cosine_similarity.csv", row.names = F)
+write.csv(modifie, "../results/egg_fixed/dis2txt_and_cosine_similarity_vot_only.csv", row.names = F)
+
 ```
 
 ```{r}
