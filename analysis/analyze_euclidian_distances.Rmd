@@ -18,7 +18,7 @@ constriction <- dplyr::select(features_data, dplyr::starts_with("constri"))
 
 # Choisir si on considère plusieurs mesures ou juste une
 #measures <- dplyr::bind_cols(vot, vowel_dur)
-measures <- vot
+measures <- vowel_dur
 
 # Tout mettre dans un même fichier 
 colonnes <- as.vector(features_data$`#file`)
@@ -69,13 +69,13 @@ names(modifie)[5] <- "cosinus"
 
 ```{r}
 # Corrélation entre les deux mesures de distance ?
-ggplot2::ggplot(modifie, ggplot2::aes(x = euclidian, y = cosinus)) + 
-  ggplot2::geom_point() + 
-  ggplot2::geom_smooth(method=lm)
-
-ggplot2::ggplot(vot_v_dur, ggplot2::aes(x = euclidian, y = cosinus)) + 
-  ggplot2::geom_point() + 
-  ggplot2::geom_smooth(method=lm)
+# ggplot2::ggplot(modifie, ggplot2::aes(x = euclidian, y = cosinus)) + 
+#   ggplot2::geom_point() + 
+#   ggplot2::geom_smooth(method=lm)
+# 
+# ggplot2::ggplot(vot_v_dur, ggplot2::aes(x = euclidian, y = cosinus)) + 
+#   ggplot2::geom_point() + 
+#   ggplot2::geom_smooth(method=lm)
 ```
 
 
@@ -159,12 +159,12 @@ ggplot2::ggplot(distances_better, ggplot2::aes(x = place_A, y = dist, fill=type_
 #ggplot2::ggsave("/Users/chloe/vot_only_euclidian.jpeg", width = 5, height = 5)
 
 ggplot2::ggplot(distances_better, ggplot2::aes(x = place_A, y = dist, fill=same)) + 
-      ggplot2::geom_boxplot(position="dodge") +
+      ggplot2::geom_violin(position="dodge") +
       ggplot2::facet_grid(speaker_B ~ .) +
       ggplot2::theme_minimal() +
-      ggplot2::labs(title = "VOT dans deux conditions", 
+      ggplot2::labs(title = "Vowel duration dans deux conditions", 
                     x = "Point d'articulation", y = "Distance euclidienne")
 
-#ggplot2::ggsave("/Users/chloe/vot_euclidian.jpg", width = 10, height = 5)
+#ggplot2::ggsave("/Users/chloe/v_dur_euclidian.jpg", width = 10, height = 5)
 ```
 
