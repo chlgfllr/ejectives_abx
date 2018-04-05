@@ -1,0 +1,91 @@
+---
+title: "PCA"
+output: html_document
+---
+http://www.sthda.com/french/articles/38-methodes-des-composantes-principales-dans-r-guide-pratique/73-acp-analyse-en-composantes-principales-avec-r-l-essentiel/
+
+https://www.youtube.com/watch?v=_UVHneBUBW0
+
+```{r}
+library("FactoMineR")
+library("factoextra")
+library("tibble")
+library("corrplot")
+```
+
+```{r}
+egg <- readr::read_delim("../results/egg_fixed/egg_1000_edit.csv", ",")
+egg_amplitude <- dplyr::select(egg, dplyr::starts_with("time"))
+egg_filename <- dplyr::select(egg, dplyr::matches("#file"))
+
+```
+
+```{r}
+pca_egg <- PCA(egg_amplitude, graph = F)
+print(pca_egg)
+```
+
+```{r}
+eig.val <- get_eigenvalue(pca_egg)
+eig.val
+```
+
+```{r}
+fviz_eig(pca_egg, addlabels = TRUE, ylim = c(0, 50))
+```
+
+```{r}
+var <- get_pca_var(pca_egg)
+var
+
+# Coordonnées
+head(var$coord)
+# Cos2: qualité de répresentation
+head(var$cos2)
+# Contributions aux composantes principales
+head(var$contrib)
+# Coordonnées des variables
+head(var$coord, 4)
+```
+
+```{r}
+fviz_pca_var(pca_egg, col.var = "black")
+```
+
+```{r}
+corrplot(var$cos2, is.corr=FALSE)
+fviz_cos2(pca_egg, choice = "var", axes = 1:2)
+```
+
+```{r}
+# Colorer en fonction du cos2: qualité de représentation
+fviz_pca_var(pca_egg, col.var = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE # Évite le chevauchement de texte
+             )
+
+# Changer la transparence en fonction du cos2
+fviz_pca_var(pca_egg, alpha.var = "cos2")
+```
+
+```{r}
+# Contributions des variables à PC1
+fviz_contrib(pca_egg, choice = "var", axes = 1, top = 25)
+# Contributions des variables à PC2
+fviz_contrib(pca_egg, choice = "var", axes = 2, top = 25)
+
+fviz_contrib(pca_egg, choice = "var", axes = 1:2, top = 25)
+```
+
+```{r}
+egg$segment <- paste(egg$type, egg$place)
+
+fviz_pca_ind(pca_egg,
+             geom.ind = "point", # Montre les points seulement (mais pas le "text")
+             col.ind = egg$segment, # colorer by groups
+             palette = "RdBu",
+             addEllipses = TRUE, # Ellipses de concentration
+             legend.title = "Groups"
+             )
+```
+

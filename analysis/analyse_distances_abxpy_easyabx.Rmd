@@ -196,6 +196,9 @@ distances_abxpy_egg$experiment <- "egg_abxpy"
 distances_abxpy_egg_40 <- read_abxpy("egg_fixed/abxpy_mel40_by__place_position_question_speaker_vowel")
 distances_abxpy_egg_40$experiment <- "egg_abxpy_mel40"
 
+distances_abxpy_egg_25 <- read_abxpy("egg_fixed/abxpy_mel25_by__place_position_question_speaker_vowel")
+distances_abxpy_egg_25$experiment <- "egg_abxpy_mel25"
+
 # distances_egg <- read_easyabx("egg_fixed/by__place_position_question_speaker_vowel")
 # distances_egg$experiment <- "egg"
 
@@ -225,7 +228,7 @@ distances_features_no_vowel_timbre$experiment <- "features_no_vowel_timbre"
 
 ## Tous les tests dans un même fichier
 #distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_vot_only)
-distances <- dplyr::bind_rows(distances_abxpy_egg_40, distances_abxpy_egg)
+distances <- dplyr::bind_rows(distances_abxpy_egg_40, distances_abxpy_egg, distances_abxpy_egg_25)
 
 #distances <- distances_egg_1000
 distances$place <- distances$place_A # know this because experiment was BY place, speaker
