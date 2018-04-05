@@ -54,7 +54,7 @@ fviz_pca_var(pca_egg, col.var = "black")
 
 ```{r}
 corrplot(var$cos2, is.corr=FALSE)
-fviz_cos2(pca_egg, choice = "var", axes = 1:2)
+fviz_cos2(pca_egg, choice = "var", axes = 2:3)
 ```
 
 ```{r}
@@ -75,17 +75,40 @@ fviz_contrib(pca_egg, choice = "var", axes = 1, top = 25)
 fviz_contrib(pca_egg, choice = "var", axes = 2, top = 25)
 
 fviz_contrib(pca_egg, choice = "var", axes = 1:2, top = 25)
+fviz_contrib(pca_egg, choice = "var", axes = 2:3, top = 25)
+fviz_contrib(pca_egg, choice = "var", axes = 3:4, top = 25)
+
 ```
 
 ```{r}
 egg$segment <- paste(egg$type, egg$place)
 
 fviz_pca_ind(pca_egg,
+             axes = 1:2,
              geom.ind = "point", # Montre les points seulement (mais pas le "text")
-             col.ind = egg$segment, # colorer by groups
-             palette = "RdBu",
+             col.ind = egg$type, # colorer by groups
+             palette = "simpsons",
              addEllipses = TRUE, # Ellipses de concentration
              legend.title = "Groups"
              )
+
+fviz_pca_ind(pca_egg,
+             axes = 2:3,
+             geom.ind = "point", # Montre les points seulement (mais pas le "text")
+             col.ind = egg$type, # colorer by groups
+             palette = "simpsons",
+             addEllipses = TRUE, # Ellipses de concentration
+             legend.title = "Groups"
+             )
+
+fviz_pca_ind(pca_egg,
+             axes = 3:4,
+             geom.ind = "point", # Montre les points seulement (mais pas le "text")
+             col.ind = egg$type, # colorer by groups
+             palette = "simpsons",
+             addEllipses = TRUE, # Ellipses de concentration
+             legend.title = "Groups"
+             )
+
 ```
 
