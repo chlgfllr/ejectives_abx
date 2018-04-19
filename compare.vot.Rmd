@@ -1,0 +1,14 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r}
+my.table <- readr::read_delim("/Users/chloe/ejectives_abx/pre-processing/full_abx_corrected.item", " ")
+my.table$truc <- paste(my.table$type, my.table$place)
+ggplot2::ggplot(my.table, ggplot2::aes(x = truc, y = vot, fill = position)) +
+  ggplot2::geom_boxplot() + 
+  ggplot2::facet_grid(speaker ~ .)
+
+```
+

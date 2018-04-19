@@ -5,6 +5,7 @@ output: html_document
 ```{r}
 library(plyr)
 library(ggplot2)
+library(wesanderson)
 ```
 
 ```{r}
@@ -44,7 +45,7 @@ read_abxpy <- function(data_folder) {
   items_A_clean <- items_A__
   items_A_clean$type_A <- NULL
   items_A_clean$vowel_A <- NULL
-  items_A_clean$position_A <- NULL
+#  items_A_clean$position_A <- NULL
   items_A_clean$new_A <- NULL
 
   # Selectionne le distance score
@@ -142,7 +143,7 @@ read_easyabx <- function(data_folder) {
 
   items_A_clean$type_A <- NULL
   items_A_clean$vowel_A <- NULL
-  items_A_clean$position_A <- NULL
+#  items_A_clean$position_A <- NULL
   items_A_clean$`#syllables_A` <- NULL
 
   # Selectionne le distance score
@@ -190,6 +191,9 @@ setwd("~/ejectives_abx/results")
 distances_fixed_standard <- read_abxpy("fixed/by__place_position_question_speaker_vowel")
 distances_fixed_standard$experiment <- "fixed_standard"
 
+all_fixed_standard <- read_abxpy("fixed_initial_medial/by__place_position_question_speaker_vowel")
+all_fixed_standard$experiment <- "all_fixed_standard"
+
 distances_abxpy_egg <- read_abxpy("egg_fixed/abxpy_mel_by__place_position_question_speaker_vowel")
 distances_abxpy_egg$experiment <- "egg_abxpy"
 
@@ -228,7 +232,7 @@ distances_features_no_vowel_timbre$experiment <- "features_no_vowel_timbre"
 
 ## Tous les tests dans un même fichier
 #distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_vot_only)
-distances <- dplyr::bind_rows(distances_abxpy_egg_40, distances_abxpy_egg, distances_abxpy_egg_25)
+distances <- dplyr::bind_rows(distances_fixed_standard, all_fixed_standard)
 
 #distances <- distances_egg_1000
 distances$place <- distances$place_A # know this because experiment was BY place, speaker
@@ -240,10 +244,11 @@ distances$question <- distances$question_A
 
 ```{r}
 # Plot the distances by experiment
-ggplot(distances, aes(x = place, y = dist, fill=same)) + 
-      ggplot2::geom_boxplot(position="dodge") +
-      ggplot2::facet_grid(speaker ~ experiment) +
-      ggplot2::theme_minimal()
+ggplot(all_fixed_standard, aes(x = position_A, y = dist, fill = same)) +
+      ggplot2::geom_boxplot(position=position_dodge(width = .8)) +
+      ggplot2::facet_grid(speaker_A ~ place_A) +
+      ggplot2::theme_minimal() +
+      ggplot2::scale_fill_manual(values = wes_palette(n=2, name = "GrandBudapest"))
 
 #ggsave("/Users/chloe/euclidian_vot_and_abxpy.jpeg", width = 5, height = 5)
 
@@ -254,7 +259,8 @@ ggplot(distances, aes(x = place, y = dist, fill=same)) +
       ggplot2::labs(title = "", 
                     x = "Point d'articulation", 
                     y = "Dynamic Time Warping") +
-      ggplot2::ylim(c(0, 0.12))
+      ggplot2::ylim(c(0, 0.12)) +
+      ggplot2::scale_fill_manual(values = wes_palette(n=2, name="Darjeeling"))
 
 #ggsave("/Users/chloe/abxpy_fixed.jpeg", width = 10, height = 5)
 ```

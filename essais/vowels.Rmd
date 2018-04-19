@@ -1,0 +1,60 @@
+---
+title: "Untitled"
+output: html_document
+---
+```{r}
+library(wesanderson)
+```
+
+
+```{r warning=FALSE}
+vowels <- readr::read_delim("Vowel.txt", " ", col_names = F)
+
+segment <- vowels[, 2]
+speaker <- vowels[, 1]
+speaker$speaker <- substr(speaker$X1, 7, 9)
+speaker$X1 <- NULL
+
+vowel <- dplyr::bind_cols(segment, speaker)
+names(vowel) <- c("vowel", "speaker")
+
+vowel_1 <- vowels[, 4:5]
+vowel_1$mesure <- "1"
+names(vowel_1) <- c("F1", "F2", "mesure")
+vowel_1 <- dplyr::bind_cols(vowel, vowel_1)
+
+vowel_2 <- vowels[, 9:10]
+vowel_2$mesure <- "2"
+names(vowel_2) <- c("F1", "F2", "mesure")
+vowel_2 <- dplyr::bind_cols(vowel, vowel_2)
+
+vowel_3 <- vowels[, 14:15]
+vowel_3$mesure <- "3"
+names(vowel_3) <- c("F1", "F2", "mesure")
+vowel_3 <- dplyr::bind_cols(vowel, vowel_3)
+
+vowel_4 <- vowels[, 19:20]
+vowel_4$mesure <- "4"
+names(vowel_4) <- c("F1", "F2", "mesure")
+vowel_4 <- dplyr::bind_cols(vowel, vowel_4)
+
+vowel_5 <- vowels[, 24:25]
+vowel_5$mesure <- "5"
+names(vowel_5) <- c("F1", "F2", "mesure")
+vowel_5 <- dplyr::bind_cols(vowel, vowel_5)
+
+vowel_1to5 <- dplyr::bind_rows(vowel_1, vowel_2, vowel_3, vowel_4, vowel_5)
+
+vowel_aei <- subset(vowel_1to5, vowel_1to5$vowel==c("a", "e", "i"))
+
+ggplot2::ggplot(vowel_aei, ggplot2::aes(x = F2, y = F1, color = vowel)) + 
+  ggplot2::geom_point() +
+  ggplot2::scale_color_manual(values=wes_palette(n=3, name="Darjeeling")) + 
+  ggplot2::facet_grid(speaker ~ mesure) +
+  ggplot2::ylim(1500, 0) + 
+  ggplot2::xlim(3000, 500) +
+  ggplot2::theme_minimal() +
+  ggplot2::stat_ellipse()
+
+```
+

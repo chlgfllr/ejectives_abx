@@ -16,7 +16,7 @@ We want to delete some of the columns which were created in the `full_abx.item` 
 
 Choose which window setting to use
 ```{r}
-datafile <- readr::read_delim("full_abx.item", " ")
+datafile <- readr::read_delim("full_abx_corrected.item", " ")
 datafile <- dplyr::rename_at(datafile, 
                   names(datafile["item"]), 
                   function(x) paste0("#", x))
@@ -47,7 +47,7 @@ datafile$vowelduration <- NULL
 
 # ABXpy item file
 ## Change folder
-write.table(datafile, file = "../results/fixed/abx.item", quote = F, sep = " ", row.names = F, col.names = T)
+write.table(datafile, file = "../results/fixed_initial_medial/abx.item", quote = F, sep = " ", row.names = F, col.names = T)
 # Easy_abx csv file
 #write.table(datafile, file = "../results/features/abx_corrected.csv", quote = F, sep = ",", row.names = F, col.names = T)
 ```

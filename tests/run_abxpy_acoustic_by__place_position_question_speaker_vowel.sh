@@ -4,11 +4,11 @@ set -e
 
 source activate abxenv
 
-TEST=fixed
+TEST=fixed_initial_medial
 FOLDER=by__place_position_question_speaker_vowel
 DIR=../results/$TEST
 
-FEATURE_FILE=mono_mfcc.h5f
+FEATURE_FILE=mfcc_audio_initial_medial.h5f
 ITEM_FILE=$DIR/abx.item
 
 TASK_FILE=$DIR/$FOLDER/abx.abx
