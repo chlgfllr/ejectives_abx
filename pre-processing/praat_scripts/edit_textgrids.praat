@@ -1,7 +1,7 @@
 ##  This script opens all the sound files in a given directory, plus their associated textgrids so that you can review/change the marks.
 
 
-directory$ = "C:\Users\chloe_000\OneDrive\Documents\M2\Georgian\Data\Recordings\s08_Nino\original_020\s08_interv020\vot_s08\"
+directory$ = "/Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/resampled_mono/edited/"
 extension$ = ".wav"
 
 Create Strings as file list... list 'directory$'*'extension$'

@@ -1,0 +1,37 @@
+geo020s08a0007v02	voyelle pas détectée	pakt>i
+geo020s08a0008v02	v pas détectée		pakt>i
+geo020s08a0011v02	manque voyelle 2	k>rit>ik>a
+geo020s08a0012v02	manque v 2		k>rit>ik>a
+geo020s08a0016v01	revoir fin du burst	t>ani
+geo020s08a0016v02	revoir EGG		t>ani
+geo020s08a0025v02	manque v 2		t>it>uli
+geo020s08a0027v01	vérifier EGG		k>enk>ra
+geo020s08a0030v01	manque v 3		p>ilot>i
+geo020s08a0045v01	manque v 2		q>lup>i
+geo020s08a0047v01	vérifier EGG		t>ank>i
+geo020s08a0057v01	manque v 2		p>api
+geo020s08a0059v01	vérifier EGG		p>at>ara
+geo020s08a0060v01	manque v 3		k>vart>et>i
+geo020s08a0062v01	manque v 3		t>abak>a
+geo020s08a0064v01	manque v 3		p>ark>et>i
+geo020s08a0079v02	manque v 3		Cap>it>o
+geo020s08a0080v01	manque v 3		Cap>it>o
+geo020s08a0081v01	manque v 2		tok>i
+geo020s08a0084v01	manque v 2		papa
+geo020s08a0086v01	manque v 2		papa
+geo020s08a0087v01	manque v 3		p>asek>i
+geo020s08a0098v01	manque v 3		p>anek>i
+geo020s08a0105v01	manque v 2		papa
+geo020s08a0115v01	manque v 3		paCat>i
+geo020s08a0118v01	manque v 2		pxak>i
+geo020s08a0119v02	manquent v 1-2		papuk>i
+geo020s08a0120v01	manque v 3		papuk>i
+geo020s08a0120v02	manque v 2		papuk>i
+geo020s08a0137v01	manque v 3		p>ak>et>i
+geo020s08a0146v01	manque v 2		pxek>a
+geo020s08a0173v02	vérifier EGG		k>ak>ao
+geo020s08a0192v01	manque v 2		p>api
+geo020s08a0197v01	manque v 3		park>eti
+geo020s08a0222v01	manque v 3		p>aseki
+---
+geo020s08a0227v02	regarder k>a		k>abina
