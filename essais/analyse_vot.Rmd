@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r}
+mon.data <- readr::read_delim("log_vot_measures.txt", " ")
+mon.data$speaker <- NULL
+mon.data$onset_f <- NULL
+mon.data$onset_v <- NULL
+mon.data$offset_f <- NULL
+mon.data$offset_v <- NULL
+mon.data$syllables <- NULL
+mon.data$X21 <- NULL
+
+mon.subset <- dplyr::filter(mon.data, good_vot > 0)
+mon.subset <- dplyr::filter(mon.subset, good_vot < 100)
+mon.subset <- dplyr::filter(mon.subset, vowel == c("a", "e", "i"))
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(mon.subset, aes(x = type, y = good_vot, fill = position)) +
+  geom_boxplot() +
+  facet_grid(vowel ~ place)
+  
+```
+
