@@ -2,28 +2,77 @@
 title: "Untitled"
 output: html_document
 ---
-
 ```{r}
-mon.data <- readr::read_delim("log_vot_measures.txt", " ")
-mon.data$speaker <- NULL
-mon.data$onset_f <- NULL
-mon.data$onset_v <- NULL
-mon.data$offset_f <- NULL
-mon.data$offset_v <- NULL
-mon.data$syllables <- NULL
-mon.data$X21 <- NULL
-
-mon.subset <- dplyr::filter(mon.data, good_vot > 0)
-mon.subset <- dplyr::filter(mon.subset, good_vot < 100)
-mon.subset <- dplyr::filter(mon.subset, vowel == c("a", "e", "i"))
+library(dplyr)
+library(ggplot2)
 ```
 
 ```{r}
-library(ggplot2)
+mon.data <- readr::read_delim("log_vot_measures_s08.txt", " ")
+mon.data_ <- mon.data %>%
+  select(type, place, position, good_vot) %>%
+  filter(good_vot > 0 & good_vot < 150) 
 
-ggplot(mon.subset, aes(x = type, y = good_vot, fill = position)) +
+#mon.subset <- dplyr::filter(mon.subset, vowel == c("a", "e", "i"))
+mon.data_$objet <- paste(mon.data_$place, mon.data_$type, mon.data_$position)
+
+comparaison.des.vot <- mon.data_ %>%
+    group_by(place, type, position) %>%
+    add_count(place, type, position) %>%
+    summarise_all(mean)
+
+#write.table(x = comparaison.des.vot, file = "comparaison_VOT.txt", sep = "\t", col.names = T, row.names = F, quote = F)
+```
+
+```{r}
+ggplot(mon.data_, aes(x = type, y = good_vot, fill = position)) +
   geom_boxplot() +
-  facet_grid(vowel ~ place)
-  
+  facet_grid(. ~ place)
+```
+
+```{r}
+bigger.data_cei <- as_tibble(sample(x = mon.data_$good_vot[mon.data_$place=="coronal" & mon.data_$type=="ejective" & mon.data_$position=="initial"], size = 400, replace = T))
+bigger.data_cei$place <- "coronal"
+bigger.data_cei$type <- "ejective"
+bigger.data_cei$position <- "initial"
+
+bigger.data_cem <- as_tibble(sample(x = mon.data_$good_vot[mon.data_$place=="coronal" & mon.data_$type=="ejective" & mon.data_$position=="medial"], size = 400, replace = T))
+bigger.data_cem$place <- "coronal"
+bigger.data_cem$type <- "ejective"
+bigger.data_cem$position <- "medial"
+
+###
+
+bigger.data_lei <- as_tibble(sample(x = mon.data_$good_vot[mon.data_$place=="labial" & mon.data_$type=="ejective" & mon.data_$position=="initial"], size = 400, replace = T))
+bigger.data_lei$place <- "labial"
+bigger.data_lei$type <- "ejective"
+bigger.data_lei$position <- "initial"
+
+bigger.data_lem <- as_tibble(sample(x = mon.data_$good_vot[mon.data_$place=="labial" & mon.data_$type=="ejective" & mon.data_$position=="medial"], size = 400, replace = T))
+bigger.data_lem$place <- "labial"
+bigger.data_lem$type <- "ejective"
+bigger.data_lem$position <- "medial"
+
+###
+
+bigger.data_vei <- as_tibble(sample(x = mon.data_$good_vot[mon.data_$place=="velar" & mon.data_$type=="ejective" & mon.data_$position=="initial"], size = 400, replace = T))
+bigger.data_vei$place <- "velar"
+bigger.data_vei$type <- "ejective"
+bigger.data_vei$position <- "initial"
+
+bigger.data_vem <- as_tibble(sample(x = mon.data_$good_vot[mon.data_$place=="velar" & mon.data_$type=="ejective" & mon.data_$position=="medial"], size = 400, replace = T))
+bigger.data_vem$place <- "velar"
+bigger.data_vem$type <- "ejective"
+bigger.data_vem$position <- "medial"
+
+bigger.data_labial <- bind_rows(bigger.data_lem, bigger.data_lei) 
+bigger.data_velar <- bind_rows(bigger.data_vei, bigger.data_vem)
+bigger.data_coronal <- bind_rows(bigger.data_cei, bigger.data_cem)
+
+bigger.data <- bind_rows(bigger.data_coronal, bigger.data_labial, bigger.data_velar)
+
+mon.plot <- ggplot(bigger.data, aes(x = type, y = value, fill = position)) +
+  geom_boxplot() +
+  facet_grid(. ~ place)
 ```
 

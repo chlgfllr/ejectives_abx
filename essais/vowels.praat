@@ -9,11 +9,11 @@ numintervals = 5
 #Number of intervals you wish to extract pitch from.
 
 form Extract Formant data from labelled points
-   sentence Directory_name: /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/resampled_mono
+   sentence Directory_name: /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/resampled_mono/edited/done
    sentence Temporary_path: /Users/chloe/ejectives_abx/essais
    sentence Interval_label 
    sentence Log_file Vowel
-   positive Labeled_tier_number 3
+   positive Labeled_tier_number 7
    positive Analysis_points_time_step 0.005
    positive Record_with_precision 1
    comment Formant Settings:
@@ -59,6 +59,10 @@ for ifile to num
 		select 'textGridID'
 		label$ = Get label of interval... labeled_tier_number i
 			if label$ = "a" or label$ = "e" or label$ = "i" or label$ = "o" or label$ = "u" 
+				debut = Get start point: labeled_tier_number, i
+				seq = Get interval at time... 1 debut
+				mot$ = Get label of interval... 1 debut
+				
 				fileappend 'temporary_path$'/'log_file$'.txt 'fileName$''tab$'
 	      			intvl_start = Get starting point... labeled_tier_number i
 				intvl_end = intvl_start+'duration'
@@ -89,10 +93,10 @@ for ifile to num
 					f3_b = f3+(f3/10)
 						if j = numintervals
 						fileappend 'temporary_path$'/'log_file$'.txt
-	 	           			... 'label$' 'j' 'f1:2''tab$''f2:2''tab$''f3:2''newline$'
+	 	           			... 'label$' 'mot$' 'j' 'f1:2''tab$''f2:2''tab$''f3:2''newline$'
 						else
 						fileappend 'temporary_path$'/'log_file$'.txt
-	   	         			... 'label$' 'j' 'f1:2''tab$''f2:2''tab$''f3:2''tab$'
+	   	         			... 'label$' 'mot$' 'j' 'f1:2''tab$''f2:2''tab$''f3:2''tab$'
 						endif
 					select 'chunk_part'
 					Remove

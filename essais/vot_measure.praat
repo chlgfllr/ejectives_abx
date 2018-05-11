@@ -16,7 +16,7 @@ form Extract VOT measures from TextGrid
 	sentence Sound_file_extension .wav
 	sentence TextGrid_directory /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/resampled_mono/edited/done/
 	sentence TextGrid_file_extension .TextGrid
-	text resultsfile /Users/chloe/ejectives_abx/essais/log_vot_measures.txt
+	text resultsfile /Users/chloe/ejectives_abx/essais/log_vot_measures_s08.txt
 	comment Which tier do you want to analyze?
 	integer Tier 3
 endform
@@ -109,7 +109,7 @@ for ifile to num
                 	vot_start = Get start point: 7, y+1
                 endif
 
-                vot = (vot_start - end) * 1000
+                vot = (vot_start - oral_burst) * 1000
                                                 
                 type$ = "ejective"
                 place$ = "labial"
@@ -188,7 +188,7 @@ for ifile to num
                 	vot_start = Get start point: 7, y+1
                 endif
 
-                vot = (vot_start - end) * 1000
+                vot = (vot_start - oral_burst) * 1000
                 
                 type$ = "ejective"
                 place$ = "coronal"
@@ -267,7 +267,7 @@ for ifile to num
                 	vot_start = Get start point: 7, y+1
                 endif
 
-                vot = (vot_start - end) * 1000
+                vot = (vot_start - oral_burst) * 1000
                
                 type$ = "ejective"
                 place$ = "velar"
@@ -347,7 +347,7 @@ for ifile to num
                 	vot_start = Get start point: 7, y+1
                 endif
 
-                vot = (vot_start - end) * 1000
+                vot = (vot_start - oral_burst) * 1000
                 
                 type$ = "pulmonic"
                 place$ = "labial"
@@ -423,7 +423,7 @@ for ifile to num
                 	vot_start = Get start point: 7, y+1
                 endif
 
-                vot = (vot_start - end) * 1000
+                vot = (vot_start - oral_burst) * 1000
                 
                 type$ = "pulmonic"
                 place$ = "coronal"
@@ -499,7 +499,7 @@ for ifile to num
                 	vot_start = Get start point: 7, y+1
                 endif
 
-                vot = (vot_start - end) * 1000
+                vot = (vot_start - oral_burst) * 1000
                 
                 type$ = "pulmonic"
                 place$ = "velar"

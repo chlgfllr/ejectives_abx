@@ -1,0 +1,12 @@
+place	type	position	good_vot	n
+coronal	ejective	initial	32.1151923076923	52
+coronal	ejective	medial	21.41975	40
+coronal	pulmonic	initial	68.19	5
+labial	ejective	initial	26.9523728813559	59
+labial	ejective	medial	18.675	12
+labial	pulmonic	initial	67.0225	24
+labial	pulmonic	medial	55.0454545454545	11
+velar	ejective	initial	31.3964406779661	59
+velar	ejective	medial	26.9638461538462	26
+velar	pulmonic	initial	77.9275	8
+velar	pulmonic	medial	58.625	2

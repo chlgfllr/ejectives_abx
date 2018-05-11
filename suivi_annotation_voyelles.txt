@@ -35,3 +35,10 @@ geo020s08a0197v01	manque v 3		park>eti
 geo020s08a0222v01	manque v 3		p>aseki
 ---
 geo020s08a0227v02	regarder k>a		k>abina
+geo020s08a0240v01	manque v 2		papa
+geo020s08a0242v01	manque v 2		papa
+geo020s08a0249v02	manque v 3		paCat>i
+geo020s08a0250v01	manque v 3		paCat>i
+geo020s08a0251v01	manque v 2		pxak>i
+---
+geo020s08a0012v02	checker v 3		k>rit>ik>a
