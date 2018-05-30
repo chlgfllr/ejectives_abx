@@ -1,0 +1,20 @@
+type_2	type_1	by	score	n
+ejective	pulmonic	('coronal', 'initial', 'answer', 's08')	0.572916666667	288
+pulmonic	ejective	('coronal', 'initial', 'answer', 's08')	0.460144927536	2208
+ejective	pulmonic	('velar', 'medial', 'answer', 's08')	1.0	36
+pulmonic	ejective	('velar', 'medial', 'answer', 's08')	0.807189542484	612
+ejective	pulmonic	('labial', 'initial', 'question', 's08')	0.965323166304	11016
+pulmonic	ejective	('labial', 'initial', 'question', 's08')	0.789065255732	22680
+pulmonic	ejective	('velar', 'medial', 'question', 's08')	0.683333333333	420
+ejective	pulmonic	('labial', 'initial', 'answer', 's08')	0.972017973856	9792
+pulmonic	ejective	('labial', 'initial', 'answer', 's08')	0.713821684588	17856
+ejective	pulmonic	('labial', 'medial', 'answer', 's08')	0.614772727273	880
+pulmonic	ejective	('labial', 'medial', 'answer', 's08')	0.858766233766	616
+ejective	pulmonic	('labial', 'medial', 'question', 's08')	0.642361111111	576
+pulmonic	ejective	('labial', 'medial', 'question', 's08')	0.65873015873	504
+ejective	pulmonic	('velar', 'initial', 'question', 's08')	0.548850574713	348
+pulmonic	ejective	('velar', 'initial', 'question', 's08')	0.59513546798	3248
+ejective	pulmonic	('velar', 'initial', 'answer', 's08')	0.556451612903	372
+pulmonic	ejective	('velar', 'initial', 'answer', 's08')	0.543279569892	3720
+ejective	pulmonic	('coronal', 'initial', 'question', 's08')	0.360119047619	336
+pulmonic	ejective	('coronal', 'initial', 'question', 's08')	0.689484126984	3024

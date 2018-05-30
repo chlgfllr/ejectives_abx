@@ -188,6 +188,15 @@ read_easyabx <- function(data_folder) {
 ```{r warning = FALSE}
 setwd("~/ejectives_abx/results")
 
+distances_vot <- read_abxpy("vot/by__place_position_question_speaker")
+distances_vot$experiment <- "vot"
+
+distances_vowel <- read_abxpy("vowel/by__place_position_question_speaker_vowel")
+distances_vowel$experiment <- "vowel"
+
+distances_vowel_flattened <- read_abxpy("vowel/flattened_by__place_position_question_speaker_vowel")
+distances_vowel_flattened$experiment <- "vowel_flattened"
+
 distances_fixed_standard <- read_abxpy("fixed/by__place_position_question_speaker_vowel")
 distances_fixed_standard$experiment <- "fixed_standard"
 
@@ -232,7 +241,7 @@ distances_features_no_vowel_timbre$experiment <- "features_no_vowel_timbre"
 
 ## Tous les tests dans un même fichier
 #distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_vot_only)
-distances <- dplyr::bind_rows(distances_fixed_standard, all_fixed_standard)
+distances <- dplyr::bind_rows(distances_vowel, distances_vowel_flattened)
 
 #distances <- distances_egg_1000
 distances$place <- distances$place_A # know this because experiment was BY place, speaker
@@ -253,13 +262,13 @@ ggplot(all_fixed_standard, aes(x = position_A, y = dist, fill = same)) +
 #ggsave("/Users/chloe/euclidian_vot_and_abxpy.jpeg", width = 5, height = 5)
 
 ggplot(distances, aes(x = place, y = dist, fill=same)) + 
-      ggplot2::geom_violin(position="dodge") +
-      ggplot2::facet_grid(speaker ~ experiment) +
+      ggplot2::geom_boxplot(position="dodge") +
+      ggplot2::facet_grid(position_A ~ experiment) +
       ggplot2::theme_minimal() +
       ggplot2::labs(title = "", 
                     x = "Point d'articulation", 
                     y = "Dynamic Time Warping") +
-      ggplot2::ylim(c(0, 0.12)) +
+      ggplot2::ylim(c(0.01, 0.06)) +
       ggplot2::scale_fill_manual(values = wes_palette(n=2, name="Darjeeling"))
 
 #ggsave("/Users/chloe/abxpy_fixed.jpeg", width = 10, height = 5)

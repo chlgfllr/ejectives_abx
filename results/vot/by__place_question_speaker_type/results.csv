@@ -1,0 +1,20 @@
+position_2	position_1	by	score	n
+initial	medial	('labial', 'answer', 's08', 'pulmonic')	0.441919191919	1980
+medial	initial	('labial', 'answer', 's08', 'pulmonic')	0.666666666667	3366
+initial	medial	('velar', 'answer', 's08', 'ejective')	0.523824583597	9486
+medial	initial	('velar', 'answer', 's08', 'ejective')	0.536260454002	16740
+initial	medial	('labial', 'question', 's08', 'pulmonic')	0.432098765432	1296
+medial	initial	('labial', 'question', 's08', 'pulmonic')	0.686274509804	2754
+initial	medial	('velar', 'question', 's08', 'ejective')	0.44039408867	12180
+medial	initial	('velar', 'question', 's08', 'ejective')	0.60086793338	17052
+initial	medial	('coronal', 'answer', 's08', 'ejective')	0.603929249763	16848
+medial	initial	('coronal', 'answer', 's08', 'ejective')	0.559782608696	14904
+initial	medial	('coronal', 'question', 's08', 'ejective')	0.454979213908	21168
+medial	initial	('coronal', 'question', 's08', 'ejective')	0.657407407407	21168
+initial	medial	('labial', 'answer', 's08', 'ejective')	0.651227678571	1792
+medial	initial	('labial', 'answer', 's08', 'ejective')	0.509954637097	7936
+initial	medial	('velar', 'answer', 's08', 'pulmonic')	1.0	8
+medial	initial	('velar', 'answer', 's08', 'pulmonic')	0.666666666667	24
+initial	medial	('labial', 'question', 's08', 'ejective')	0.489087301587	2016
+medial	initial	('labial', 'question', 's08', 'ejective')	0.620337301587	10080
+medial	initial	('velar', 'question', 's08', 'pulmonic')	0.75	12

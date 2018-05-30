@@ -1,0 +1,14 @@
+type_2	type_1	by	score	n
+pulmonic	ejective	('labial', 'medial', 'question', 's08', 'i')	0.0	2
+pulmonic	ejective	('velar', 'initial', 'question', 's08', 'e')	0.916666666667	12
+ejective	pulmonic	('coronal', 'initial', 'answer', 's08', 'e')	1.0	8
+pulmonic	ejective	('coronal', 'initial', 'answer', 's08', 'e')	0.708333333333	24
+ejective	pulmonic	('labial', 'initial', 'answer', 's08', 'a')	0.618131868132	728
+pulmonic	ejective	('labial', 'initial', 'answer', 's08', 'a')	0.523237179487	1248
+ejective	pulmonic	('labial', 'initial', 'question', 's08', 'a')	0.947619047619	630
+pulmonic	ejective	('labial', 'initial', 'question', 's08', 'a')	0.629931972789	1470
+ejective	pulmonic	('velar', 'initial', 'answer', 's08', 'e')	1.0	4
+pulmonic	ejective	('velar', 'initial', 'answer', 's08', 'e')	0.5	4
+ejective	pulmonic	('labial', 'medial', 'question', 's08', 'a')	0.333333333333	6
+pulmonic	ejective	('coronal', 'initial', 'question', 's08', 'e')	1.0	20
+pulmonic	ejective	('velar', 'initial', 'question', 's08', 'a')	0.388888888889	72

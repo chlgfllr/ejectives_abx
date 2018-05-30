@@ -1,0 +1,368 @@
+#file burst dur_burst dur_lag dur_creak dur_vowel onset_vot offset_vot item sequence syllables type place vowel position speaker question new bad_vot constriction vowelduration check_vowel good_vot 
+geo020s08a0005v02 burst 18.94 33.48 8.35 78.49 0.882052 0.968888 1_5690 t>e 2 ejective coronal e initial s08 answer new 60.63 74.03 136.94 e 52.42 
+geo020s08a0006v01 burst 13.04 8.18 43.24 49.00 1.050361 1.142602 1_9727 t>e 2 ejective coronal e initial s08 question new 64.47 74.01 111.97 e 21.23 
+geo020s08a0006v02 burst 17.18 60.24 17.11 47.13 0.908954 0.977385 1_5696 t>e 2 ejective coronal e initial s08 answer echo 94.54 78.24 139.82 e 73.24 
+geo020s08a0007v01 burst 8.50 9.02 11.02 95.24 0.866184 0.972447 1_5237 ka 2 pulmonic velar a initial s08 question new 94.54 48.64 122.97 a 17.52 
+geo020s08a0007v02 burst 7.11 59.96 3.11 60.19 0.905406 0.977582 1_6276 pa 2 pulmonic labial a initial s08 answer new 94.54 81.32 139.25 a 67.08 
+geo020s08a0008v01 burst 8.78 42.02 0 0 0.880095 0.961481 1_6722 pa 2 pulmonic labial a initial s08 question new 94.54 79.93 132.19 a 50.81 
+geo020s08a0008v02 burst 8.75 59.37 0 0 0.806732 0.875807 1_2159 pa 2 pulmonic labial a initial s08 answer echo 94.54 86.73 137.20 a 68.13 
+geo020s08a0009v01 burst 15.21 4.37 42.67 58.62 0.903691 1.004979 1_5764 k>a 3 ejective velar a initial s08 question new 62.24 58.64 119.35 a 19.58 
+geo020s08a0011v01 burst 11.46 7.84 104.70 0 1.183106 1.312248 2_1667 k>a 2 ejective velar a medial s08 question new 148.44 49.72 145.97 a 19.29 
+geo020s08a0011v02 burst 14.94 27.02 26.40 35.03 1.103648 1.165079 2_3560 t>i 3 ejective coronal i medial s08 answer new 68.36 54.74 100.95 i 41.96 
+geo020s08a0011v02  14.94 27.02 26.40 35.03 1.235148 1.389090 3_208 k>a 3 ejective velar a medial s08 answer new 90.29 55.17 168.84 a 70.07 
+geo020s08a0012v01 burst 5.18 15.00 16.52 66.93 1.061521 1.144974 2_9936 t>i 3 ejective coronal i medial s08 question new 36.71 64.49 103.64 i 20.18 
+geo020s08a0012v01 burst 9.87 26.52 62.80 0 1.220563 1.283368 3_2970 k>a 3 ejective velar a medial s08 question new 99.19 39.21 99.19 a 36.38 
+geo020s08a0012v02 burst 15.31 16.98 4.97 62.05 0.948226 1.015255 2_2401 t>i 3 ejective coronal i medial s08 answer echo 37.27 84.23 87.22 i 32.29 
+geo020s08a0012v02 burst 33.11 9.86 7.38 88.30 1.106599 1.218020 3_363 k>a 3 ejective velar a medial s08 answer echo 50.36 70.24 132.53 a 42.98 
+geo020s08a0013v01 burst 8.33 6.78 26.93 57.62 0.645073 0.729623 1_7085 t>e 2 ejective coronal e initial s08 question new 42.05 78.67 97.26 e 15.11 
+geo020s08a0015v02 burst 15.64 8.13 44.60 96.88 0.820780 0.962251 1_5631 t>a 2 ejective coronal a initial s08 answer new 68.37 88.22 161.89 a 23.77 
+geo020s08a0016v01 burst 10.94 6.82 47.98 85.27 0.746405 0.879655 1_9737 t>a 2 ejective coronal a initial s08 question new 65.75 89.51 146.82 a 17.77 
+geo020s08a0016v02 burst 35.35 16.05 20.12 73.71 0.932642 1.026471 1_7807 t>a 2 ejective coronal a initial s08 answer echo 77.84 102.07 142.08 a 51.39 
+geo020s08a0019v01 lag 35.35 16.05 20.12 73.71 0.661039 0.752007 1_6724 k>a 3 ejective velar a initial s08 question new 45.12 83.33 92.19 a 21.68 
+geo020s08a0019v01 burst 9.89 34.60 20.35 64.46 0.866521 0.951328 2_1977 k>a 3 ejective velar a medial s08 question new 64.84 71.14 128.18 a 44.49 
+geo020s08a0021v01 burst 12.10 13.95 38.52 77.17 0.822425 0.938117 1_1028 k>a 3 ejective velar a initial s08 question new 64.58 47.61 137.38 a 26.06 
+geo020s08a0023v01 burst 5.36 7.96 52.84 70.86 0.789424 0.913126 1_1072 p>a 2 ejective labial a initial s08 question new 70.97 122.04 134.29 a 13.32 
+geo020s08a0023v02 burst 7.06 64.97 4.80 57.68 0.850825 0.913307 1_9947 po 3 pulmonic labial o initial s08 answer new 70.97 97.62 134.51 o 72.03 
+geo020s08a0024v01 burst 7.15 61.26 3.32 49.79 0.744026 0.797138 1_615 po 3 pulmonic labial o initial s08 question new 70.97 78.50 121.52 o 68.41 
+geo020s08a0024v02 burst 8.78 68.19 0 0 0.711833 0.754418 1_122 po 3 pulmonic labial o initial s08 answer echo 70.97 80.54 119.56 o 76.97 
+geo020s08a0025v02 burst 12.41 4.13 49.29 35.24 0.767177 0.851704 1_1908 t>i 3 ejective coronal i initial s08 answer new 50.40 70.52 97.92 i 16.55 
+geo020s08a0025v02 burst 8.09 12.15 21.35 73.79 0.949717 1.044851 2_5676 t>u 3 ejective coronal u medial s08 answer new 41.58 80.14 113.01 u 20.24 
+geo020s08a0026v01 burst 12.57 16.78 8.01 53.96 0.854322 0.916298 1_8039 t>i 3 ejective coronal i initial s08 question new 37.36 78.14 89.76 i 29.35 
+geo020s08a0026v01 burst 12.46 5.60 22.72 64.49 1.007889 1.095098 2_675 t>u 3 ejective coronal u medial s08 question new 40.79 76.86 101.94 u 18.07 
+geo020s08a0026v02 burst 12.05 33.55 9.13 43.19 0.750535 0.802854 1_3636 t>i 3 ejective coronal i initial s08 answer echo 54.73 71.80 94.50 i 45.60 
+geo020s08a0026v02 burst 9.49 17.02 17.66 66.32 0.920512 1.004488 2_1317 t>u 3 ejective coronal u medial s08 answer echo 44.16 93.46 108.17 u 26.50 
+geo020s08a0027v01 burst 8.49 11.85 34.13 74.84 0.842852 0.951826 1_9774 k>e 2 ejective velar e initial s08 question new 54.47 72.28 127.08 e 20.34 
+geo020s08a0029v02 burst 5.61 6.94 5.64 74.22 0.829145 0.909005 1_9723 p>i 3 ejective labial i initial s08 answer new 20.26 90.45 92.26 i 12.56 
+geo020s08a0029v02 burst 13.17 9.87 10.24 51.63 1.187979 1.249849 3_6119 t>i 3 ejective coronal i medial s08 answer new 33.28 74.18 84.91 i 23.04 
+geo020s08a0030v01 burst 5.45 25.84 23.47 37.21 0.997951 1.058636 1_7476 p>i 3 ejective labial i initial s08 question new 54.77 79.88 90.39 i 31.29 
+geo020s08a0030v01 burst 8.58 35.56 25.23 0 1.350908 1.376137 3_8626 t>i 3 ejective coronal i medial s08 question new 69.37 75.50 66.87 i 44.14 
+geo020s08a0030v02 burst 4.95 6.60 14.80 56.96 0.855589 0.927351 1_9942 p>i 3 ejective labial i initial s08 answer echo 26.36 82.40 81.48 i 11.56 
+geo020s08a0030v02 burst 22.19 6.99 10.47 77.42 1.201524 1.289407 3_8999 t>i 3 ejective coronal i medial s08 answer echo 39.65 85.21 110.48 i 29.18 
+geo020s08a0033v02 burst 14.77 41.37 17.24 68.62 0.810230 0.896089 1_7130 k>a 4 ejective velar a initial s08 answer new 73.38 60.56 142.00 a 56.14 
+geo020s08a0033v02 burst 14.83 58.56 14.64 32.28 1.033050 1.079964 2_4385 k>a 4 ejective velar a medial s08 answer new 88.03 65.29 118.59 a 73.39 
+geo020s08a0034v01 creak 14.83 58.56 14.64 32.28 0.453642 0.558510 1_8344 k>a 3 ejective velar a initial s08 question new 56.99 81.52 101.03 a 0.02 
+geo020s08a0034v01 creak 14.83 58.56 14.64 32.28 0.453642 0.719019 2_4214 k>a 3 ejective velar a medial s08 question new 44.72 96.39 64.11  -192.91 
+geo020s08a0034v02 burst 9.82 24.88 11.17 77.56 0.652684 0.741413 1_362 k>a 3 ejective velar a initial s08 answer echo 51.81 65.44 120.82 a 34.70 
+geo020s08a0034v02 burst 9.06 14.94 9.76 80.02 0.823572 0.913346 2_9780 k>a 3 ejective velar a medial s08 answer echo 33.76 61.05 110.89 a 24.00 
+geo020s08a0035v01 burst 13.50 16.51 35.18 63.17 1.088613 1.186957 2_1841 t>a 3 ejective coronal a medial s08 question new 65.20 84.50 126.78 a 30.02 
+geo020s08a0039v01 burst 10.35 8.27 9.69 102.37 0.786979 0.899037 1_7870 k>a 3 ejective velar a initial s08 question new 28.31 67.33 128.48 a 18.62 
+geo020s08a0039v01 burst 10.82 3.19 30.80 94.65 0.973749 1.099197 2_252 k>a 3 ejective velar a medial s08 question new 15.25 60.96 139.20 a 14.01 
+geo020s08a0041v02 burst 15.25 22.07 15.69 109.87 0.794568 0.920128 1_2946 t>e 3 ejective coronal e initial s08 answer new 53.01 72.94 159.40 e 37.32 
+geo020s08a0042v01 burst 11.19 8.55 24.87 94.88 0.982146 1.101890 1_4799 t>e 3 ejective coronal e initial s08 question new 44.60 81.37 137.43 e 19.74 
+geo020s08a0042v02 burst 12.93 5.19 28.27 92.47 0.655600 0.776615 1_9435 t>e 3 ejective coronal e initial s08 answer echo 46.40 66.71 134.99 e 18.12 
+geo020s08a0045v01 burst 5.64 29.56 104.84 0 1.105129 1.209971 2_6475 p>i 2 ejective labial i medial s08 question new 140.04 81.29 138.40 i 35.20 
+geo020s08a0047v01 burst 9.34 2.95 40.51 40.21 0.707102 0.787818 1_5067 t>a 2 ejective coronal a initial s08 question new 52.80 77.44 90.59 a 12.29 
+geo020s08a0047v02 burst 23.41 0 0 0 0.766131 0.861383 1_4334 t>a 2 ejective coronal a initial s08 answer new 53.40 80.03 115.70 a 23.41 
+geo020s08a0048v01 burst 13.20 21.44 30.53 52.48 0.982134 1.065137 1_6560 t>e 2 ejective coronal e initial s08 question new 65.16 111.79 114.18 e 34.64 
+geo020s08a0055v02 burst 17.48 58.39 7.01 56.40 0.844331 0.907748 1_5490 ko 3 pulmonic velar o initial s08 answer new 65.16 58.68 139.28 o 75.87 
+geo020s08a0056v01 burst 14.81 70.10 11.53 45.07 0.816982 0.873584 1_9335 ko 3 pulmonic velar o initial s08 question new 65.16 75.40 141.51 o 84.91 
+geo020s08a0056v02 burst 9.39 83.62 7.76 45.21 0.755283 0.808258 1_2177 ko 3 pulmonic velar o initial s08 answer echo 65.16 53.54 145.99 o 93.01 
+geo020s08a0057v01 burst 10.87 60.17 8.59 69.95 0.901327 0.979869 1_9379 p>a 2 ejective labial a initial s08 question new 79.62 56.88 148.81 a 71.04 
+geo020s08a0057v01 burst 11.88 53.76 50.41 0 1.151509 1.201915 2_8481 pi 2 pulmonic labial i medial s08 question new 79.62 106.00 116.04 i 65.64 
+geo020s08a0059v01 burst 8.45 9.66 28.54 77.05 0.847251 0.952843 1_3073 p>a 3 ejective labial a initial s08 question new 46.65 83.99 122.16 a 18.11 
+geo020s08a0059v01 burst 11.32 4.45 17.00 114.07 1.043614 1.174680 2_349 t>a 3 ejective coronal a medial s08 question new 32.77 77.94 143.90 a 15.77 
+geo020s08a0059v02 burst 23.58 5.27 24.13 84.33 1.365063 1.473528 3_6598 t>i 3 ejective coronal i medial s08 answer new 52.98 113.40 137.32 i 28.85 
+geo020s08a0060v01 burst 2.88 25.84 57.23 0 1.239390 1.296621 3_8265 t>i 3 ejective coronal i medial s08 question new 85.95 57.29 85.95 i 28.72 
+geo020s08a0060v02 burst 6.46 10.10 5.87 88.94 1.283615 1.378416 3_9620 t>i 3 ejective coronal i medial s08 answer echo 22.42 76.97 110.36 i 16.56 
+geo020s08a0061v02 burst 20.25 41.23 20.39 56.15 0.897947 0.974481 1_4009 t>a 3 ejective coronal a initial s08 answer new 81.88 63.22 135.79 a 61.49 
+geo020s08a0061v02 burst 12.98 12.71 36.09 67.19 1.252824 1.356101 3_3389 k>a 3 ejective velar a medial s08 answer new 61.78 74.38 124.62 a 25.69 
+geo020s08a0062v01 burst 8.44 8.25 14.46 79.40 0.906672 1.001014 1_9284 t>a 3 ejective coronal a initial s08 question new 31.41 78.14 108.51 a 16.69 
+geo020s08a0062v01 burst 6.51 29.80 11.85 49.43 1.232734 1.294008 3_3998 k>a 3 ejective velar a medial s08 question new 48.15 54.11 95.65 a 36.31 
+geo020s08a0062v02 burst 52.33 0 0 0 0.746876 0.807296 1_1832 t>a 3 ejective coronal a initial s08 answer echo 58.89 66.50 111.42 a 52.33 
+geo020s08a0062v02 burst 10.60 13.32 9.68 69.68 1.048593 1.127958 3_2531 k>a 3 ejective velar a medial s08 answer echo 33.60 69.01 100.63 a 23.92 
+geo020s08a0063v01 burst 11.55 17.00 14.42 102.80 0.846787 0.964005 1_1379 p>i 2 ejective labial i initial s08 question new 42.97 100.51 143.94 i 28.55 
+geo020s08a0064v01 burst 3.82 17.32 17.21 78.50 0.745657 0.841372 1_9599 p>a 3 ejective labial a initial s08 question new 38.35 80.25 115.05 a 21.14 
+geo020s08a0064v01 lag 3.82 17.32 17.21 78.50 1.160837 1.191128 3_4576 t>i 3 ejective coronal i medial s08 question new 82.60 103.38 44.05 i 35.57 
+geo020s08a0064v02 burst 9.32 32.41 6.12 74.29 0.725460 0.805867 1_956 p>a 3 ejective labial a initial s08 answer echo 47.85 82.96 120.34 a 41.73 
+geo020s08a0064v02 burst 12.55 11.29 7.34 79.70 1.122124 1.209162 3_7869 t>i 3 ejective coronal i medial s08 answer echo 31.17 85.50 108.33 i 23.83 
+geo020s08a0065v01 burst 10.32 5.77 55.42 51.29 0.886834 0.993542 1_2440 k>a 2 ejective velar a initial s08 question new 71.51 75.12 120.96 a 16.09 
+geo020s08a0065v01 burst 11.12 0 55.42 0 1.089133 1.193841 2_7460 t>a 2 ejective coronal a medial s08 question new 115.83 84.47 115.83 a 11.12 
+geo020s08a0067v01 burst 12.15 22.97 17.00 57.36 0.934253 1.008616 1_9759 k>e 3 ejective velar e initial s08 question new 52.12 67.57 107.95 e 35.12 
+geo020s08a0067v02 burst 7.97 16.32 6.73 83.02 0.776765 0.866517 1_2635 p>a 3 ejective labial a initial s08 answer new 31.01 85.24 112.19 a 24.29 
+geo020s08a0068v01 burst 13.24 0 0 0 0.906922 1.007574 1_6302 p>a 3 ejective labial a initial s08 question new 45.30 81.11 111.78 a 13.24 
+geo020s08a0068v02 burst 11.49 0 0 0 0.649848 0.763737 1_2599 p>a 3 ejective labial a initial s08 answer echo 37.61 66.83 123.39 a 11.49 
+geo020s08a0069v02 burst 8.35 47.77 13.94 72.68 0.810492 0.897114 1_6961 p>a 2 ejective labial a initial s08 answer new 70.06 87.77 141.70 a 56.12 
+geo020s08a0070v01 burst 6.98 6.73 38.51 70.41 0.757015 0.865928 1_511 p>a 2 ejective labial a initial s08 question new 52.22 82.46 120.30 a 13.71 
+geo020s08a0070v02 burst 11.92 0 0 0 0.553052 0.650079 1_1181 p>a 2 ejective labial a initial s08 answer echo 31.38 78.82 106.77 a 11.92 
+geo020s08a0071v01 burst 15.08 21.66 20.06 59.98 0.913275 0.993317 1_6627 k>e 2 ejective velar e initial s08 question new 56.80 75.44 116.78 e 36.74 
+geo020s08a0073v01 burst 8.27 68.17 6.24 56.57 0.990266 1.053079 1_6208 po 2 pulmonic labial o initial s08 question new 56.80 97.52 139.26 o 76.45 
+geo020s08a0075v02 burst 12.77 7.42 43.47 44.74 0.797178 0.885384 1_568 k>a 3 ejective velar a initial s08 answer new 63.65 62.65 108.39 a 20.19 
+geo020s08a0075v02 burst 13.70 0 0 0 0.981636 1.058709 2_6417 p>e 3 ejective labial e medial s08 answer new 61.74 83.91 89.42 e 13.70 
+geo020s08a0076v01 burst 11.60 11.82 13.15 71.44 0.912944 0.997540 1_555 k>a 3 ejective velar a initial s08 question new 36.58 73.12 106.35 a 23.43 
+geo020s08a0076v01 burst 3.72 5.38 68.66 0 1.086098 1.154754 2_1513 p>e 3 ejective labial e medial s08 question new 208.57 79.46 77.75 e 9.10 
+geo020s08a0076v02 burst 9.35 21.91 8.31 68.91 0.680566 0.757786 1_8820 k>a 3 ejective velar a initial s08 answer echo 39.57 48.55 107.02 a 31.26 
+geo020s08a0076v02 burst 4.98 5.77 6.13 75.26 0.843416 0.924796 2_6363 p>e 3 ejective labial e medial s08 answer echo 16.87 76.48 90.53 e 10.75 
+geo020s08a0077v02 burst 10.09 6.70 29.08 75.60 0.719245 0.823924 1_5319 k>a 3 ejective velar a initial s08 answer new 45.87 52.19 119.17 a 16.79 
+geo020s08a0078v01 burst 11.26 10.29 34.02 55.67 0.876791 0.966477 1_6171 k>a 3 ejective velar a initial s08 question new 55.57 64.63 108.29 a 21.55 
+geo020s08a0078v02 burst 12.50 10.86 93.42 0 0.686988 0.780405 1_7445 k>a 3 ejective velar a initial s08 answer echo 116.77 71.23 114.68 a 23.35 
+geo020s08a0079v02 burst 6.73 20.84 5.64 46.75 1.009602 1.061994 2_9465 p>i 3 ejective labial i medial s08 answer new 33.21 82.68 78.76 i 27.57 
+geo020s08a0079v02 burst 9.61 0 0 0 1.167364 1.280926 3_2907 t>o 3 ejective coronal o medial s08 answer new 14.19 98.21 120.73 o 9.61 
+geo020s08a0080v01 burst 7.08 0 0 0 0.966183 1.015651 2_8629 p>i 3 ejective labial i medial s08 question new 14.28 93.08 53.80 i 7.08 
+geo020s08a0080v01 burst 16.43 11.56 50.76 0 1.113923 1.164686 3_5995 t>o 3 ejective coronal o medial s08 question new 78.76 70.28 78.76 o 27.99 
+geo020s08a0080v02 burst 5.16 6.87 13.18 43.80 0.953003 1.009989 2_7244 p>i 3 ejective labial i medial s08 answer echo 25.21 88.94 68.19 i 12.03 
+geo020s08a0080v02 burst 5.85 6.32 7.71 78.84 1.104246 1.190795 3_7696 t>o 3 ejective coronal o medial s08 answer echo 19.88 84.15 96.66 o 12.17 
+geo020s08a0081v01 burst 6.42 81.23 2.93 76.98 0.846129 0.926044 1_8059 to 2 pulmonic coronal o initial s08 question new 19.88 82.12 167.57 o 87.65 
+geo020s08a0081v01 burst 13.66 37.44 78.26 0 1.033597 1.111860 2_2997 k>i 2 ejective velar i medial s08 question new 129.37 58.55 127.26 i 51.11 
+geo020s08a0081v02 burst 4.15 10.73 21.92 78.90 0.791721 0.892535 1_8894 p>a 3 ejective labial a initial s08 answer new 36.80 65.52 113.35 a 14.88 
+geo020s08a0081v02 burst 15.19 44.78 8.90 55.56 1.022435 1.086900 2_5951 t>e 3 ejective coronal e medial s08 answer new 68.87 73.37 120.99 e 59.97 
+geo020s08a0082v01 burst 8.41 17.86 16.02 71.34 0.718814 0.806174 1_5963 p>a 3 ejective labial a initial s08 question new 42.29 70.20 111.80 a 26.27 
+geo020s08a0082v01 burst 11.80 5.16 26.95 66.03 0.889071 0.982048 2_3414 t>e 3 ejective coronal e medial s08 question new 43.91 68.21 107.67 e 16.96 
+geo020s08a0082v02 burst 6.59 17.72 23.25 70.36 0.769038 0.862648 1_9494 p>a 3 ejective labial a initial s08 answer echo 47.56 52.21 115.10 a 24.31 
+geo020s08a0082v02 burst 11.93 23.69 10.90 70.19 0.967491 1.048580 2_5254 t>e 3 ejective coronal e medial s08 answer echo 46.52 70.89 115.05 e 35.62 
+geo020s08a0083v02 burst 10.33 85.24 6.82 36.45 0.807401 0.850672 1_8464 pa 2 pulmonic labial a initial s08 answer new 46.52 85.55 138.85 a 95.57 
+geo020s08a0083v02 burst 8.96 63.33 9.12 73.76 1.014856 1.097737 2_3162 pa 2 pulmonic labial a medial s08 answer new 46.52 91.89 155.17 a 72.29 
+geo020s08a0084v01 burst 6.06 55.76 2.52 52.54 0.762268 0.817321 1_7170 pa 2 pulmonic labial a initial s08 question new 46.52 68.10 116.88 a 61.83 
+geo020s08a0084v01 burst 6.49 18.71 69.52 0 0.916158 0.985680 2_2931 pa 2 pulmonic labial a medial s08 question new 46.52 73.63 94.73 a 25.20 
+geo020s08a0084v02 burst 6.23 58.31 62.96 0 0.726832 0.790786 1_3687 pa 2 pulmonic labial a initial s08 answer echo 46.52 76.71 127.51 a 63.55 
+geo020s08a0084v02 burst 5.27 70.78 7.29 56.62 0.958173 1.022084 2_8258 pa 2 pulmonic labial a medial s08 answer echo 46.52 91.33 139.96 a 76.05 
+geo020s08a0085v01 burst 13.25 14.23 41.75 98.91 0.811443 0.952105 1_6821 t>a 3 ejective coronal a initial s08 question new 69.24 71.40 165.93 a 27.49 
+geo020s08a0085v02 burst 5.99 67.44 6.67 59.42 0.843822 0.909904 1_3752 pa 2 pulmonic labial a initial s08 answer new 69.24 76.81 139.52 a 73.44 
+geo020s08a0085v02 burst 3.79 60.28 5.32 94.04 1.064686 1.164040 2_9002 pa 2 pulmonic labial a medial s08 answer new 69.24 90.71 163.43 a 64.07 
+geo020s08a0086v01 burst 5.76 43.60 7.36 64.88 0.674108 0.746346 1_1255 pa 2 pulmonic labial a initial s08 question new 69.24 69.16 121.61 a 49.37 
+geo020s08a0086v01 burst 4.92 18.44 71.17 0 0.854503 0.925671 2_7558 pa 2 pulmonic labial a medial s08 question new 69.24 84.80 94.52 a 23.36 
+geo020s08a0086v02 burst 8.62 44.46 10.04 71.11 0.763011 0.844152 1_3760 pa 2 pulmonic labial a initial s08 answer echo 69.24 92.28 134.22 a 53.08 
+geo020s08a0086v02 burst 6.93 48.51 10.04 65.42 0.984812 1.060267 2_9314 pa 2 pulmonic labial a medial s08 answer echo 69.24 85.22 130.89 a 55.44 
+geo020s08a0087v01 burst 18.34 0 0 0 0.985973 1.091383 1_8209 p>a 3 ejective labial a initial s08 question new 68.44 84.53 121.06 a 18.34 
+geo020s08a0087v01 burst 18.24 47.81 45.86 0 1.442189 1.488050 3_1023 k>i 3 ejective velar i medial s08 question new 111.90 69.50 111.90 i 66.04 
+geo020s08a0087v02 burst 15.12 12.51 31.54 68.60 1.151875 1.252008 2_1318 t>i 3 ejective coronal i medial s08 answer new 59.17 78.84 123.97 i 27.63 
+geo020s08a0088v01 burst 14.82 5.06 11.29 58.75 1.019576 1.089612 2_7437 t>i 3 ejective coronal i medial s08 question new 31.17 59.30 86.91 i 19.88 
+geo020s08a0088v02 burst 15.69 7.73 31.77 55.84 0.912151 0.999756 2_3317 t>i 3 ejective coronal i medial s08 answer echo 55.19 77.71 107.90 i 23.42 
+geo020s08a0089v01 burst 8.55 27.69 15.49 74.17 1.161346 1.251009 1_8630 p>e 2 ejective labial e initial s08 question new 51.73 74.55 125.91 e 36.24 
+geo020s08a0093v01 burst 12.79 12.13 16.10 79.95 0.845900 0.941954 1_3420 k>a 3 ejective velar a initial s08 question new 41.02 63.54 119.26 a 24.92 
+geo020s08a0095v02 burst 12.51 42.13 24.18 47.64 0.705759 0.799640 1_8158 t>a 2 ejective coronal a initial s08 answer new 78.82 64.19 146.56 a 54.65 
+geo020s08a0096v01 burst 16.69 0 0 0 0.776145 0.861968 1_5853 t>a 2 ejective coronal a initial s08 question new 51.60 72.65 100.89 a 16.69 
+geo020s08a0096v02 burst 11.22 24.27 86.74 0 0.776848 0.863584 1_2048 t>a 2 ejective coronal a initial s08 answer echo 67.51 65.05 119.13 a 35.50 
+geo020s08a0097v01 burst 7.93 18.97 6.56 70.70 0.839097 0.916353 1_4141 p>e 3 ejective labial e initial s08 question new 33.46 83.59 102.76 e 26.90 
+geo020s08a0097v02 burst 8.83 45.74 11.94 75.79 0.680152 0.767884 1_9251 p>a 3 ejective labial a initial s08 answer new 66.51 68.01 139.96 a 54.56 
+geo020s08a0097v02 burst 18.30 10.66 6.05 100.58 0.991928 1.098557 3_7069 k>a 3 ejective velar a medial s08 answer new 43.78 69.41 126.08 a 28.96 
+geo020s08a0098v01 burst 5.90 19.43 37.24 74.02 0.795422 0.906689 1_4321 p>a 3 ejective labial a initial s08 question new 62.57 72.99 136.60 a 25.33 
+geo020s08a0098v01 burst 26.33 0 37.24 0 1.098088 1.187320 3_8403 k>a 3 ejective velar a medial s08 question new 115.56 58.56 103.81 a 26.33 
+geo020s08a0098v02 burst 7.85 53.97 5.95 64.71 0.735623 0.806280 1_1749 p>a 3 ejective labial a initial s08 answer echo 67.77 71.86 129.47 a 61.82 
+geo020s08a0098v02 burst 25.43 6.69 5.17 85.97 1.017190 1.108333 3_9437 k>a 3 ejective velar a medial s08 answer echo 37.30 71.19 108.49 a 32.13 
+geo020s08a0099v01 burst 7.26 88.93 82.98 0 1.086953 1.169933 1_9982 pu 2 pulmonic labial u initial s08 question new 37.30 107.80 179.17 u 96.19 
+geo020s08a0101v02 burst 12.46 8.67 23.85 72.07 0.776443 0.872361 1_2311 k>e 2 ejective velar e initial s08 answer new 44.99 58.47 117.05 e 21.13 
+geo020s08a0102v01 burst 13.24 7.57 14.25 70.55 0.917676 1.002482 1_2058 k>e 2 ejective velar e initial s08 question new 35.06 73.96 103.02 e 20.81 
+geo020s08a0102v02 burst 14.16 51.44 17.43 40.74 0.835325 0.893486 1_6551 k>e 2 ejective velar e initial s08 answer echo 83.02 75.77 122.16 e 65.59 
+geo020s08a0105v01 burst 6.26 82.31 4.72 58.40 0.942764 1.005891 1_2437 pa 2 pulmonic labial a initial s08 question new 83.02 78.18 151.69 a 88.56 
+geo020s08a0105v01 burst 8.43 50.11 96.16 0 1.139599 1.235759 2_4688 pa 2 pulmonic labial a medial s08 question new 83.02 75.17 154.70 a 58.54 
+geo020s08a0105v02 burst 5.21 102.37 6.43 67.03 1.071435 1.144891 1_7010 te 3 pulmonic coronal e initial s08 answer new 83.02 69.84 181.04 e 107.58 
+geo020s08a0106v01 burst 8.91 80.25 6.31 61.44 0.905286 0.973033 1_8680 te 3 pulmonic coronal e initial s08 question new 83.02 73.05 156.90 e 89.16 
+geo020s08a0106v02 burst 7.17 86.02 5.12 63.33 0.728950 0.797397 1_4639 te 3 pulmonic coronal e initial s08 answer echo 83.02 68.93 161.64 e 93.19 
+geo020s08a0107v01 burst 8.21 15.38 46.02 62.30 0.836923 0.945250 1_2684 p>a 2 ejective labial a initial s08 question new 69.60 65.20 128.65 a 23.58 
+geo020s08a0107v01 burst 9.47 39.23 100.22 0 1.076758 1.176979 2_3262 p>a 2 ejective labial a medial s08 question new 148.92 85.31 146.42 a 48.70 
+geo020s08a0108v01 burst 14.75 7.15 41.42 52.89 0.953045 1.047360 1_941 t>i 2 ejective coronal i initial s08 question new 63.32 65.29 113.87 i 21.90 
+geo020s08a0108v02 burst 15.91 14.39 42.93 64.58 0.816586 0.924095 1_3612 t>i 2 ejective coronal i initial s08 answer echo 73.23 84.21 134.53 i 30.29 
+geo020s08a0111v02 burst 15.30 47.12 20.46 111.97 0.842899 0.975322 1_4407 t>a 2 ejective coronal a initial s08 answer new 82.88 83.83 189.73 a 62.42 
+geo020s08a0112v01 burst 14.28 6.33 37.77 96.97 0.952441 1.087190 1_3596 t>a 2 ejective coronal a initial s08 question new 58.39 77.22 152.36 a 20.62 
+geo020s08a0112v02 burst 39.68 25.73 13.55 99.81 0.763019 0.876376 1_7759 t>a 2 ejective coronal a initial s08 answer echo 78.97 71.47 176.91 a 65.41 
+geo020s08a0113v01 burst 5.58 26.08 3.14 51.53 1.022670 1.077332 1_7334 p>i 3 ejective labial i initial s08 question new 34.80 86.01 83.16 i 31.67 
+geo020s08a0115v01 burst 10.28 57.30 10.54 65.84 1.085865 1.162241 1_1316 pa 3 pulmonic labial a initial s08 question new 34.80 67.02 143.96 a 67.58 
+geo020s08a0115v01 burst 26.62 8.23 103.70 0 1.477963 1.581659 3_5862 t>i 3 ejective coronal i medial s08 question new 138.55 67.35 138.55 i 34.85 
+geo020s08a0115v02 burst 8.35 29.81 17.16 75.58 0.761158 0.853904 1_5893 p>a 3 ejective labial a initial s08 answer new 55.32 73.33 127.89 a 38.16 
+geo020s08a0116v01 burst 4.60 18.81 8.68 83.11 0.865633 0.957425 1_2182 p>a 3 ejective labial a initial s08 question new 32.08 59.87 115.20 a 23.41 
+geo020s08a0116v02 burst 8.12 36.74 8.79 69.27 0.759540 0.837602 1_5522 p>a 3 ejective labial a initial s08 answer echo 53.64 63.35 122.91 a 44.85 
+geo020s08a0118v01 burst 9.51 38.36 33.95 0 1.188486 1.222435 2_4696 k>i 2 ejective velar i medial s08 question new 81.82 63.60 81.82 i 47.87 
+geo020s08a0118v02 burst 16.07 19.99 10.81 58.95 0.969701 1.039458 2_7774 k>i 2 ejective velar i medial s08 answer echo 46.87 64.69 105.82 i 36.06 
+geo020s08a0119v01 burst 7.47 34.35 22.52 110.94 1.007268 1.140734 1_9232 p>a 3 ejective labial a initial s08 question new 64.34 69.71 172.56 a 41.81 
+geo020s08a0119v02 burst 13.36 60.66 73.64 0 0.836087 0.909731 1_3112 pa 3 pulmonic labial a initial s08 answer new 64.34 74.85 147.67 a 74.02 
+geo020s08a0119v02 burst 6.00 45.93 9.10 80.67 1.030516 1.120280 2_8248 pu 3 pulmonic labial u medial s08 answer new 64.34 68.85 141.70 u 51.93 
+geo020s08a0119v02 burst 14.42 13.20 13.60 91.62 1.185357 1.290577 3_3903 k>i 3 ejective velar i medial s08 answer new 41.22 41.72 128.58 i 27.62 
+geo020s08a0120v01 burst 8.19 56.30 8.17 60.31 0.718978 0.787455 1_3453 pa 3 pulmonic labial a initial s08 question new 41.22 66.27 132.97 a 64.49 
+geo020s08a0120v01 burst 11.08 32.07 8.41 72.58 0.907703 0.988689 2_1345 pu 3 pulmonic labial u medial s08 question new 41.22 77.10 124.14 u 43.15 
+geo020s08a0120v01 creak 11.08 32.07 8.41 72.58 0.907703 1.086317 3_9043 k>i 3 ejective velar i medial s08 question new 46.01 41.75 55.88  -122.74 
+geo020s08a0120v02 burst 8.32 55.22 9.03 53.63 0.660266 0.722921 1_4501 pa 3 pulmonic labial a initial s08 answer echo 46.01 71.77 126.19 a 63.54 
+geo020s08a0120v02 burst 6.09 45.36 38.06 0 0.878743 0.916801 2_7222 pu 3 pulmonic labial u medial s08 answer echo 46.01 104.37 89.51 u 51.45 
+geo020s08a0120v02 creak 6.09 45.36 38.06 0 0.878743 1.108640 3_9183 k>i 3 ejective velar i medial s08 answer echo 36.59 98.25 93.59  -133.18 
+geo020s08a0121v01 burst 15.30 9.36 46.13 97.61 0.955389 1.099132 1_5151 t>a 2 ejective coronal a initial s08 question new 70.79 74.32 165.27 a 24.66 
+geo020s08a0125v02 burst 9.18 0 0 0 1.032381 1.158929 2_9895 pa 2 pulmonic labial a medial s08 answer new 70.79 95.51 135.73 a 9.18 
+geo020s08a0127v01 burst 6.85 63.30 6.32 62.37 0.925519 0.994207 1_7560 po 2 pulmonic labial o initial s08 question new 70.79 84.89 138.83 o 70.15 
+geo020s08a0127v01 burst 8.77 11.06 87.86 0 1.085322 1.173183 2_9376 t>o 2 ejective coronal o medial s08 question new 107.69 73.46 105.52 o 19.83 
+geo020s08a0127v02 burst 7.94 41.24 11.75 73.94 0.662822 0.748508 1_2633 p>a 3 ejective labial a initial s08 answer new 60.93 60.16 133.77 a 49.18 
+geo020s08a0127v02 double burst 7.94 41.24 11.75 73.94 0.862906 0.965883 2_3614 t>a 3 ejective coronal a medial s08 answer new 61.38 62.88 154.50 a 54.29 
+geo020s08a0128v01 burst 5.58 23.92 6.13 82.99 0.759740 0.848858 1_9244 p>a 3 ejective labial a initial s08 question new 35.63 53.09 117.03 a 29.50 
+geo020s08a0128v01 burst 7.66 10.64 15.86 84.68 0.927392 1.027929 2_1935 t>a 3 ejective coronal a medial s08 question new 34.16 61.91 117.16 a 18.30 
+geo020s08a0128v02 burst 4.38 16.52 0 94.55 0.776296 0.874722 1_7261 p>a 3 ejective labial a initial s08 answer echo 24.77 55.30 116.75 a 20.90 
+geo020s08a0128v02 burst 10.85 35.49 11.31 82.00 0.979035 1.072345 2_2079 t>a 3 ejective coronal a medial s08 answer echo 57.65 59.82 137.80 a 46.34 
+geo020s08a0129v01 burst 13.93 6.68 24.84 90.09 1.149406 1.264336 1_8425 t>a 3 ejective coronal a initial s08 question new 45.45 71.76 132.49 a 20.61 
+geo020s08a0133v01 burst 8.33 15.14 48.52 55.34 0.898013 1.001877 1_6765 p>a 2 ejective labial a initial s08 question new 72.00 82.13 124.65 a 23.48 
+geo020s08a0135v02 burst 11.71 81.90 9.88 52.56 0.835656 0.898096 1_2136 ke 2 pulmonic velar e initial s08 answer new 72.00 65.49 156.05 e 93.61 
+geo020s08a0136v01 burst 13.95 67.28 10.63 52.27 0.889421 0.952324 1_2356 ke 2 pulmonic velar e initial s08 question new 72.00 78.09 144.13 e 81.23 
+geo020s08a0136v02 burst 9.65 81.80 14.63 53.29 0.873058 0.940969 1_3572 ke 2 pulmonic velar e initial s08 answer echo 72.00 56.70 159.36 e 91.45 
+geo020s08a0137v01 burst 6.73 15.99 10.35 86.35 0.804708 0.901406 1_3382 p>a 3 ejective labial a initial s08 question new 33.07 72.48 117.64 a 22.72 
+geo020s08a0137v01 burst 10.11 25.53 17.04 63.23 0.998286 1.078564 2_9106 k>e 3 ejective velar e medial s08 question new 52.68 63.23 113.92 e 35.63 
+geo020s08a0137v01 burst 13.29 7.76 100.17 0 1.164193 1.264364 3_825 t>i 3 ejective coronal i medial s08 question new 121.22 67.36 118.44 i 21.05 
+geo020s08a0139v01 burst 16.58 17.21 33.15 63.42 0.965593 1.062159 1_6641 t>e 2 ejective coronal e initial s08 question new 66.93 104.01 126.89 e 33.78 
+geo020s08a0141v01 burst 8.45 51.75 5.93 71.46 0.883973 0.961358 1_1061 pa 2 pulmonic labial a initial s08 question new 66.93 68.00 137.59 a 60.21 
+geo020s08a0141v02 burst 13.50 44.82 4.03 61.34 0.780363 0.845729 1_3118 k>a 2 ejective velar a initial s08 answer new 62.35 51.92 121.74 a 58.32 
+geo020s08a0142v01 burst 12.47 9.06 27.35 55.99 0.901508 0.984848 1_6351 k>a 2 ejective velar a initial s08 question new 48.88 49.70 103.16 a 21.53 
+geo020s08a0142v02 burst 11.55 25.16 6.96 78.57 0.781154 0.866682 1_970 k>a 2 ejective velar a initial s08 answer echo 43.67 47.69 119.12 a 36.72 
+geo020s08a0143v02 burst 13.07 9.69 39.58 104.27 0.792841 0.936686 1_8238 k>a 3 ejective velar a initial s08 answer new 62.34 58.23 164.02 a 22.77 
+geo020s08a0144v01 burst 14.72 40.38 8.32 81.84 0.848448 0.938617 1_1343 k>a 3 ejective velar a initial s08 question new 63.43 71.00 143.67 a 55.11 
+geo020s08a0144v02 burst 13.51 7.97 30.89 86.89 0.713152 0.830927 1_7427 k>a 3 ejective velar a initial s08 answer echo 52.37 50.92 135.76 a 21.48 
+geo020s08a0145v01  13.51 7.97 30.89 86.89 1.080930 1.160535 2_5023 t>i 3 ejective coronal i medial s08 question new 19.90 94.82 77.72 i 1080.93 
+geo020s08a0145v01  13.51 7.97 30.89 86.89 1.080930 1.335606 3_6979 k>a 3 ejective velar a medial s08 question new 79.29 63.47 111.60 i 1080.93 
+geo020s08a0145v02  13.51 7.97 30.89 86.89 1.130582 1.246383 2_2033 k>a 2 ejective velar a medial s08 answer new 35.30 73.75 140.74 a 1130.58 
+geo020s08a0146v01  13.51 7.97 30.89 86.89 1.464685 1.531519 2_1108 k>a 2 ejective velar a medial s08 question new 108.89 66.77 107.51 a 1464.69 
+geo020s08a0146v02  13.51 7.97 30.89 86.89 1.049329 1.182750 2_6261 k>a 2 ejective velar a medial s08 answer echo 58.36 55.54 155.29 a 1049.33 
+geo020s08a0148v01  13.51 7.97 30.89 86.89 0.866982 0.948630 1_5440 t>e 2 ejective coronal e initial s08 question new 99.89 75.63 97.30 e 866.98 
+geo020s08a0148v02  13.51 7.97 30.89 86.89 0.792632 0.850289 1_9131 t>e 2 ejective coronal e initial s08 answer echo 109.65 75.38 104.76 e 792.63 
+geo020s08a0149v01  13.51 7.97 30.89 86.89 0.932391 1.076016 1_9766 t>a 2 ejective coronal a initial s08 question new 49.24 84.75 159.07 a 932.39 
+geo020s08a0153v02  13.51 7.97 30.89 86.89 0.816805 0.901628 1_9471 k>a 3 ejective velar a initial s08 answer new 80.22 55.77 141.90 a 816.81 
+geo020s08a0153v02  13.51 7.97 30.89 86.89 0.816805 1.127705 2_3350 k>a 3 ejective velar a medial s08 answer new 68.91 74.35 151.72 a 816.81 
+geo020s08a0154v01  13.51 7.97 30.89 86.89 0.780429 0.875638 1_4895 k>a 3 ejective velar a initial s08 question new 42.47 48.76 120.71 a 780.43 
+geo020s08a0154v01  13.51 7.97 30.89 86.89 0.780429 1.045225 2_6606 k>a 3 ejective velar a medial s08 question new 40.91 60.21 109.37 a 780.43 
+geo020s08a0154v02  13.51 7.97 30.89 86.89 0.751737 0.827015 1_4399 k>a 3 ejective velar a initial s08 answer echo 76.00 53.93 135.97 a 751.74 
+geo020s08a0154v02  13.51 7.97 30.89 86.89 0.751737 1.021238 2_8343 k>a 3 ejective velar a medial s08 answer echo 58.11 68.11 126.11 a 751.74 
+geo020s08a0155v02  13.51 7.97 30.89 86.89 0.796672 0.870754 1_2610 k>a 3 ejective velar a initial s08 answer new 76.54 59.21 129.41 a 796.67 
+geo020s08a0156v01  13.51 7.97 30.89 86.89 0.897860 0.995239 1_1350 k>a 3 ejective velar a initial s08 question new 59.32 67.79 122.13 a 897.86 
+geo020s08a0156v02  13.51 7.97 30.89 86.89 0.690873 0.757918 1_6080 k>a 3 ejective velar a initial s08 answer echo 33.07 55.45 94.40 a 690.87 
+geo020s08a0157v01 erreur 13.51 7.97 30.89 86.89 0.684717 0.752339 1_4058 po 3 pulmonic labial o initial s08 question new 33.07 84.50 132.29 o 684.72 
+geo020s08a0158v01  13.51 7.97 30.89 86.89 0.982223 1.085538 1_745 p>a 2 ejective labial a initial s08 question new 59.25 63.56 115.44 a 982.22 
+geo020s08a0158v02  13.51 7.97 30.89 86.89 0.791441 0.877830 1_7000 p>a 2 ejective labial a initial s08 answer echo 80.58 73.91 147.06 a 791.44 
+geo020s08a0159v01  13.51 7.97 30.89 86.89 1.107733 1.205779 1_893 t>i 3 ejective coronal i initial s08 question new 62.50 81.67 123.37 i 1107.73 
+geo020s08a0159v01  13.51 7.97 30.89 86.89 1.107733 1.383310 2_2181 t>u 3 ejective coronal u medial s08 question new 28.55 65.87 111.66 i 1107.73 
+geo020s08a0161v02  13.51 7.97 30.89 86.89 0.839292 0.889621 1_9907 k>e 2 ejective velar e initial s08 answer new 62.41 47.88 104.56 e 839.29 
+geo020s08a0162v01  13.51 7.97 30.89 86.89 1.036419 1.127397 1_9599 k>e 2 ejective velar e initial s08 question new 51.23 59.78 114.08 e 1036.42 
+geo020s08a0162v02  13.51 7.97 30.89 86.89 0.719802 0.785292 1_9500 k>e 2 ejective velar e initial s08 answer echo 61.55 44.26 109.55 e 719.80 
+geo020s08a0163v01  13.51 7.97 30.89 86.89 0.933621 1.011676 1_473 p>i 3 ejective labial i initial s08 question new 38.40 74.21 95.47 i 933.62 
+geo020s08a0163v01  13.51 7.97 30.89 86.89 0.933621 1.360873 3_4279 t>i 3 ejective coronal i medial s08 question new 113.90 73.38 111.83 i 933.62 
+geo020s08a0167v01  13.51 7.97 30.89 86.89 1.016477 1.108056 1_7225 k>a 3 ejective velar a initial s08 question new 40.04 62.05 124.11 a 1016.48 
+geo020s08a0167v01  13.51 7.97 30.89 86.89 1.016477 1.282431 2_4422 k>a 3 ejective velar a medial s08 question new 31.63 61.41 112.97 a 1016.48 
+geo020s08a0169v02  13.51 7.97 30.89 86.89 0.900628 1.001719 2_1849 t>a 3 ejective coronal a medial s08 answer new 45.34 83.79 116.21 a 900.63 
+geo020s08a0170v01  13.51 7.97 30.89 86.89 1.011709 1.113280 2_2839 t>a 3 ejective coronal a medial s08 question new 49.49 70.75 113.02 a 1011.71 
+geo020s08a0170v02  13.51 7.97 30.89 86.89 0.899585 1.007821 2_2248 t>a 3 ejective coronal a medial s08 answer echo 46.82 74.41 119.45 a 899.58 
+geo020s08a0173v02  13.51 7.97 30.89 86.89 0.787475 0.863989 1_4943 k>a 3 ejective velar a initial s08 answer new 61.45 61.03 137.09 a 787.48 
+geo020s08a0173v02  13.51 7.97 30.89 86.89 0.787475 1.052675 2_6565 k>a 3 ejective velar a medial s08 answer new 75.51 69.11 119.57 a 787.48 
+geo020s08a0174v01  13.51 7.97 30.89 86.89 0.936470 1.028588 1_8683 k>a 3 ejective velar a initial s08 question new 34.57 71.17 113.70 a 936.47 
+geo020s08a0174v01  13.51 7.97 30.89 86.89 0.936470 1.168990 2_787 k>a 3 ejective velar a medial s08 question new 79.78 62.19 78.21 a 936.47 
+geo020s08a0174v02  13.51 7.97 30.89 86.89 0.590235 0.710926 1_8198 k>a 3 ejective velar a initial s08 answer echo 41.29 57.26 133.07 a 590.23 
+geo020s08a0174v02  13.51 7.97 30.89 86.89 0.590235 0.903471 2_9662 k>a 3 ejective velar a medial s08 answer echo 60.85 62.60 129.94 a 590.23 
+geo020s08a0175v01  13.51 7.97 30.89 86.89 0.677358 0.811490 1_9107 t>e 3 ejective coronal e initial s08 question new 60.51 62.88 152.84 e 677.36 
+geo020s08a0179v02  13.51 7.97 30.89 86.89 0.950958 1.062917 2_702 p>i 2 ejective labial i medial s08 answer new 143.78 83.04 142.52 i 950.96 
+geo020s08a0180v01  13.51 7.97 30.89 86.89 1.116582 1.159434 2_4151 p>i 2 ejective labial i medial s08 question new 65.70 81.86 64.60 i 1116.58 
+geo020s08a0180v02  13.51 7.97 30.89 86.89 0.911367 0.996323 2_6585 p>i 2 ejective labial i medial s08 answer echo 36.84 80.89 110.13 i 911.37 
+geo020s08a0181v01  13.51 7.97 30.89 86.89 0.820858 0.874414 1_9151 t>a 2 ejective coronal a initial s08 question new 59.40 66.65 98.46 a 820.86 
+geo020s08a0181v02  13.51 7.97 30.89 86.89 0.866651 0.964109 1_6563 k>a 2 ejective velar a initial s08 answer new 93.91 70.89 149.68 a 866.65 
+geo020s08a0182v01  13.51 7.97 30.89 86.89 0.896308 1.036832 1_1061 k>a 2 ejective velar a initial s08 question new 74.36 56.01 156.62 a 896.31 
+geo020s08a0182v02  13.51 7.97 30.89 86.89 0.834781 0.927876 1_8156 k>a 2 ejective velar a initial s08 answer echo 70.68 102.67 132.09 a 834.78 
+geo020s08a0183v02  13.51 7.97 30.89 86.89 0.771235 0.855101 1_4309 t>e 2 ejective coronal e initial s08 answer new 44.85 82.84 118.37 e 771.23 
+geo020s08a0184v01  13.51 7.97 30.89 86.89 0.804789 0.878858 1_9935 t>e 2 ejective coronal e initial s08 question new 49.38 78.40 92.81 e 804.79 
+geo020s08a0184v02  13.51 7.97 30.89 86.89 0.581973 0.661158 1_562 t>e 2 ejective coronal e initial s08 answer echo 47.31 61.40 99.04 e 581.97 
+geo020s08a0189v01 erreur 13.51 7.97 30.89 86.89 0.958840 1.026723 1_3041 ko 3 pulmonic velar o initial s08 question new 47.31 77.15 145.14 o 958.84 
+geo020s08a0189v02  13.51 7.97 30.89 86.89 0.733851 0.831325 1_8769 t>o 2 ejective coronal o initial s08 answer new 67.95 77.53 130.25 o 733.85 
+geo020s08a0190v01  13.51 7.97 30.89 86.89 0.735992 0.830691 1_3279 t>o 2 ejective coronal o initial s08 question new 56.30 76.29 108.41 o 735.99 
+geo020s08a0190v02  13.51 7.97 30.89 86.89 0.714938 0.805996 1_6319 t>o 2 ejective coronal o initial s08 answer echo 49.88 73.42 108.03 o 714.94 
+geo020s08a0191v02  13.51 7.97 30.89 86.89 0.777134 0.835588 1_1354 p>a 2 ejective labial a initial s08 answer new 98.53 70.14 129.50 a 777.13 
+geo020s08a0191v02 erreur 13.51 7.97 30.89 86.89 0.777134 1.074795 2_4306 pi 2 pulmonic labial i medial s08 answer new 98.53 94.77 144.43 a 777.13 
+geo020s08a0192v01  13.51 7.97 30.89 86.89 0.821661 0.920889 1_958 p>a 2 ejective labial a initial s08 question new 56.94 70.36 113.05 a 821.66 
+geo020s08a0192v01 erreur 13.51 7.97 30.89 86.89 0.821661 1.091675 2_8456 pi 2 pulmonic labial i medial s08 question new 56.94 84.67 86.12 a 821.66 
+geo020s08a0192v02  13.51 7.97 30.89 86.89 0.677009 0.745204 1_6020 p>a 2 ejective labial a initial s08 answer echo 56.76 75.00 111.98 a 677.01 
+geo020s08a0192v02 erreur 13.51 7.97 30.89 86.89 0.677009 0.961605 2_2834 pi 2 pulmonic labial i medial s08 answer echo 56.76 85.74 130.66 a 677.01 
+geo020s08a0193v01  13.51 7.97 30.89 86.89 1.208680 1.292176 3_9097 t>i 3 ejective coronal i medial s08 question new 101.02 86.58 83.37 i 1208.68 
+geo020s08a0193v02  13.51 7.97 30.89 86.89 0.715310 0.775866 1_5547 p>a 3 ejective labial a initial s08 answer new 62.27 75.10 110.93 a 715.31 
+geo020s08a0193v02  13.51 7.97 30.89 86.89 0.715310 0.968964 2_730 t>a 3 ejective coronal a medial s08 answer new 37.56 62.42 130.67 a 715.31 
+geo020s08a0194v01  13.51 7.97 30.89 86.89 0.737812 0.818327 1_9025 p>a 3 ejective labial a initial s08 question new 26.98 80.32 79.98 a 737.81 
+geo020s08a0194v01  13.51 7.97 30.89 86.89 0.737812 1.005606 2_8265 t>a 3 ejective coronal a medial s08 question new 42.73 71.84 115.43 a 737.81 
+geo020s08a0194v02  13.51 7.97 30.89 86.89 0.661479 0.749292 1_5753 p>a 3 ejective labial a initial s08 answer echo 39.55 57.32 99.83 a 661.48 
+geo020s08a0194v02  13.51 7.97 30.89 86.89 0.661479 0.915746 2_6024 t>a 3 ejective coronal a medial s08 answer echo 55.50 63.86 102.60 a 661.48 
+geo020s08a0195v01  13.51 7.97 30.89 86.89 0.897753 0.999470 1_6551 t>a 3 ejective coronal a initial s08 question new 59.68 76.94 120.05 a 897.75 
+geo020s08a0195v01  13.51 7.97 30.89 86.89 0.897753 1.340280 3_2095 k>a 3 ejective velar a medial s08 question new 108.09 58.47 105.33 a 897.75 
+geo020s08a0197v01  13.51 7.97 30.89 86.89 0.946398 1.043110 1_7085 p>a 3 ejective labial a initial s08 question new 36.11 78.48 117.36 a 946.40 
+geo020s08a0197v01  13.51 7.97 30.89 86.89 0.946398 1.385299 3_7701 t>i 3 ejective coronal i medial s08 question new 80.82 53.74 78.03 a 946.40 
+geo020s08a0197v02  13.51 7.97 30.89 86.89 0.907261 1.008466 1_2622 p>i 2 ejective labial i initial s08 answer new 79.58 80.91 165.10 i 907.26 
+geo020s08a0198v01  13.51 7.97 30.89 86.89 0.955473 1.032742 1_1517 p>i 2 ejective labial i initial s08 question new 60.57 69.04 108.56 i 955.47 
+geo020s08a0198v02  13.51 7.97 30.89 86.89 0.750321 0.855222 1_1338 p>i 2 ejective labial i initial s08 answer echo 50.61 82.34 127.46 i 750.32 
+geo020s08a0199v02  13.51 7.97 30.89 86.89 0.774253 0.836280 1_336 k>a 2 ejective velar a initial s08 answer new 62.04 56.30 112.95 a 774.25 
+geo020s08a0199v02  13.51 7.97 30.89 86.89 0.774253 1.052374 2_7548 t>a 2 ejective coronal a medial s08 answer new 29.10 90.06 126.03 a 774.25 
+geo020s08a0200v01  13.51 7.97 30.89 86.89 0.781006 0.875778 1_9028 k>a 2 ejective velar a initial s08 question new 44.77 61.02 108.15 a 781.01 
+geo020s08a0200v01  13.51 7.97 30.89 86.89 0.781006 1.034523 2_440 t>a 2 ejective coronal a medial s08 question new 92.52 67.65 91.10 a 781.01 
+geo020s08a0200v02  13.51 7.97 30.89 86.89 0.676194 0.762376 1_3926 k>a 2 ejective velar a initial s08 answer echo 64.74 50.99 104.94 a 676.19 
+geo020s08a0200v02  13.51 7.97 30.89 86.89 0.676194 0.964521 2_5978 t>a 2 ejective coronal a medial s08 answer echo 33.27 82.74 119.41 a 676.19 
+geo020s08a0201v01  13.51 7.97 30.89 86.89 0.871089 0.980646 1_9140 p>a 3 ejective labial a initial s08 question new 55.60 75.20 123.02 a 871.09 
+geo020s08a0202v01  13.51 7.97 30.89 86.89 0.780873 0.875317 1_4237 k>e 3 ejective velar e initial s08 question new 64.76 61.38 117.13 e 780.87 
+geo020s08a0202v02  13.51 7.97 30.89 86.89 0.628763 0.709782 1_9475 k>e 3 ejective velar e initial s08 answer echo 26.12 50.01 97.03 e 628.76 
+geo020s08a0203v01  13.51 7.97 30.89 86.89 0.773978 0.881949 1_5992 p>a 2 ejective labial a initial s08 question new 35.68 65.27 123.52 a 773.98 
+geo020s08a0205v02  13.51 7.97 30.89 86.89 0.916000 0.973654 1_2056 k>e 2 ejective velar e initial s08 answer new 78.40 84.97 123.59 e 916.00 
+geo020s08a0206v01  13.51 7.97 30.89 86.89 0.952497 1.031244 1_7389 k>e 2 ejective velar e initial s08 question new 41.35 75.81 95.34 e 952.50 
+geo020s08a0206v02  13.51 7.97 30.89 86.89 0.739675 0.802975 1_6935 k>e 2 ejective velar e initial s08 answer echo 53.08 76.64 105.61 e 739.68 
+geo020s08a0207v02 erreur 13.51 7.97 30.89 86.89 0.795195 0.857644 1_6400 po 2 pulmonic labial o initial s08 answer new 53.08 82.56 117.96 o 795.20 
+geo020s08a0208v01 erreur 13.51 7.97 30.89 86.89 1.079626 1.131280 1_1215 po 2 pulmonic labial o initial s08 question new 53.08 79.09 103.31 o 1079.63 
+geo020s08a0208v02 erreur 13.51 7.97 30.89 86.89 0.669727 0.726709 1_8505 po 2 pulmonic labial o initial s08 answer echo 53.08 111.85 115.68 o 669.73 
+geo020s08a0209v01  13.51 7.97 30.89 86.89 0.720331 0.809213 1_8202 k>a 3 ejective velar a initial s08 question new 48.81 58.73 115.86 a 720.33 
+geo020s08a0209v01  13.51 7.97 30.89 86.89 0.720331 0.982052 2_1221 p>e 3 ejective labial e medial s08 question new 59.95 77.53 95.31 a 720.33 
+geo020s08a0211v01  13.51 7.97 30.89 86.89 0.871483 0.951319 1_9263 k>a 3 ejective velar a initial s08 question new 51.03 48.94 105.13 a 871.48 
+geo020s08a0213v01  13.51 7.97 30.89 86.89 1.251486 1.299251 2_9784 p>i 3 ejective labial i medial s08 question new 77.07 71.31 75.43 i 1251.49 
+geo020s08a0213v01  13.51 7.97 30.89 86.89 1.251486 1.471681 3_579 t>o 3 ejective coronal o medial s08 question new 98.95 75.36 97.07 i 1251.49 
+geo020s08a0215v01  13.51 7.97 30.89 86.89 0.814779 0.927306 1_3411 p>a 3 ejective labial a initial s08 question new 42.66 66.74 120.25 a 814.78 
+geo020s08a0215v01  13.51 7.97 30.89 86.89 0.814779 1.071391 2_9065 t>e 3 ejective coronal e medial s08 question new 18.59 69.27 74.82 a 814.78 
+geo020s08a0215v02 erreur 13.51 7.97 30.89 86.89 0.803306 0.858613 1_8235 to 2 pulmonic coronal o initial s08 answer new 18.59 71.51 129.89 o 803.31 
+geo020s08a0215v02  13.51 7.97 30.89 86.89 0.803306 1.068468 2_7944 k>i 2 ejective velar i medial s08 answer new 56.51 70.20 139.66 o 803.31 
+geo020s08a0216v01 erreur 13.51 7.97 30.89 86.89 0.685436 0.746981 1_5101 to 2 pulmonic coronal o initial s08 question new 56.51 52.11 97.00 o 685.44 
+geo020s08a0216v01  13.51 7.97 30.89 86.89 0.685436 0.848710 2_3504 k>i 2 ejective velar i medial s08 question new 52.29 50.39 51.34 o 685.44 
+geo020s08a0216v02 erreur 13.51 7.97 30.89 86.89 0.558738 0.618323 1_2226 to 2 pulmonic coronal o initial s08 answer echo 52.29 62.53 110.84 o 558.74 
+geo020s08a0216v02  13.51 7.97 30.89 86.89 0.558738 0.748048 2_3081 k>i 2 ejective velar i medial s08 answer echo 31.05 54.07 75.66 o 558.74 
+geo020s08a0217v01 erreur 13.51 7.97 30.89 86.89 0.921219 0.986752 1_2341 pa 2 pulmonic labial a initial s08 question new 31.05 70.05 119.32 a 921.22 
+geo020s08a0217v01 erreur 13.51 7.97 30.89 86.89 0.921219 1.184082 2_9882 pa 2 pulmonic labial a medial s08 question new 31.05 86.06 111.27 a 921.22 
+geo020s08a0219v01 erreur 13.51 7.97 30.89 86.89 0.982023 1.035365 1_789 pa 2 pulmonic labial a initial s08 question new 31.05 89.54 134.33 a 982.02 
+geo020s08a0219v01 erreur 13.51 7.97 30.89 86.89 0.982023 1.253451 2_2032 pa 2 pulmonic labial a medial s08 question new 31.05 88.85 129.23 a 982.02 
+geo020s08a0219v02  13.51 7.97 30.89 86.89 0.667389 0.785042 1_2278 t>a 3 ejective coronal a initial s08 answer new 54.81 64.69 132.00 a 667.39 
+geo020s08a0220v01  13.51 7.97 30.89 86.89 0.927354 1.013143 1_6519 t>a 3 ejective coronal a initial s08 question new 54.76 62.03 124.46 a 927.35 
+geo020s08a0220v02  13.51 7.97 30.89 86.89 0.749724 0.826029 1_2904 t>a 3 ejective coronal a initial s08 answer echo 55.55 58.22 121.88 a 749.72 
+geo020s08a0221v01  13.51 7.97 30.89 86.89 0.981719 1.064499 2_3513 t>i 3 ejective coronal i medial s08 question new 34.72 67.10 96.09 i 981.72 
+geo020s08a0221v02  13.51 7.97 30.89 86.89 0.761386 0.858099 1_1165 p>a 3 ejective labial a initial s08 answer new 59.78 68.76 109.84 a 761.39 
+geo020s08a0221v02 erreur 13.51 7.97 30.89 86.89 0.761386 1.217881 3_7998 ki 3 pulmonic velar i medial s08 answer new 59.78 65.72 106.96 a 761.39 
+geo020s08a0222v01  13.51 7.97 30.89 86.89 0.832870 0.924253 1_5974 p>a 3 ejective labial a initial s08 question new 53.24 69.45 104.46 a 832.87 
+geo020s08a0222v01 erreur 13.51 7.97 30.89 86.89 0.832870 1.244180 3_216 ki 3 pulmonic velar i medial s08 question new 53.24 67.03 81.00 a 832.87 
+geo020s08a0222v02  13.51 7.97 30.89 86.89 0.736715 0.824069 1_2171 p>a 3 ejective labial a initial s08 answer echo 50.40 65.81 97.09 a 736.72 
+geo020s08a0222v02 erreur 13.51 7.97 30.89 86.89 0.736715 1.206045 3_1969 ki 3 pulmonic velar i medial s08 answer echo 50.40 67.57 135.07 a 736.72 
+geo020s08a0223v02  13.51 7.97 30.89 86.89 0.986595 1.084641 1_3861 p>e 2 ejective labial e initial s08 answer new 36.53 73.83 113.50 e 986.60 
+geo020s08a0224v01  13.51 7.97 30.89 86.89 0.946996 1.030508 1_8423 p>e 2 ejective labial e initial s08 question new 35.75 71.18 95.24 e 947.00 
+geo020s08a0224v02  13.51 7.97 30.89 86.89 0.802082 0.875857 1_4540 p>e 2 ejective labial e initial s08 answer echo 44.10 70.76 98.99 e 802.08 
+geo020s08a0225v02  13.51 7.97 30.89 86.89 0.656557 0.759674 1_2098 k>e 3 ejective velar e initial s08 answer new 33.91 60.85 124.17 e 656.56 
+geo020s08a0225v02  13.51 7.97 30.89 86.89 0.656557 1.055248 3_3639 t>i 3 ejective coronal i medial s08 answer new 34.08 62.31 85.86 e 656.56 
+geo020s08a0226v01  13.51 7.97 30.89 86.89 0.890132 0.991223 1_6828 k>e 3 ejective velar e initial s08 question new 39.11 56.78 121.95 e 890.13 
+geo020s08a0226v01  13.51 7.97 30.89 86.89 0.890132 1.243262 3_8729 t>i 3 ejective coronal i medial s08 question new 80.19 52.62 80.19 e 890.13 
+geo020s08a0226v02  13.51 7.97 30.89 86.89 0.750921 0.841228 1_4162 k>e 3 ejective velar e initial s08 answer echo 55.22 60.29 135.25 e 750.92 
+geo020s08a0226v02  13.51 7.97 30.89 86.89 0.750921 1.168849 3_2437 t>i 3 ejective coronal i medial s08 answer echo 43.30 72.72 121.84 e 750.92 
+geo020s08a0227v02  13.51 7.97 30.89 86.89 0.717820 0.803371 1_238 k>a 3 ejective velar a initial s08 answer new 48.43 49.57 108.33 a 717.82 
+geo020s08a0228v01  13.51 7.97 30.89 86.89 0.951805 1.047254 1_4346 k>a 3 ejective velar a initial s08 question new 42.45 58.60 114.66 a 951.80 
+geo020s08a0228v02  13.51 7.97 30.89 86.89 0.777610 0.869575 1_2756 k>a 3 ejective velar a initial s08 answer echo 67.71 54.70 118.52 a 777.61 
+geo020s08a0229v01  13.51 7.97 30.89 86.89 0.831854 0.929772 1_3720 t>a 2 ejective coronal a initial s08 question new 33.89 69.77 111.46 a 831.85 
+geo020s08a0231v01  13.51 7.97 30.89 86.89 0.767740 0.887540 1_8570 p>a 3 ejective labial a initial s08 question new 54.11 71.04 140.16 a 767.74 
+geo020s08a0231v01  13.51 7.97 30.89 86.89 0.767740 1.185358 3_9288 k>a 3 ejective velar a medial s08 question new 131.54 59.67 131.54 a 767.74 
+geo020s08a0231v02  13.51 7.97 30.89 86.89 0.831429 0.892728 1_6738 p>e 3 ejective labial e initial s08 answer new 59.47 57.70 99.83 e 831.43 
+geo020s08a0232v01  13.51 7.97 30.89 86.89 0.972276 1.049239 1_1943 p>e 3 ejective labial e initial s08 question new 52.19 60.36 96.42 e 972.28 
+geo020s08a0232v02  13.51 7.97 30.89 86.89 0.984354 1.069671 1_9898 p>e 3 ejective labial e initial s08 answer echo 65.25 73.98 119.12 e 984.35 
+geo020s08a0233v02 erreur 13.51 7.97 30.89 86.89 0.810726 0.869977 1_9213 pu 2 pulmonic labial u initial s08 answer new 65.25 91.03 136.58 u 810.73 
+geo020s08a0234v01 erreur 13.51 7.97 30.89 86.89 0.962568 1.013944 1_3114 pu 2 pulmonic labial u initial s08 question new 65.25 105.43 127.16 u 962.57 
+geo020s08a0234v02 erreur 13.51 7.97 30.89 86.89 0.895225 0.962618 1_507 pu 2 pulmonic labial u initial s08 answer echo 65.25 102.74 142.66 u 895.23 
+geo020s08a0235v01  13.51 7.97 30.89 86.89 1.027862 1.123541 1_7352 k>e 2 ejective velar e initial s08 question new 55.59 72.89 142.95 e 1027.86 
+geo020s08a0239v01 erreur 13.51 7.97 30.89 86.89 1.103808 1.175933 1_6222 te 3 pulmonic coronal e initial s08 question new 55.59 86.54 190.78 e 1103.81 
+geo020s08a0239v02 erreur 13.51 7.97 30.89 86.89 0.778375 0.839580 1_1454 pa 2 pulmonic labial a initial s08 answer new 55.59 77.66 148.20 a 778.38 
+geo020s08a0239v02 erreur 13.51 7.97 30.89 86.89 0.778375 1.080274 2_1952 pa 2 pulmonic labial a medial s08 answer new 55.59 87.26 153.43 a 778.38 
+geo020s08a0240v01 erreur 13.51 7.97 30.89 86.89 0.952973 1.020120 1_1597 pa 2 pulmonic labial a initial s08 question new 55.59 74.64 113.75 a 952.97 
+geo020s08a0240v01 erreur 13.51 7.97 30.89 86.89 0.952973 1.200921 2_5220 pa 2 pulmonic labial a medial s08 question new 55.59 86.31 94.50 a 952.97 
+geo020s08a0240v02 erreur 13.51 7.97 30.89 86.89 0.719783 0.780808 1_4324 pa 2 pulmonic labial a initial s08 answer echo 55.59 69.02 116.58 a 719.78 
+geo020s08a0240v02 erreur 13.51 7.97 30.89 86.89 0.719783 0.977123 2_340 pa 2 pulmonic labial a medial s08 answer echo 55.59 85.12 111.19 a 719.78 
+geo020s08a0241v01  13.51 7.97 30.89 86.89 0.959385 1.069742 1_4165 t>i 2 ejective coronal i initial s08 question new 60.87 99.52 138.50 i 959.38 
+geo020s08a0241v02  13.51 7.97 30.89 86.89 0.766952 0.877375 1_823 p>a 2 ejective labial a initial s08 answer new 54.56 71.24 123.26 a 766.95 
+geo020s08a0241v02  13.51 7.97 30.89 86.89 0.766952 1.120121 2_9330 p>a 2 ejective labial a medial s08 answer new 31.32 88.91 153.83 a 766.95 
+geo020s08a0242v01  13.51 7.97 30.89 86.89 0.814887 0.906781 1_9136 p>a 2 ejective labial a initial s08 question new 40.37 52.13 109.12 a 814.89 
+geo020s08a0242v01  13.51 7.97 30.89 86.89 0.814887 1.103503 2_6646 p>a 2 ejective labial a medial s08 question new 106.27 90.45 106.27 a 814.89 
+geo020s08a0242v02  13.51 7.97 30.89 86.89 0.654270 0.714185 1_9314 p>a 2 ejective labial a initial s08 answer echo 64.00 56.56 115.41 a 654.27 
+geo020s08a0242v02  13.51 7.97 30.89 86.89 0.654270 0.935413 2_2547 p>a 2 ejective labial a medial s08 answer echo 26.48 97.58 123.65 a 654.27 
+geo020s08a0245v01  13.51 7.97 30.89 86.89 0.794975 0.930108 1_1833 t>a 2 ejective coronal a initial s08 question new 54.01 72.54 164.17 a 794.98 
+geo020s08a0247v02  13.51 7.97 30.89 86.89 0.721610 0.791507 1_6844 p>i 3 ejective labial i initial s08 answer new 47.13 74.63 111.97 i 721.61 
+geo020s08a0248v01  13.51 7.97 30.89 86.89 0.721696 0.791470 1_1077 p>i 3 ejective labial i initial s08 question new 38.50 72.40 89.68 i 721.70 
+geo020s08a0248v02  13.51 7.97 30.89 86.89 0.663725 0.732189 1_2263 p>i 3 ejective labial i initial s08 answer echo 31.95 70.00 84.76 i 663.72 
+geo020s08a0249v01  13.51 7.97 30.89 86.89 0.750605 0.848383 1_1035 p>a 3 ejective labial a initial s08 question new 15.14 72.61 107.25 a 750.61 
+geo020s08a0249v02 erreur 13.51 7.97 30.89 86.89 0.755435 0.844992 1_2668 pa 3 pulmonic labial a initial s08 answer new 15.14 91.72 142.81 a 755.43 
+geo020s08a0249v02  13.51 7.97 30.89 86.89 0.755435 1.222625 3_5588 t>i 3 ejective coronal i medial s08 answer new 43.04 75.46 120.15 a 755.43 
+geo020s08a0250v01 erreur 13.51 7.97 30.89 86.89 0.782850 0.856449 1_8448 pa 3 pulmonic labial a initial s08 question new 43.04 79.47 136.20 a 782.85 
+geo020s08a0250v01  13.51 7.97 30.89 86.89 0.782850 1.196903 3_5529 t>i 3 ejective coronal i medial s08 question new 30.36 72.44 75.60 a 782.85 
+geo020s08a0250v02 erreur 13.51 7.97 30.89 86.89 0.764970 0.840400 1_7449 pa 3 pulmonic labial a initial s08 answer echo 30.36 60.00 139.44 a 764.97 
+geo020s08a0250v02  13.51 7.97 30.89 86.89 0.764970 1.214732 3_5079 t>i 3 ejective coronal i medial s08 answer echo 30.83 82.93 116.50 a 764.97 
+geo020s08a0251v01  13.51 7.97 30.89 86.89 1.228351 1.321928 2_4122 k>i 2 ejective velar i medial s08 question new 109.53 69.65 109.53 i 1228.35 
+geo020s08a0251v02  13.51 7.97 30.89 86.89 0.950459 1.026642 1_6326 t>i 3 ejective coronal i initial s08 answer new 89.36 69.82 156.63 i 950.46 
+geo020s08a0252v01  13.51 7.97 30.89 86.89 0.858871 0.941900 1_3702 t>i 3 ejective coronal i initial s08 question new 70.12 58.70 150.75 i 858.87 
+geo020s08a0252v02  13.51 7.97 30.89 86.89 0.656172 0.720155 1_6164 t>i 3 ejective coronal i initial s08 answer echo 80.65 56.93 126.12 i 656.17 

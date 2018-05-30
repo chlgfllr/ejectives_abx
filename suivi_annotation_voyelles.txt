@@ -42,3 +42,12 @@ geo020s08a0250v01	manque v 3		paCat>i
 geo020s08a0251v01	manque v 2		pxak>i
 ---
 geo020s08a0012v02	checker v 3		k>rit>ik>a
+
+
+
+EGG
+geo020s08a0015v02	t>ani		checker audio+EGG
+geo020s08a0030v01	p>ilot>i	v 3 pas voisée
+geo020s08a0034v01	k>ak>abi	exemple de k> sans glottal release
+geo020s08a0076v01	k>ap>ela	exemple glottalisation
+

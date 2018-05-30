@@ -47,7 +47,7 @@ datafile$vowelduration <- NULL
 
 # ABXpy item file
 ## Change folder
-write.table(datafile, file = "../results/fixed_initial_medial/abx.item", quote = F, sep = " ", row.names = F, col.names = T)
+write.table(datafile, file = "../results/parties_abxpy/abx.item", quote = F, sep = " ", row.names = F, col.names = T)
 # Easy_abx csv file
 #write.table(datafile, file = "../results/features/abx_corrected.csv", quote = F, sep = ",", row.names = F, col.names = T)
 ```

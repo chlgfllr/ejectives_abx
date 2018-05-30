@@ -1,0 +1,5 @@
+type_2;type_1;by;score;n
+ejective;pulmonic;('labial', 'initial', 'question', 's08', 'a');0.985537190083;2420
+pulmonic;ejective;('labial', 'initial', 'question', 's08', 'a');0.919716646989;5082
+ejective;pulmonic;('labial', 'initial', 'answer', 's08', 'a');0.996411483254;2508
+pulmonic;ejective;('labial', 'initial', 'answer', 's08', 'a');0.873538011696;4104

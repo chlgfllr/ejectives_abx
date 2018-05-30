@@ -11,15 +11,19 @@ library(ggplot2)
 mon.data <- readr::read_delim("log_vot_measures_s08.txt", " ")
 mon.data_ <- mon.data %>%
   select(type, place, position, good_vot) %>%
-  filter(good_vot > 0 & good_vot < 150) 
+  filter(good_vot >= 0 & good_vot <= 100) 
 
 #mon.subset <- dplyr::filter(mon.subset, vowel == c("a", "e", "i"))
 mon.data_$objet <- paste(mon.data_$place, mon.data_$type, mon.data_$position)
 
-comparaison.des.vot <- mon.data_ %>%
+comparaison.des.vot_B <- mon.data_ %>%
     group_by(place, type, position) %>%
     add_count(place, type, position) %>%
-    summarise_all(mean)
+    summarise_all(funs(mean, sd))
+
+ggplot(mon.data_, aes(x = good_vot)) + 
+  geom_histogram() + 
+  facet_grid(place ~ type)
 
 #write.table(x = comparaison.des.vot, file = "comparaison_VOT.txt", sep = "\t", col.names = T, row.names = F, quote = F)
 ```

@@ -1,0 +1,5 @@
+type_2	type_1	by	score	n
+ejective	pulmonic	('labial', 'initial', 'answer', 's08', 'a')	0.432692307692	728
+pulmonic	ejective	('labial', 'initial', 'answer', 's08', 'a')	0.499198717949	1248
+ejective	pulmonic	('labial', 'initial', 'question', 's08', 'a')	0.553968253968	630
+pulmonic	ejective	('labial', 'initial', 'question', 's08', 'a')	0.397619047619	1470

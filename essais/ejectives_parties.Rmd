@@ -1,0 +1,71 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+## This is what we did with the good_vot and bad_vot measures the other day
+my.data <- readr::read_delim("/Users/chloe/ejectives_abx/results/vot/abx.item", " ")
+my.data.eject <- subset(my.data, type=="ejective")
+
+ggplot(my.data.eject, aes(x = goodvot)) + 
+  geom_histogram() +
+  facet_grid(position ~ place) 
+
+ggplot(my.data.eject, aes(x = (vowelduration-goodvot), y=badvot-goodvot, color = vowel)) + 
+  geom_point() +
+  geom_abline(slope = 1, intercept=0) +
+  facet_grid(position ~ place) +
+  coord_cartesian(ylim=c(0, 200))
+
+ggplot(my.data.eject, aes(x = goodvot, y=badvot-goodvot)) + 
+  geom_point() +
+  facet_grid(position ~ place) +
+  coord_cartesian(ylim=c(0, 200))
+```
+
+```{r}
+## That's the new stuff
+mes.mesures <- readr::read_delim("/Users/chloe/ejectives_abx/results/parties_consonne/abx.csv", ",")
+
+ejectives <- subset(mes.mesures, mes.mesures$type=="ejective")
+ejectives[is.na(ejectives)] <- 0
+
+parties_mean <- mes.mesures %>%
+  group_by(position, place, type) %>%
+  mutate(mean_lag = mean(dur_lag)) %>%
+  mutate(mean_creak = mean(dur_creak)) %>%
+  mutate(median_lag = median(dur_lag)) %>%
+  mutate(median_creak = median(dur_creak/(dur_creak + dur_vowel)))
+## For this one thing here I have NaN and NAs
+
+ggplot(parties_mean, aes(x=dur_creak, y=dur_lag, color = position)) +
+  geom_point() + 
+  stat_ellipse() +
+  facet_grid(type ~ place) +
+  coord_cartesian(xlim= c(0, 150), ylim=c(0, 100))
+## ...
+
+ggplot(parties_mean, aes(x = dur_creak)) + 
+  geom_histogram() +
+  facet_grid(position*type ~ place) +
+  geom_vline(aes(xintercept = mean_creak))
+
+ggplot(parties_mean, aes(x = (dur_creak + dur_vowel), y=dur_creak, color = vowel)) + 
+  geom_point() +
+  geom_abline(slope = 1, intercept=0) +
+  facet_grid(position*type ~ place) +
+  coord_cartesian(ylim=c(0, 100))
+
+ggplot(subset(parties_mean, type=="ejective"), aes(x = dur_lag, y=(dur_creak/(dur_creak+dur_vowel)), color = (dur_vowel/(dur_lag+dur_creak+dur_vowel)))) + 
+  geom_point() +
+  facet_grid(position ~ place) +
+  geom_vline(aes(xintercept = mean_lag)) +
+  geom_hline(aes(yintercept = mean_creak)) +
+  coord_cartesian(ylim=c(0, 1))
+```
