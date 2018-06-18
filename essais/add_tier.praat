@@ -1,5 +1,5 @@
 form Extract Formant data from labelled points
-   sentence Directory_name: /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/resampled_mono/edited/done/audio_files
+   sentence Directory_name: /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/resampled_mono/edited/done/s09_audio_files
    sentence new_label burst
 endform
 
@@ -16,7 +16,7 @@ for ifile to num
 
   num_tiers = Get number of tiers
   new_tier = num_tiers + 1
-  Insert interval tier... new_tier new_label
+  Insert interval tier... new_tier new_label$
 
 	selectObject: textGridID
 	Save as text file... 'directory_name$'/'soundID1$'.TextGrid

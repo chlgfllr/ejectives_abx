@@ -188,6 +188,9 @@ read_easyabx <- function(data_folder) {
 ```{r warning = FALSE}
 setwd("~/ejectives_abx/results")
 
+distances_modalv <- read_abxpy("modalv/by__place_position_question_speaker_vowel")
+distances_modalv$experiment <- "modalv"
+
 distances_vot <- read_abxpy("vot/by__place_position_question_speaker")
 distances_vot$experiment <- "vot"
 
@@ -241,7 +244,7 @@ distances_features_no_vowel_timbre$experiment <- "features_no_vowel_timbre"
 
 ## Tous les tests dans un même fichier
 #distances <- dplyr::bind_rows(distances_fixed_standard, distances_features_vot_only)
-distances <- dplyr::bind_rows(distances_vowel, distances_vowel_flattened)
+distances <- dplyr::bind_rows(distances_modalv)
 
 #distances <- distances_egg_1000
 distances$place <- distances$place_A # know this because experiment was BY place, speaker

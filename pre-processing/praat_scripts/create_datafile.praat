@@ -137,7 +137,7 @@ for ifile to num
                 Extract part: left, right, "rectangular", 1, "yes"
                 Write to WAV file... /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/cv_sequences/'new_name$'.wav
                 
-                fileappend "'resultsfile$'" 'soundname$' 'left:6' 'right:6' 'start:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'newline$'
+                fileappend "'resultsfile$'" 'soundname$' 'oral_burst:6' 'right:6' 'start:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'newline$'
 
                 # select the TextGrid so we can iterate to the next interval:
                 select TextGrid 'soundname$'

@@ -12,11 +12,11 @@
 #Number of intervals you wish to extract pitch from.
 
 form Extract VOT measures from TextGrid
-	sentence Sound_directory: /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/resampled_mono/edited/done/audio_files/
+	sentence Sound_directory: /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/resampled_mono/edited/done/all_audio_files/
 	sentence Sound_file_extension .wav
-	sentence TextGrid_directory /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/resampled_mono/edited/done/audio_files/
+	sentence TextGrid_directory /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/resampled_mono/edited/done/all_audio_files/
 	sentence TextGrid_file_extension .TextGrid
-	text resultsfile /Users/chloe/ejectives_abx/essais/measures_s08.item
+	text resultsfile /Users/chloe/ejectives_abx/essais/all_audio_files.item
 	comment Which tier do you want to analyze?
 	integer Tier 3
 endform
@@ -33,7 +33,7 @@ endif
 
 # onset and offset are taken for variable window (CV sequence) and fixed window (centered on oral burst, -0.02 +0.109)
 num = Get number of strings
-header$ = "#file burst dur_burst dur_lag dur_creak dur_vowel onset_vot offset_vot item sequence syllables type place vowel position speaker question new bad_vot constriction vowelduration check_vowel good_vot 'newline$'"
+header$ = "#file burst dur_burst dur_lag dur_creak dur_vowel onset_creak onset_vowel offset_vot item sequence syllables type place vowel position speaker question new bad_vot constriction vowelduration check_vowel good_vot 'newline$'"
 fileappend "'resultsfile$'" 'header$'
 
 for ifile to num
@@ -93,6 +93,15 @@ for ifile to num
                         duree_lag = (fin_lag - debut_lag)*1000
                     elsif next$ = "creak"
                         duree_lag = 0
+                        debut_creak = Get start point... 8 x+1
+                        fin_creak = Get end point... 8 x+1
+                        duree_creak = (fin_creak - debut_creak)*1000
+                    elsif next$ = "vowel"
+                        duree_lag = 0
+                        duree_creak = 0
+                        debut_vowel = Get start point... 8 x+1
+                        fin_vowel = Get end point... 8 x+1
+                        duree_vowel = (fin_vowel - debut_vowel)*1000
                     endif
                     following$ = Get label of interval... 8 x+2
                     if following$ = "creak"
@@ -101,15 +110,20 @@ for ifile to num
                         duree_creak = (fin_creak - debut_creak)*1000
                     elsif following$ = "vowel"
                         duree_creak = 0
+                        debut_vowel = Get start point... 8 x+2
+                        fin_vowel = Get end point... 8 x+2
+                        duree_vowel = (fin_vowel - debut_vowel)*1000                    
                     endif
                     final$ = Get label of interval... 8 x+3
                     if final$ = "vowel"
                         debut_vowel = Get start point... 8 x+3
                         fin_vowel = Get end point... 8 x+3
                         duree_vowel = (fin_vowel - debut_vowel)*1000
-                    elsif final$ != "vowel"
+                    elsif final$ != "vowel" & following$ != "vowel" & next$ != "vowel"
                         duree_vowel = 0
                     endif
+                else
+                    verif$ = "erreur"
                 endif
 
                 left = oral_burst - 0.02
@@ -179,7 +193,7 @@ for ifile to num
                 #Extract part: left, right, "rectangular", 1, "yes"
                 #Write to WAV file... /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/cv_sequences/'new_name$'.wav
                 
-                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'vot_start:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
+                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'debut_creak:6' 'debut_vowel:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
 
                 # select the TextGrid so we can iterate to the next interval:
                 select TextGrid 'soundname$'
@@ -204,6 +218,15 @@ for ifile to num
                         duree_lag = (fin_lag - debut_lag)*1000
                     elsif next$ = "creak"
                         duree_lag = 0
+                        debut_creak = Get start point... 8 x+1
+                        fin_creak = Get end point... 8 x+1
+                        duree_creak = (fin_creak - debut_creak)*1000
+                    elsif next$ = "vowel"
+                        duree_lag = 0
+                        duree_creak = 0
+                        debut_vowel = Get start point... 8 x+1
+                        fin_vowel = Get end point... 8 x+1
+                        duree_vowel = (fin_vowel - debut_vowel)*1000
                     endif
                     following$ = Get label of interval... 8 x+2
                     if following$ = "creak"
@@ -212,15 +235,20 @@ for ifile to num
                         duree_creak = (fin_creak - debut_creak)*1000
                     elsif following$ = "vowel"
                         duree_creak = 0
+                        debut_vowel = Get start point... 8 x+2
+                        fin_vowel = Get end point... 8 x+2
+                        duree_vowel = (fin_vowel - debut_vowel)*1000                    
                     endif
                     final$ = Get label of interval... 8 x+3
                     if final$ = "vowel"
                         debut_vowel = Get start point... 8 x+3
                         fin_vowel = Get end point... 8 x+3
                         duree_vowel = (fin_vowel - debut_vowel)*1000
-                    elsif final$ != "vowel"
+                    elsif final$ != "vowel" & following$ != "vowel" & next$ != "vowel"
                         duree_vowel = 0
                     endif
+                else
+                    verif$ = "erreur"
                 endif
 
                 left = oral_burst - 0.02
@@ -290,7 +318,7 @@ for ifile to num
                 #Extract part: left, right, "rectangular", 1, "yes"
                 #Write to WAV file... /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/cv_sequences/'new_name$'.wav
                 
-                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'vot_start:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
+                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'debut_creak:6' 'debut_vowel:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
 
                 # select the TextGrid so we can iterate to the next interval:
                 select TextGrid 'soundname$'
@@ -315,6 +343,15 @@ for ifile to num
                         duree_lag = (fin_lag - debut_lag)*1000
                     elsif next$ = "creak"
                         duree_lag = 0
+                        debut_creak = Get start point... 8 x+1
+                        fin_creak = Get end point... 8 x+1
+                        duree_creak = (fin_creak - debut_creak)*1000
+                    elsif next$ = "vowel"
+                        duree_lag = 0
+                        duree_creak = 0
+                        debut_vowel = Get start point... 8 x+1
+                        fin_vowel = Get end point... 8 x+1
+                        duree_vowel = (fin_vowel - debut_vowel)*1000
                     endif
                     following$ = Get label of interval... 8 x+2
                     if following$ = "creak"
@@ -323,15 +360,20 @@ for ifile to num
                         duree_creak = (fin_creak - debut_creak)*1000
                     elsif following$ = "vowel"
                         duree_creak = 0
+                        debut_vowel = Get start point... 8 x+2
+                        fin_vowel = Get end point... 8 x+2
+                        duree_vowel = (fin_vowel - debut_vowel)*1000                    
                     endif
                     final$ = Get label of interval... 8 x+3
                     if final$ = "vowel"
                         debut_vowel = Get start point... 8 x+3
                         fin_vowel = Get end point... 8 x+3
                         duree_vowel = (fin_vowel - debut_vowel)*1000
-                    elsif final$ != "vowel"
+                    elsif final$ != "vowel" & following$ != "vowel" & next$ != "vowel"
                         duree_vowel = 0
                     endif
+                else
+                    verif$ = "erreur"
                 endif
 
                 left = oral_burst - 0.02
@@ -401,7 +443,7 @@ for ifile to num
                 #Extract part: left, right, "rectangular", 1, "yes"
                 #Write to WAV file... /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/cv_sequences/'new_name$'.wav
                 
-                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'vot_start:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
+                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'debut_creak:6' 'debut_vowel:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
 
                 # select the TextGrid so we can iterate to the next interval:
                 select TextGrid 'soundname$'
@@ -426,6 +468,15 @@ for ifile to num
                         duree_lag = (fin_lag - debut_lag)*1000
                     elsif next$ = "creak"
                         duree_lag = 0
+                        debut_creak = Get start point... 8 x+1
+                        fin_creak = Get end point... 8 x+1
+                        duree_creak = (fin_creak - debut_creak)*1000
+                    elsif next$ = "vowel"
+                        duree_lag = 0
+                        duree_creak = 0
+                        debut_vowel = Get start point... 8 x+1
+                        fin_vowel = Get end point... 8 x+1
+                        duree_vowel = (fin_vowel - debut_vowel)*1000
                     endif
                     following$ = Get label of interval... 8 x+2
                     if following$ = "creak"
@@ -434,16 +485,19 @@ for ifile to num
                         duree_creak = (fin_creak - debut_creak)*1000
                     elsif following$ = "vowel"
                         duree_creak = 0
+                        debut_vowel = Get start point... 8 x+2
+                        fin_vowel = Get end point... 8 x+2
+                        duree_vowel = (fin_vowel - debut_vowel)*1000                    
                     endif
                     final$ = Get label of interval... 8 x+3
                     if final$ = "vowel"
                         debut_vowel = Get start point... 8 x+3
                         fin_vowel = Get end point... 8 x+3
                         duree_vowel = (fin_vowel - debut_vowel)*1000
-                    elsif final$ != "vowel"
+                    elsif final$ != "vowel" & following$ != "vowel" & next$ != "vowel"
                         duree_vowel = 0
                     endif
-                elsif verif$ != "burst"
+                else
                     verif$ = "erreur"
                 endif
 
@@ -512,7 +566,7 @@ for ifile to num
                 #Extract part: left, right, "rectangular", 1, "yes"
                 #Write to WAV file... /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/cv_sequences/'new_name$'.wav
                 
-                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'vot_start:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
+                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'debut_creak:6' 'debut_vowel:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
 
                 # select the TextGrid so we can iterate to the next interval:
                 select TextGrid 'soundname$'
@@ -537,6 +591,15 @@ for ifile to num
                         duree_lag = (fin_lag - debut_lag)*1000
                     elsif next$ = "creak"
                         duree_lag = 0
+                        debut_creak = Get start point... 8 x+1
+                        fin_creak = Get end point... 8 x+1
+                        duree_creak = (fin_creak - debut_creak)*1000
+                    elsif next$ = "vowel"
+                        duree_lag = 0
+                        duree_creak = 0
+                        debut_vowel = Get start point... 8 x+1
+                        fin_vowel = Get end point... 8 x+1
+                        duree_vowel = (fin_vowel - debut_vowel)*1000
                     endif
                     following$ = Get label of interval... 8 x+2
                     if following$ = "creak"
@@ -545,13 +608,16 @@ for ifile to num
                         duree_creak = (fin_creak - debut_creak)*1000
                     elsif following$ = "vowel"
                         duree_creak = 0
+                        debut_vowel = Get start point... 8 x+2
+                        fin_vowel = Get end point... 8 x+2
+                        duree_vowel = (fin_vowel - debut_vowel)*1000                    
                     endif
                     final$ = Get label of interval... 8 x+3
                     if final$ = "vowel"
                         debut_vowel = Get start point... 8 x+3
                         fin_vowel = Get end point... 8 x+3
                         duree_vowel = (fin_vowel - debut_vowel)*1000
-                    elsif final$ != "vowel"
+                    elsif final$ != "vowel" & following$ != "vowel" & next$ != "vowel"
                         duree_vowel = 0
                     endif
                 else
@@ -610,6 +676,8 @@ for ifile to num
                     elsif question$ = "answer"
                         echo$ = "echo"
                     endif
+                else
+                    verif$ = "erreur"
                 endif
 
                 numero = randomInteger (0, 10000)
@@ -623,7 +691,7 @@ for ifile to num
                 #Extract part: left, right, "rectangular", 1, "yes"
                 #Write to WAV file... /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/cv_sequences/'new_name$'.wav
                 
-                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'vot_start:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
+                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'debut_creak:6' 'debut_vowel:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
 
                 # select the TextGrid so we can iterate to the next interval:
                 select TextGrid 'soundname$'
@@ -648,6 +716,15 @@ for ifile to num
                         duree_lag = (fin_lag - debut_lag)*1000
                     elsif next$ = "creak"
                         duree_lag = 0
+                        debut_creak = Get start point... 8 x+1
+                        fin_creak = Get end point... 8 x+1
+                        duree_creak = (fin_creak - debut_creak)*1000
+                    elsif next$ = "vowel"
+                        duree_lag = 0
+                        duree_creak = 0
+                        debut_vowel = Get start point... 8 x+1
+                        fin_vowel = Get end point... 8 x+1
+                        duree_vowel = (fin_vowel - debut_vowel)*1000
                     endif
                     following$ = Get label of interval... 8 x+2
                     if following$ = "creak"
@@ -656,6 +733,9 @@ for ifile to num
                         duree_creak = (fin_creak - debut_creak)*1000
                     elsif following$ = "vowel"
                         duree_creak = 0
+                        debut_vowel = Get start point... 8 x+2
+                        fin_vowel = Get end point... 8 x+2
+                        duree_vowel = (fin_vowel - debut_vowel)*1000                    
                     endif
                     final$ = Get label of interval... 8 x+3
                     if final$ = "vowel"
@@ -665,8 +745,6 @@ for ifile to num
                     elsif final$ != "vowel"
                         duree_vowel = 0
                     endif
-                else
-                    verif$ = "erreur"
                 endif
 
                 end_vot = Get end point: 5, x
@@ -734,7 +812,7 @@ for ifile to num
                 #Extract part: left, right, "rectangular", 1, "yes"
                 #Write to WAV file... /Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/audio_files/cv_sequences/'new_name$'.wav
                 
-                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'vot_start:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
+                fileappend "'resultsfile$'" 'soundname$' 'verif$' 'duree_burst:2' 'duree_lag:2' 'duree_creak:2' 'duree_vowel:2' 'debut_creak:6' 'debut_vowel:6' 'vowel_end:6' 'new_name$' 'sequence$' 'syllable_count' 'type$' 'place$' 'vowel$' 'initial$' 'speaker$' 'question$' 'echo$' 'extendVOT_duration:2' 'constriction_duration:2' 'vowelduration:2' 'vot_check$' 'vot:2' 'newline$'
 
                 # select the TextGrid so we can iterate to the next interval:
                 select TextGrid 'soundname$'

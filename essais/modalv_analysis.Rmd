@@ -1,0 +1,61 @@
+---
+title: "Untitled"
+output: html_document
+---
+```{r}
+# Analyse des distances au test ABXpy sur la voyelle modale
+mes_distances <- distances_better
+mes_distances$item_A <- NULL
+mes_distances$item_B <- NULL
+mes_distances$place_B <- NULL
+mes_distances$speaker_B <- NULL
+mes_distances$question_B <- NULL
+mes_distances$vowel_B <- NULL
+
+
+mes_distances_same <- subset(mes_distances, same == "SAME")
+mes_distances_different <- subset(mes_distances, same == "DIFFERENT")
+
+mes_distances_same$pair <- ifelse(mes_distances_same$ejective_A=="TRUE", "ejectives", "aspirates")
+mes_distances_different$pair <- "different"
+
+mes_scores <- dplyr::bind_rows(mes_distances_different, mes_distances_same)
+mes_scores$ejective_A <- NULL
+mes_scores$ejective_B <- NULL
+
+some_scores <- subset(mes_scores, position_A=="initial" & vowel_A=="a" | vowel_A=="e")
+
+```
+
+```{r}
+ggplot(some_scores, aes(x = place_A, y = dist, fill=pair)) + 
+      geom_boxplot(position="dodge") +
+      facet_grid(position_A ~ speaker_A) +
+      theme_minimal() +
+      labs(title = "", 
+                    x = "Point d'articulation", 
+                    y = "Dynamic Time Warping") #+
+      ylim(c(0.01, 0.06)) #+
+      #scale_fill_manual(values = wes_palette(n=3, name="Darjeeling"))
+```
+```{r}
+mes_resultats_abx <- readr::read_delim("/Users/chloe/ejectives_abx/results/modalv/by__place_position_question_speaker_vowel/results.csv", "\t")
+mes_resultats <- subset(mes_resultats_abx, n >= 100)
+
+mes_resultats_abx$weighted <- mes_resultats_abx$score * mes_resultats_abx$n / sum(mes_resultats_abx$n)
+sum(mes_resultats_abx$weighted)
+
+moyenne_tous <- mean(mes_resultats_abx$score)
+moyenne_above_100 <- mean(mes_resultats$score)
+
+s08_results <- mes_resultats[c(1,2,4,5,8,9), ]
+mean_s08 <- mean(s08_results$score)
+s09_results <- mes_resultats[c(3,6,7,10:12), ]
+mean_s09 <- mean(s09_results$score)
+```
+
+```{r allboth, out.extra='angle=90', echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.cap=legende, fig.height=4}
+source("/Users/chloe/OneDrive/Documents/M2/2017-2018/georgian_suite/writings/notes/analyse_both_speakers.R")
+legende <- "truc"
+toutes_mes_mesures
+```

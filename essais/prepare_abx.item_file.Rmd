@@ -1,0 +1,46 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+library(tibble)
+```
+
+
+```{r}
+
+mon_datafile <- readr::read_delim("all_audio_files.item", " ")
+
+`#file` <- as.tibble(mon_datafile$`#file`)
+`#item` <- as.tibble(mon_datafile$item)
+mes_variables <- mon_datafile[, 13:18]
+onset_creak <- as.tibble(mon_datafile$onset_creak)
+onset_modalv <- as.tibble(mon_datafile$onset_vowel)
+onset_vowel <- as.tibble(mon_datafile$onset_vowel)
+offset <- as.tibble(mon_datafile$offset_vot)
+
+datafile_creak_vowel <- bind_cols(`#file`, onset_creak, offset, `#item`, mes_variables)
+colnames(datafile_creak_vowel) <- c("#file", "onset", "offset", "#item", "type", "place", "vowel", "position", "speaker", "question")
+check <- datafile_creak_vowel
+check$checking <- check$offset - check$onset
+check_ <- subset(check, checking > 0)
+check_$checking <- NULL
+
+write.table(check_, "/Users/chloe/ejectives_abx/results/creak_modalv/abx.item", quote = F, col.names = T, row.names = F)
+
+####################################################################################################
+
+datafile_modalvowel <- bind_cols(`#file`, onset_vowel, offset, `#item`, mes_variables)
+colnames(datafile_modalvowel) <- c("#file", "onset", "offset", "#item", "type", "place", "vowel", "position", "speaker", "question")
+check2 <- datafile_modalvowel
+check2$checking <- check2$offset - check2$onset
+check2_ <- subset(check2, checking > 0)
+datafile_modalvowel_ <- check2_
+datafile_modalvowel_$checking <- NULL
+
+write.table(datafile_modalvowel_, "/Users/chloe/ejectives_abx/results/modalv/abx.item", quote = F, col.names = T, row.names = F)
+
+```
+
